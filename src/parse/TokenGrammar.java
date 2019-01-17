@@ -433,6 +433,25 @@ public void charLit(int pos, int n) {
 //: `void ::= "void" !idChar ws*
 //: reserved ::= `void
 
+//: `while ::= "while" !idChar ws*
+//: reserved ::= `while
+
+// Java reserved words not used in MiniJava
+
+//: `abstract ::= "abstract" !idChar ws*
+//: reserved ::= `abstract
+
+//: `assert ::= "assert" !idChar ws*
+//: reserved ::= `assert
+
+//: `byte ::= "byte" !idChar ws*
+//: reserved ::= `byte
+
+//: `case ::= "case" !idChar ws*
+//: reserved ::= `case
+
+//: `catch ::= "catch" !idChar ws*
+//: reserved ::= `catch
 
 
     

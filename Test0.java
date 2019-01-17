@@ -1,3 +1,5 @@
-this
-true
-void
+abstract
+assert
+byte
+case
+catch
