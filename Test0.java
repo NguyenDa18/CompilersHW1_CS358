@@ -1,3 +1,3 @@
-int
-new
-null
+this
+true
+void

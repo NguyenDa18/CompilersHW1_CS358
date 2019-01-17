@@ -412,6 +412,27 @@ public void charLit(int pos, int n) {
 //: `null ::= "null" !idChar ws*
 //: reserved ::= `null
 
+//: `public ::= "public" !idChar ws*
+//: reserved ::= `public
+
+//: `return ::= "return" !idChar ws*
+//: reserved ::= `return
+
+//: `super ::= "super" !idChar ws*
+//: reserved ::= `super
+
+//: `switch ::= "switch" !idChar ws*
+//: reserved ::= `switch
+
+//: `this ::= "this" !idChar ws*
+//: reserved ::= `this
+
+//: `true ::= "true" !idChar ws*
+//: reserved ::= `true
+
+//: `void ::= "void" !idChar ws*
+//: reserved ::= `void
+
 
 
     
