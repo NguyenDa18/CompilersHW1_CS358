@@ -453,6 +453,57 @@ public void charLit(int pos, int n) {
 //: `catch ::= "catch" !idChar ws*
 //: reserved ::= `catch
 
+//: `char ::= "char" !idChar ws*
+//: reserved ::= `char
+
+//: `const ::= "const" !idChar ws*
+//: reserved ::= `const
+
+//: `continue ::= "continue" !idChar ws*
+//: reserved ::= `continue
+
+//: `default ::= "default" !idChar ws*
+//: reserved ::= `default
+
+//: `do ::= "do" !idChar ws*
+//: reserved ::= `do
+
+//: `double ::= "double" !idChar ws*
+//: reserved ::= `double
+
+//: `enum ::= "enum" !idChar ws*
+//: reserved ::= `enum
+
+//: `final ::= "final" !idChar ws*
+//: reserved ::= `final
+
+//: `finally ::= "finally" !idChar ws*
+//: reserved ::= `finally
+
+//: `float ::= "float" !idChar ws*
+//: reserved ::= `float
+
+//: `goto ::= "goto" !idChar ws*
+//: reserved ::= `goto
+
+//: `implements ::= "implements" !idChar ws*
+//: reserved ::= `implements
+
+//: `import ::= "import" !idChar ws*
+//: reserved ::= `import
+
+//: `interface ::= "interface" !idChar ws*
+//: reserved ::= `interface
+
+//: `long ::= "long" !idChar ws*
+//: reserved ::= `long
+
+//: `native ::= "native" !idChar ws*
+//: reserved ::= `native
+
+//: `package ::= "package" !idChar ws*
+//: reserved ::= `package
+
 
     
 
