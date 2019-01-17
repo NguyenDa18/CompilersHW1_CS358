@@ -382,8 +382,17 @@ public void charLit(int pos, int n) {
 //: reserved ::= `else
 
 //special-token characters
+//: `! ::= "!" ws*
 //: `!= ::= "!=" ws*
+//: `% ::= "%" ws*
+//: `&& ::= "&&" ws*
 //: `* ::= "*" ws*
+//: `# ::= "#" ws*
+//: `( ::= "(" ws*
+//: `) ::= ")" ws*
+//: `== ::= "==" ws*
+//: `+ ::= "+" ws*
+//: `- ::= "-" ws*
 
 // a numeric literal
 //: INTLIT ::= # intLit2 ws* =>
