@@ -376,10 +376,45 @@ public void charLit(int pos, int n) {
 //================================================================
 
 // reserved words
+//: `boolean ::= "boolean" !idChar ws*
+//: reserved ::= `boolean
+
+//: `break ::= "break" !idChar ws*
+//: reserved ::= `break
+
 //: `class ::= "class" !idChar ws*
 //: reserved ::= `class
+
 //: `else ::= "else" !idChar ws*
 //: reserved ::= `else
+
+//: `extends ::= "extends" !idChar ws*
+//: reserved ::= `extends
+
+//: `false ::= "false" !idChar ws*
+//: reserved ::= `false
+
+//: `for ::= "for" !idChar ws*
+//: reserved ::= `for
+
+//: `if ::= "if" !idChar ws*
+//: reserved ::= `if
+
+//: `instanceof ::= "instanceof" !idChar ws*
+//: reserved ::= `instanceof
+
+//: `int ::= "int" !idChar ws*
+//: reserved ::= `int
+
+//: `new ::= "new" !idChar ws*
+//: reserved ::= `new
+
+//: `null ::= "null" !idChar ws*
+//: reserved ::= `null
+
+
+
+    
 
 //special-token characters
 //: `! ::= "!" ws*
