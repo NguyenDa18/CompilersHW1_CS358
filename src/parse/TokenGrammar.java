@@ -644,31 +644,4 @@ public int zero(char c) { return 0;}
 //: `} ::= {156}
 //: `: ::= {157}
 
-
-
-//: `if ::= {179}
-//: `implements ::= {180}
-//: `import ::= {181}
-//: `instanceof ::= {182}
-//: `int ::= {183}
-//: `interface ::= {184}
-//: `long ::= {185}
-//: `native ::= {186}
-//: `new ::= {187}
-//: `null ::= {188}
-//: `package ::= {189}
-//: `private ::= {190}
-//: `protected ::= {191}
-//: `public ::= {192}
-//: `return ::= {193}
-//: `short ::= {194}
-//: `static ::= {195}
-//: `strictfp ::= {196}
-//: `super ::= {197}
-//: `switch ::= {198}
-//: `synchronized ::= {199}
-//: `this ::= {200}
-//: `throw ::= {201}
-//: `throws ::= {202}
-
 }

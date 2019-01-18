@@ -1,6 +1,5 @@
-while
-volatile
-void
-try
-true
-transient
+if implements
+import            instanceof
+int
+
+                                        interface
