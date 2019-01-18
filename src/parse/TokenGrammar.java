@@ -643,27 +643,9 @@ public int zero(char c) { return 0;}
 //: `|| ::= {155}
 //: `} ::= {156}
 //: `: ::= {157}
-//: `abstract ::= {158}
-//: `assert ::= {159}
-//: `boolean ::= {160}
-//: `break ::= {161}
-//: `byte ::= {162}
-//: `case ::= {163}
-//: `catch ::= {164}
-//: `char ::= {165}
-//: `const ::= {166}
-//: `continue ::= {167}
-//: `default ::= {168}
-//: `do ::= {169}
-//: `double ::= {170}
-//: `enum ::= {171}
-//: `extends ::= {172}
-//: `false ::= {173}
-//: `final ::= {174}
-//: `finally ::= {175}
-//: `float ::= {176}
-//: `for ::= {177}
-//: `goto ::= {178}
+
+
+
 //: `if ::= {179}
 //: `implements ::= {180}
 //: `import ::= {181}
@@ -688,11 +670,5 @@ public int zero(char c) { return 0;}
 //: `this ::= {200}
 //: `throw ::= {201}
 //: `throws ::= {202}
-//: `transient ::= {203}
-//: `true ::= {204}
-//: `try ::= {205}
-//: `void ::= {206}
-//: `volatile ::= {207}
-//: `while ::= {208}
 
 }
