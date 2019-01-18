@@ -504,6 +504,40 @@ public void charLit(int pos, int n) {
 //: `package ::= "package" !idChar ws*
 //: reserved ::= `package
 
+//: `private ::= "private" !idChar ws*
+//: reserved ::= `private
+
+//: `protected ::= "protected" !idChar ws*
+//: reserved ::= `protected
+
+//: `short ::= "short" !idChar ws*
+//: reserved ::= `short
+
+//: `static ::= "static" !idChar ws*
+//: reserved ::= `static
+
+//: `strictfp ::= "strictfp" !idChar ws*
+//: reserved ::= `strictfp
+
+//: `synchronized ::= "synchronized" !idChar ws*
+//: reserved ::= `synchronized
+
+//: `throw ::= "throw" !idChar ws*
+//: reserved ::= `throw
+
+//: `throws ::= "throws" !idChar ws*
+//: reserved ::= `throws
+
+//: `transient ::= "transient" !idChar ws*
+//: reserved ::= `transient
+
+//: `try ::= "try" !idChar ws*
+//: reserved ::= `try
+
+//: `volatile ::= "volatile" !idChar ws*
+//: reserved ::= `volatile
+
+
 
     
 
