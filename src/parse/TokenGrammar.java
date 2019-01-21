@@ -553,6 +553,12 @@ public void charLit(int pos, int n) {
 
 //: `+ ::= "+" !"+" ws*
 //: `++ ::= "++" ws*
+//: `- ::= "-" !"-" ws*
+//: `-- ::= "--" ws*
+//: `. ::= "." ws*
+//: `/ ::= "/" ws*
+//: `: ::= ":" ws*
+
 
 
 
@@ -560,9 +566,6 @@ public void charLit(int pos, int n) {
 
 //: `# ::= "#" ws*
 
-//: `== ::= "==" ws*
-
-//: `- ::= "-" ws*
 
 // a numeric literal
 //: INTLIT ::= # intLit2 ws* =>
