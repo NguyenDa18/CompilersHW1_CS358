@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7e229c6f-b5b1-4ea3-b2c1-32691bf94639" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/CompilersHW1.iws" beforeDir="false" afterPath="$PROJECT_DIR$/CompilersHW1.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test0.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test0.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TokenGrammarParseTable.java.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TokenGrammarParseTable.java.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CompilersHW1/parse/TokenGrammarParseTable$Initter1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CompilersHW1/parse/TokenGrammarParseTable$Initter1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CompilersHW1/parse/TokenGrammarParseTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CompilersHW1/parse/TokenGrammarParseTable.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parse/TokenGrammar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parse/TokenGrammar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parse/TokenGrammarParseTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parse/TokenGrammarParseTable.java" afterDir="false" />
     </list>
@@ -26,7 +23,7 @@
       <file leaf-file-name="ErrorMsg.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/errorMsg/ErrorMsg.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
+            <state>
               <caret line="58" selection-start-line="58" selection-end-line="58" />
             </state>
           </provider>
@@ -41,34 +38,34 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Test1.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Test1.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Test0.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test0.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
+              <caret column="1" selection-start-column="1" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TokenGrammarParseTable.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TokenGrammarParseTable.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/parse/TokenGrammarParseTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="566">
-              <caret line="9807" column="18" selection-start-line="9807" selection-start-column="18" selection-end-line="9807" selection-end-column="18" />
+            <state relative-caret-position="225">
+              <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GenTokenGrammarParser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gen/GenTokenGrammarParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TokenGrammar.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TokenGrammar.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/parse/TokenGrammar.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="248">
@@ -187,7 +184,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.GenTokenGrammarParser">
     <configuration name="GenTokenGrammarParser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="gen.GenTokenGrammarParser" />
       <module name="CompilersHW1" />
@@ -262,8 +259,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.GenTokenGrammarParser" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -282,7 +279,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="19" y="28" width="1395" height="878" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -292,24 +288,44 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3298153" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3298153" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3298153" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3298153" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4940945" visible="true" weight="0.24464154" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4940945" visible="true" weight="0.24464154" />
       <window_info id="Structure" order="1" sideWeight="0.50109893" side_tool="true" weight="0.23798965" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.47493404" />
       <window_info id="Favorites" order="2" sideWeight="0.5059055" side_tool="true" visible="true" weight="0.24464154" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info id="Designer" order="2" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3298153" />
+      <window_info id="Structure" order="1" sideWeight="0.50109893" side_tool="true" weight="0.23798965" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info id="Favorites" order="2" sideWeight="0.5059055" side_tool="true" visible="true" weight="0.24464154" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3298153" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3298153" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.47493404" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.3298153" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4940945" visible="true" weight="0.24464154" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -651,15 +667,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/errorMsg/ErrorMsg.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
+        <state>
           <caret line="58" selection-start-line="58" selection-end-line="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/parse/TokenGrammarParseTable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="9807" column="18" selection-start-line="9807" selection-start-column="18" selection-end-line="9807" selection-end-column="18" />
+        <state relative-caret-position="225">
+          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -673,7 +689,7 @@
     <entry file="file://$PROJECT_DIR$/Test0.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
+          <caret column="1" selection-start-column="1" selection-end-column="1" />
         </state>
       </provider>
     </entry>

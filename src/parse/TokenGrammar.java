@@ -557,7 +557,7 @@ public void charLit(int pos, int n) {
 //: `- ::= "-" !"-" ws*
 //: `-- ::= "--" ws*
 //: `. ::= "." ws*
-//: `/ ::= !"*" "/" !"/" !"*" ws*
+//: `/ ::= !"*" "/" !{"*" "/"} ws*
 //: `: ::= ":" ws*
 //: `; ::= ";" ws*
 //: `< ::= "<" !"=" ws*
@@ -608,6 +608,9 @@ public int convertToInt(int pos, String s) {
 
 // a digit
 //: digit ::= {"0".."9"} => pass
+
+// printable ASCII chars
+//: printable ::= {" ".."~"} => pass
 
 //================================================================
 // whitespace
