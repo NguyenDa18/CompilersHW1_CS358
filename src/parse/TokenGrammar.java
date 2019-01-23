@@ -554,7 +554,6 @@ public void charLit(int pos, int n) {
 
 
 
-    
 
 //special-token characters
 //: `! ::= "!" !"=" ws*
@@ -595,6 +594,8 @@ public void charLit(int pos, int n) {
 // NUMBER RELATED TOKENS
 //================================================================
 
+public int zero(char c) { return 0;}
+
 // a numeric literal
 //: INTLIT ::= # intLit2 ws* =>
 public int convertToInt(int pos, String s) {
@@ -627,6 +628,8 @@ public int printableToAscii(int pos, char leftQuote, char printable, char rightQ
 public String charsToStringLiteral(int pos, char leftQuote, List<Character> stringLit, char rightQuote) {
     return String.valueOf(stringLit);
 }
+
+
 
 
 // a character that can be a non-first character in an identifier
@@ -672,17 +675,10 @@ public void reportNestedComment(int pos) {
     IDENTIFIERS : Enforce the longest match rule
  */
  //: ID ::= {169} => text
-
-
-//================================================================
-// Dummied up (and incorrect) definitions, so that this starter-file
-// will compile. These definitions use unprintable characters.
-//
-//  THESE DEFINITIONS SHOULD BE DELETED (OR COMMENTED OUT)
-//  BEFORE YOU TURN YOUR SOLUTION!!!
-//
-//================================================================
-public int zero(char c) { return 0;}
+ ////: ID ::= # letter idChar+ ws* =>
+ public String sequenceToIdentifier(int pos, char start, List<Character> sequence) {
+     return String.valueOf(sequence);
+ }
 
 
 }
