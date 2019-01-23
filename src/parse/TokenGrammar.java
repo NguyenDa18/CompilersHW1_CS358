@@ -702,10 +702,9 @@ public void reportNestedComment(int pos, Character left, Character leftInner, Li
     - may optionally be followed by sequence of one or more letters, digits, underscores
     - Reserved words should NOT be recognized as identifiers
  */
- ////: ID ::= {169} => text
- //: ID ::= !reserved letter idChar++ ws* =>
+ //: ID ::= !reserved letter idChar** ws* =>
  public String sequenceToIdentifier(Character startLetter, List<Character> sequence) {
-     return String.valueOf(startLetter) + String.valueOf(sequence);
+     return String.valueOf(startLetter) + "" + sequence;
  }
 
 
