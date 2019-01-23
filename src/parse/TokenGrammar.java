@@ -614,12 +614,18 @@ public int convertToInt(int pos, String s) {
 //: digit ::= {"0".."9"} => pass
 
 //================================================================
+// LETTERS AND CHAR TOKENS
 // character patterns -- "helper symbols"
 //================================================================
 
 //: CHARLIT ::= # "'" printable "'" ws* =>
 public int printableToAscii(int pos, char leftQuote, char printable, char rightQuote) {
     return (int)printable;
+}
+
+//: STRINGLIT ::= # '"' idChar++ '"' ws* =>
+public String charsToStringLiteral(int pos, char leftQuote, List<Character> stringLit, char rightQuote) {
+    return String.valueOf(stringLit);
 }
 
 
@@ -677,7 +683,6 @@ public void reportNestedComment(int pos) {
 //
 //================================================================
 public int zero(char c) { return 0;}
-//: STRINGLIT ::= {132} => text
 
 
 }
