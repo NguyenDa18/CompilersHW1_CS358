@@ -25,16 +25,18 @@ public class TokenGrammar implements wrangLR.runtime.MessageObject {
 
 //: start ::= ws* token*
 
-/**
-THE FOLLOWING IS DETAILS ABOUT TOKENS
-tokens = indivisible building blocks of our language
+ /** 
+    ================================================================================
+        THE FOLLOWING IS DETAILS ABOUT TOKENS
+        tokens : indivisible building blocks of our language
 
-NON-TERMINALS:
-start : the start rule
-grammar-level symbols : non-termianls that consist of sequences of tokens
-whitespace token : defines what a whitespace character is in the language, ws denotes the whitespace char
-subpattern tokens : define char sequences that might appear within tokens
- */
+        NON-TERMINALS:
+        start : the start rule
+        grammar-level symbols : non-termianls that consist of sequences of tokens
+        whitespace token : defines what a whitespace character is in the language, ws denotes the whitespace char
+        subpattern tokens : define char sequences that might appear within tokens
+    =================================================================================
+*/
 	
 
 //: token ::= # `boolean =>
@@ -447,7 +449,9 @@ public void charLit(int pos, int n) {
 //: `while ::= "while" !idChar ws*
 //: reserved ::= `while
 
-// Java reserved words not used in MiniJava
+/**
+    Java reserved words not used in MiniJava
+ */
 
 //: `abstract ::= "abstract" !idChar ws*
 //: reserved ::= `abstract
@@ -585,10 +589,11 @@ public void charLit(int pos, int n) {
 
 
 
-
-
 //: `# ::= "#" ws*
 
+//================================================================
+// NUMBER RELATED TOKENS
+//================================================================
 
 // a numeric literal
 //: INTLIT ::= # intLit2 ws* =>
@@ -602,12 +607,21 @@ public int convertToInt(int pos, String s) {
 	}
 }
 
+// pattern that represents an integer literal (without trailing whitespace)
+//: intLit2 ::= !"0" digit++ => text
+
+// a digit
+//: digit ::= {"0".."9"} => pass
+
 //================================================================
 // character patterns -- "helper symbols"
 //================================================================
 
-// pattern that represents an integer literal (without trailing whitespace)
-//: intLit2 ::= !"0" digit++ => text
+//: CHARLIT ::= # "'" printable "'" ws* =>
+public int printableToAscii(int pos, char leftQuote, char printable, char rightQuote) {
+    return (int)printable;
+}
+
 
 // a character that can be a non-first character in an identifier
 //: idChar ::= letter => pass
@@ -617,14 +631,11 @@ public int convertToInt(int pos, String s) {
 // a letter
 //: letter ::= {"a".."z" "A".."Z"} => pass
 
-// a digit
-//: digit ::= {"0".."9"} => pass
-
 // printable ASCII chars
 //: printable ::= {" ".."~"} => pass
 
 //================================================================
-// whitespace
+// WHITESPACE
 //================================================================
 
 // whitespace
@@ -646,9 +657,15 @@ public void registerNewline(int pos) {
 }
 
 
+public void reportNestedComment(int pos) {
+    warning(pos, "Nested comment detected at " + pos);
+}
+
+
 /**
     IDENTIFIERS : Enforce the longest match rule
  */
+ //: ID ::= {169} => text
 
 
 //================================================================
@@ -659,11 +676,8 @@ public void registerNewline(int pos) {
 //  BEFORE YOU TURN YOUR SOLUTION!!!
 //
 //================================================================
-//: CHARLIT ::= {130} =>
 public int zero(char c) { return 0;}
-//: ID ::= {131} => text
 //: STRINGLIT ::= {132} => text
-//: `/ ::= {144}
 
 
 }

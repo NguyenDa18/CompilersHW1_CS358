@@ -14,8 +14,8 @@ errorMsg
 *
 ;
 public class TokenGrammarParseTable implements wrangLR.runtime.ParseTable {
-public int getEofSym() { return 154; }
-public int getNttSym() { return 155; }
+public int getEofSym() { return 156; }
+public int getNttSym() { return 157; }
 private String[] symNameTable = {
 "$$start",
 "start",
@@ -155,20 +155,22 @@ private String[] symNameTable = {
 "intLit2",
 "\"0\"",
 "digit++",
-"letter",
 "digit",
+"{\"1\"..\"9\"}",
+"\"\'\"",
+"printable",
+"letter",
 "\"_\"",
 "{\"A\"..\"Z\" \"j\" \"q\"}",
-"{\"1\"..\"9\"}",
+"{\'\"\'..\"$\" \"?\"..\"@\" \"\\\" \"^\" \"`\" \"~\"}",
+"\" \"",
 "ws",
-"{9 \" \"}",
+"9",
 "eol",
 "10",
 "13",
-"130",
-"131",
+"169",
 "132",
-"144",
 "token*",
 "digit+",
 "$",
@@ -179,8 +181,8 @@ public String symName(int n) {
 }
 private TokenGrammar actionObject;
 public int[][] getParseTable() { return parseTable; }
-public int numSymbols() { return 156;}
-private static final int MIN_REDUCTION = 582;
+public int numSymbols() { return 158;}
+private static final int MIN_REDUCTION = 585;
 public int minReduction() { return MIN_REDUCTION;}
 private static final int MAX_ACCEPT_REDUCTION = MIN_REDUCTION+1;
 public int maxAcceptReduction() { return MAX_ACCEPT_REDUCTION; }
@@ -212,8 +214,8 @@ public int doInit(int startIdx) {
 }
 private final int[][] myParseTable = {
 { // state 0
-0x80000000|205, // match move
-0x80000000|368, // no-match move
+0x80000000|204, // match move
+0x80000000|369, // no-match move
 // T-test match for "*":
 120,
   }
@@ -222,26 +224,28 @@ private final int[][] myParseTable = {
   }
 ,
 { // state 2
-2,452, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+2,454, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+96, // (default reduction)
   }
 ,
 { // state 3
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+241, // (default reduction)
   }
 ,
 { // state 4
-101,254, // "t"
+101,256, // "t"
   }
 ,
 { // state 5
@@ -249,39 +253,40 @@ MIN_REDUCTION+8, // (default reduction)
   }
 ,
 { // state 6
-2,152, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+2,150, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+226, // (default reduction)
   }
 ,
 { // state 7
-93,304, // "a"
+93,306, // "a"
   }
 ,
 { // state 8
-90,344, // "o"
+90,345, // "o"
   }
 ,
 { // state 9
-0x80000000|212, // match move
-0x80000000|282, // no-match move
+0x80000000|211, // match move
+0x80000000|284, // no-match move
 0x80000000|33, // NT-test-match state for digit
   }
 ,
 { // state 10
-155,MIN_REDUCTION+254, // $NT
+157,MIN_REDUCTION+257, // $NT
   }
 ,
 { // state 11
-108,477, // "h"
+108,479, // "h"
   }
 ,
 { // state 12
-92,546, // "e"
+92,549, // "e"
   }
 ,
 { // state 13
@@ -289,7 +294,7 @@ MIN_REDUCTION+68, // (default reduction)
   }
 ,
 { // state 14
-103,238, // "f"
+103,239, // "f"
   }
 ,
 { // state 15
@@ -297,15 +302,16 @@ MIN_REDUCTION+68, // (default reduction)
   }
 ,
 { // state 16
-104,301, // "i"
+104,303, // "i"
   }
 ,
 { // state 17
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+175, // (default reduction)
   }
 ,
@@ -315,20 +321,20 @@ MIN_REDUCTION+56, // (default reduction)
 ,
 { // state 19
 0x80000000|1, // match move
-0x80000000|536, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+0x80000000|539, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 20
-99,317, // "s"
+99,319, // "s"
   }
 ,
 { // state 21
-122,389, // "+"
+122,390, // "+"
   }
 ,
 { // state 22
-104,538, // "i"
+104,541, // "i"
   }
 ,
 { // state 23
@@ -336,89 +342,93 @@ MIN_REDUCTION+56, // (default reduction)
   }
 ,
 { // state 24
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+123, // (default reduction)
   }
 ,
 { // state 25
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+167, // (default reduction)
   }
 ,
 { // state 26
 2,92, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+92, // (default reduction)
   }
 ,
 { // state 27
-107,526, // "p"
+107,529, // "p"
   }
 ,
 { // state 28
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+219, // (default reduction)
   }
 ,
 { // state 29
-99,209, // "s"
+99,208, // "s"
   }
 ,
 { // state 30
-0x80000000|144, // match move
-0x80000000|328, // no-match move
+0x80000000|142, // match move
+0x80000000|330, // no-match move
 // T-test match for "=":
 115,
   }
 ,
 { // state 31
-92,319, // "e"
+92,321, // "e"
   }
 ,
 { // state 32
-0x80000000|170, // match move
-0x80000000|557, // no-match move
+0x80000000|169, // match move
+0x80000000|560, // no-match move
 // T-test match for "*":
 120,
   }
 ,
 { // state 33
-136,256, // "0"
-142,256, // {"1".."9"}
+136,258, // "0"
+139,258, // {"1".."9"}
   }
 ,
 { // state 34
 0x80000000|36, // match move
-0x80000000|148, // no-match move
+0x80000000|146, // no-match move
 0x80000000|33, // NT-test-match state for digit
   }
 ,
 { // state 35
-91,285, // "l"
+91,287, // "l"
   }
 ,
 { // state 36
-MIN_REDUCTION+271, // (default reduction)
+MIN_REDUCTION+272, // (default reduction)
   }
 ,
 { // state 37
-94,409, // "n"
+94,410, // "n"
   }
 ,
 { // state 38
@@ -426,8 +436,8 @@ MIN_REDUCTION+46, // (default reduction)
   }
 ,
 { // state 39
-99,419, // "s"
-101,413, // "t"
+99,421, // "s"
+101,414, // "t"
   }
 ,
 { // state 40
@@ -435,57 +445,61 @@ MIN_REDUCTION+19, // (default reduction)
   }
 ,
 { // state 41
-0x80000000|290, // match move
-0x80000000|460, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+0x80000000|292, // match move
+0x80000000|462, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 42
-99,547, // "s"
+99,550, // "s"
   }
 ,
 { // state 43
-MIN_REDUCTION+269, // (default reduction)
+MIN_REDUCTION+270, // (default reduction)
   }
 ,
 { // state 44
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+121, // (default reduction)
   }
 ,
 { // state 45
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+215, // (default reduction)
   }
 ,
 { // state 46
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+133, // (default reduction)
   }
 ,
 { // state 47
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+97, // (default reduction)
   }
 ,
 { // state 48
-108,337, // "h"
+108,338, // "h"
   }
 ,
 { // state 49
@@ -493,16 +507,17 @@ MIN_REDUCTION+97, // (default reduction)
   }
 ,
 { // state 50
-104,299, // "i"
+104,301, // "i"
   }
 ,
 { // state 51
-2,541, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+2,544, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+110, // (default reduction)
   }
 ,
@@ -511,12 +526,13 @@ MIN_REDUCTION+110, // (default reduction)
   }
 ,
 { // state 53
-2,200, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+2,199, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+224, // (default reduction)
   }
 ,
@@ -525,7 +541,7 @@ MIN_REDUCTION+40, // (default reduction)
   }
 ,
 { // state 55
-94,514, // "n"
+94,517, // "n"
   }
 ,
 { // state 56
@@ -533,25 +549,27 @@ MIN_REDUCTION+54, // (default reduction)
   }
 ,
 { // state 57
-2,147, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+2,145, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+230, // (default reduction)
   }
 ,
 { // state 58
-93,349, // "a"
+93,350, // "a"
   }
 ,
 { // state 59
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+239, // (default reduction)
   }
 ,
@@ -560,21 +578,21 @@ MIN_REDUCTION+34, // (default reduction)
   }
 ,
 { // state 61
-112,443, // "g"
+112,445, // "g"
   }
 ,
 { // state 62
-90,572, // "o"
+90,575, // "o"
   }
 ,
 { // state 63
 0x80000000|1, // match move
 0x80000000|113, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 64
-109,277, // "v"
+109,279, // "v"
   }
 ,
 { // state 65
@@ -582,67 +600,72 @@ MIN_REDUCTION+60, // (default reduction)
   }
 ,
 { // state 66
-101,533, // "t"
+101,536, // "t"
   }
 ,
 { // state 67
 0x80000000|1, // match move
 0x80000000|222, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 68
-2,552, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+2,555, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+144, // (default reduction)
   }
 ,
 { // state 69
-101,287, // "t"
+101,289, // "t"
   }
 ,
 { // state 70
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+177, // (default reduction)
   }
 ,
 { // state 71
-124,492, // "-"
+124,494, // "-"
   }
 ,
 { // state 72
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+161, // (default reduction)
   }
 ,
 { // state 73
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+169, // (default reduction)
   }
 ,
 { // state 74
-2,289, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+2,291, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+210, // (default reduction)
   }
 ,
@@ -652,61 +675,64 @@ MIN_REDUCTION+210, // (default reduction)
 ,
 { // state 76
 2,77, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+120, // (default reduction)
   }
 ,
 { // state 77
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+119, // (default reduction)
   }
 ,
 { // state 78
-2,194, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+2,193, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+200, // (default reduction)
   }
 ,
 { // state 79
-99,241, // "s"
+99,242, // "s"
   }
 ,
 { // state 80
 0x80000000|1, // match move
-0x80000000|465, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+0x80000000|467, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 81
 0x80000000|1, // match move
-0x80000000|160, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+0x80000000|158, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 82
-101,343, // "t"
+101,344, // "t"
   }
 ,
 { // state 83
 0x80000000|1, // match move
 0x80000000|2, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 84
-89,385, // "b"
+89,386, // "b"
   }
 ,
 { // state 85
@@ -714,205 +740,209 @@ MIN_REDUCTION+200, // (default reduction)
 -1, // start
 -1, // ws*
 -1, // $$0
-264, // token
-174, // `boolean
-564, // `class
-176, // `extends
+266, // token
+173, // `boolean
+567, // `class
+175, // `extends
 5, // `void
 233, // `int
-288, // `while
-421, // `if
-125, // `else
-427, // `for
-498, // `break
-192, // `this
-163, // `false
-251, // `true
+290, // `while
+423, // `if
+124, // `else
+429, // `for
+500, // `break
+191, // `this
+161, // `false
+252, // `true
 217, // `super
 40, // `null
 96, // `return
-338, // `instanceof
-499, // `new
-312, // `abstract
-395, // `assert
-573, // `byte
-434, // `case
-575, // `catch
-356, // `char
-418, // `const
-491, // `continue
-474, // `default
-366, // `do
-155, // `double
+339, // `instanceof
+501, // `new
+314, // `abstract
+396, // `assert
+576, // `byte
+436, // `case
+578, // `catch
+357, // `char
+420, // `const
+493, // `continue
+476, // `default
+367, // `do
+153, // `double
 60, // `enum
 119, // `final
-274, // `finally
+276, // `finally
 101, // `float
-167, // `goto
-497, // `implements
+166, // `goto
+499, // `implements
 54, // `import
-259, // `interface
-404, // `long
-318, // `native
-401, // `package
-280, // `private
+261, // `interface
+405, // `long
+320, // `native
+402, // `package
+282, // `private
 38, // `protected
-291, // `public
-548, // `short
-172, // `static
-351, // `strictfp
+293, // `public
+551, // `short
+171, // `static
+352, // `strictfp
 94, // `switch
-359, // `synchronized
-449, // `throw
+360, // `synchronized
+451, // `throw
 56, // `throws
-261, // `transient
+263, // `transient
 18, // `try
 227, // `volatile
-332, // `!
-383, // `!=
+334, // `!
+384, // `!=
 65, // `%
-458, // `&&
+460, // `&&
 -1, // `*
-496, // `(
-253, // `)
-326, // `{
-445, // `}
-362, // `-
+498, // `(
+255, // `)
+328, // `{
+447, // `}
+363, // `-
 13, // `+
-187, // `=
-196, // `==
-161, // `[
-325, // `]
-340, // `||
-136, // `<
+186, // `=
+195, // `==
+159, // `[
+327, // `]
+341, // `||
+134, // `<
 121, // `<=
-551, // `,
+554, // `,
 109, // `>
 102, // `>=
-137, // `.
-171, // `;
-435, // `++
+135, // `.
+170, // `;
+437, // `++
 220, // `--
-193, // `/
-273, // `:
-554, // ID
-381, // INTLIT
-165, // STRINGLIT
-426, // CHARLIT
-361, // "b"
+192, // `/
+275, // `:
+557, // ID
+382, // INTLIT
+164, // STRINGLIT
+428, // CHARLIT
+362, // "b"
 -1, // "o"
-480, // "l"
-360, // "e"
-579, // "a"
-509, // "n"
+482, // "l"
+361, // "e"
+582, // "a"
+512, // "n"
 -1, // idChar
-298, // "r"
+300, // "r"
 -1, // "k"
-188, // "c"
-463, // "s"
+187, // "c"
+465, // "s"
 -1, // "x"
-489, // "t"
-569, // "d"
-276, // "f"
-372, // "i"
+491, // "t"
+572, // "d"
+278, // "f"
+373, // "i"
 48, // "w"
 -1, // "u"
-331, // "p"
+333, // "p"
 -1, // "h"
 114, // "v"
 -1, // "y"
 -1, // "m"
 8, // "g"
 -1, // "z"
-297, // "!"
+299, // "!"
 30, // "="
 78, // "%"
-354, // "&"
-127, // "("
-479, // ")"
+355, // "&"
+126, // "("
+481, // ")"
 -1, // "*"
-471, // "/"
-423, // "+"
-382, // ","
-386, // "-"
+473, // "/"
+425, // "+"
+383, // ","
+387, // "-"
 223, // "."
 53, // ":"
 6, // ";"
-367, // "<"
-327, // ">"
-414, // "["
-576, // "]"
-242, // "{"
+368, // "<"
+329, // ">"
+416, // "["
+579, // "]"
+243, // "{"
 95, // "}"
-433, // "|"
-341, // intLit2
-461, // "0"
-211, // digit++
--1, // letter
+435, // "|"
+342, // intLit2
+463, // "0"
+210, // digit++
 34, // digit
+463, // {"1".."9"}
+504, // "'"
+-1, // printable
+-1, // letter
 -1, // "_"
 -1, // {"A".."Z" "j" "q"}
-461, // {"1".."9"}
+-1, // {'"'.."$" "?".."@" "\" "^" "`" "~"}
+-1, // " "
 -1, // ws
--1, // {9 " "}
+-1, // {9}
 -1, // eol
 -1, // {10}
 -1, // {13}
-133, // {130}
-335, // {131}
-315, // {132}
-124, // {144}
+415, // {169}
+317, // {132}
 -1, // token*
 9, // digit+
-MIN_REDUCTION+273, // $
+MIN_REDUCTION+274, // $
 -1, // $NT
   }
 ,
 { // state 86
-99,560, // "s"
-101,310, // "t"
+99,563, // "s"
+101,312, // "t"
   }
 ,
 { // state 87
 91,58, // "l"
-104,444, // "i"
+104,446, // "i"
   }
 ,
 { // state 88
 2,25, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+168, // (default reduction)
   }
 ,
 { // state 89
-154,MIN_REDUCTION+0, // $
+156,MIN_REDUCTION+0, // $
   }
 ,
 { // state 90
-93,130, // "a"
+93,129, // "a"
 106,103, // "u"
-110,306, // "y"
+110,308, // "y"
   }
 ,
 { // state 91
-102,448, // "d"
+102,450, // "d"
   }
 ,
 { // state 92
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+91, // (default reduction)
   }
 ,
 { // state 93
-90,350, // "o"
+90,351, // "o"
   }
 ,
 { // state 94
@@ -920,12 +950,13 @@ MIN_REDUCTION+51, // (default reduction)
   }
 ,
 { // state 95
-2,189, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+2,188, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+246, // (default reduction)
   }
 ,
@@ -935,23 +966,23 @@ MIN_REDUCTION+20, // (default reduction)
 ,
 { // state 97
 0x80000000|1, // match move
-0x80000000|555, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+0x80000000|558, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 98
-91,149, // "l"
-94,376, // "n"
+91,147, // "l"
+94,377, // "n"
 96,14, // "r"
-100,567, // "x"
+100,570, // "x"
   }
 ,
 { // state 99
-MIN_REDUCTION+267, // (default reduction)
+MIN_REDUCTION+268, // (default reduction)
   }
 ,
 { // state 100
-101,392, // "t"
+101,393, // "t"
   }
 ,
 { // state 101
@@ -963,35 +994,36 @@ MIN_REDUCTION+78, // (default reduction)
   }
 ,
 { // state 103
-92,431, // "e"
+92,433, // "e"
   }
 ,
 { // state 104
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+213, // (default reduction)
   }
 ,
 { // state 105
-MIN_REDUCTION+256, // (default reduction)
+MIN_REDUCTION+252, // (default reduction)
   }
 ,
 { // state 106
-90,243, // "o"
+90,244, // "o"
 104,64, // "i"
   }
 ,
 { // state 107
 0x80000000|1, // match move
 0x80000000|26, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 108
-91,406, // "l"
+91,407, // "l"
   }
 ,
 { // state 109
@@ -999,24 +1031,25 @@ MIN_REDUCTION+77, // (default reduction)
   }
 ,
 { // state 110
-91,363, // "l"
+91,364, // "l"
   }
 ,
 { // state 111
-111,302, // "m"
+111,304, // "m"
   }
 ,
 { // state 112
-94,164, // "n"
+94,162, // "n"
   }
 ,
 { // state 113
-2,369, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+2,370, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+128, // (default reduction)
   }
 ,
@@ -1027,31 +1060,33 @@ MIN_REDUCTION+128, // (default reduction)
 { // state 115
 0x80000000|1, // match move
 0x80000000|76, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 116
 0x80000000|1, // match move
 0x80000000|237, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 117
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+247, // (default reduction)
   }
 ,
 { // state 118
-2,451, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+2,453, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+198, // (default reduction)
   }
 ,
@@ -1060,7 +1095,7 @@ MIN_REDUCTION+35, // (default reduction)
   }
 ,
 { // state 120
-104,375, // "i"
+104,376, // "i"
   }
 ,
 { // state 121
@@ -1071,92 +1106,92 @@ MIN_REDUCTION+75, // (default reduction)
 -1, // $$start
 89, // start
 32, // ws*
-397, // $$0
+398, // $$0
 99, // token
-174, // `boolean
-564, // `class
-176, // `extends
+173, // `boolean
+567, // `class
+175, // `extends
 5, // `void
 233, // `int
-288, // `while
-421, // `if
-125, // `else
-427, // `for
-498, // `break
-192, // `this
-163, // `false
-251, // `true
+290, // `while
+423, // `if
+124, // `else
+429, // `for
+500, // `break
+191, // `this
+161, // `false
+252, // `true
 217, // `super
 40, // `null
 96, // `return
-338, // `instanceof
-499, // `new
-312, // `abstract
-395, // `assert
-573, // `byte
-434, // `case
-575, // `catch
-356, // `char
-418, // `const
-491, // `continue
-474, // `default
-366, // `do
-155, // `double
+339, // `instanceof
+501, // `new
+314, // `abstract
+396, // `assert
+576, // `byte
+436, // `case
+578, // `catch
+357, // `char
+420, // `const
+493, // `continue
+476, // `default
+367, // `do
+153, // `double
 60, // `enum
 119, // `final
-274, // `finally
+276, // `finally
 101, // `float
-167, // `goto
-497, // `implements
+166, // `goto
+499, // `implements
 54, // `import
-259, // `interface
-404, // `long
-318, // `native
-401, // `package
-280, // `private
+261, // `interface
+405, // `long
+320, // `native
+402, // `package
+282, // `private
 38, // `protected
-291, // `public
-548, // `short
-172, // `static
-351, // `strictfp
+293, // `public
+551, // `short
+171, // `static
+352, // `strictfp
 94, // `switch
-359, // `synchronized
-449, // `throw
+360, // `synchronized
+451, // `throw
 56, // `throws
-261, // `transient
+263, // `transient
 18, // `try
 227, // `volatile
-332, // `!
-383, // `!=
+334, // `!
+384, // `!=
 65, // `%
-458, // `&&
+460, // `&&
 -1, // `*
-496, // `(
-253, // `)
-326, // `{
-445, // `}
-362, // `-
+498, // `(
+255, // `)
+328, // `{
+447, // `}
+363, // `-
 13, // `+
-187, // `=
-196, // `==
-161, // `[
-325, // `]
-340, // `||
-136, // `<
+186, // `=
+195, // `==
+159, // `[
+327, // `]
+341, // `||
+134, // `<
 121, // `<=
-551, // `,
+554, // `,
 109, // `>
 102, // `>=
-137, // `.
-171, // `;
-435, // `++
+135, // `.
+170, // `;
+437, // `++
 220, // `--
-193, // `/
-273, // `:
-554, // ID
-381, // INTLIT
-165, // STRINGLIT
-426, // CHARLIT
+192, // `/
+275, // `:
+557, // ID
+382, // INTLIT
+164, // STRINGLIT
+428, // CHARLIT
 -1, // "b"
 -1, // "o"
 -1, // "l"
@@ -1206,152 +1241,152 @@ MIN_REDUCTION+75, // (default reduction)
 -1, // intLit2
 -1, // "0"
 -1, // digit++
--1, // letter
 -1, // digit
+-1, // {"1".."9"}
+-1, // "'"
+-1, // printable
+-1, // letter
 -1, // "_"
 -1, // {"A".."Z" "j" "q"}
--1, // {"1".."9"}
-439, // ws
--1, // {9 " "}
-346, // eol
+-1, // {'"'.."$" "?".."@" "\" "^" "`" "~"}
+-1, // " "
+441, // ws
+-1, // {9}
+347, // eol
 -1, // {10}
 -1, // {13}
--1, // {130}
--1, // {131}
+-1, // {169}
 -1, // {132}
--1, // {144}
-352, // token*
+353, // token*
 -1, // digit+
 -1, // $
 -1, // $NT
   }
 ,
 { // state 123
-104,457, // "i"
+104,459, // "i"
   }
 ,
 { // state 124
-MIN_REDUCTION+265, // (default reduction)
-  }
-,
-{ // state 125
 MIN_REDUCTION+12, // (default reduction)
   }
 ,
-{ // state 126
-2,173, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 125
+2,172, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+112, // (default reduction)
   }
 ,
-{ // state 127
+{ // state 126
 2,229, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+204, // (default reduction)
   }
 ,
-{ // state 128
-90,399, // "o"
+{ // state 127
+90,400, // "o"
   }
 ,
-{ // state 129
+{ // state 128
 -1, // $$start
 -1, // start
 -1, // ws*
 -1, // $$0
-264, // token
-174, // `boolean
-564, // `class
-176, // `extends
+266, // token
+173, // `boolean
+567, // `class
+175, // `extends
 5, // `void
 233, // `int
-288, // `while
-421, // `if
-125, // `else
-427, // `for
-498, // `break
-192, // `this
-163, // `false
-251, // `true
+290, // `while
+423, // `if
+124, // `else
+429, // `for
+500, // `break
+191, // `this
+161, // `false
+252, // `true
 217, // `super
 40, // `null
 96, // `return
-338, // `instanceof
-499, // `new
-312, // `abstract
-395, // `assert
-573, // `byte
-434, // `case
-575, // `catch
-356, // `char
-418, // `const
-491, // `continue
-474, // `default
-366, // `do
-155, // `double
+339, // `instanceof
+501, // `new
+314, // `abstract
+396, // `assert
+576, // `byte
+436, // `case
+578, // `catch
+357, // `char
+420, // `const
+493, // `continue
+476, // `default
+367, // `do
+153, // `double
 60, // `enum
 119, // `final
-274, // `finally
+276, // `finally
 101, // `float
-167, // `goto
-497, // `implements
+166, // `goto
+499, // `implements
 54, // `import
-259, // `interface
-404, // `long
-318, // `native
-401, // `package
-280, // `private
+261, // `interface
+405, // `long
+320, // `native
+402, // `package
+282, // `private
 38, // `protected
-291, // `public
-548, // `short
-172, // `static
-351, // `strictfp
+293, // `public
+551, // `short
+171, // `static
+352, // `strictfp
 94, // `switch
-359, // `synchronized
-449, // `throw
+360, // `synchronized
+451, // `throw
 56, // `throws
-261, // `transient
+263, // `transient
 18, // `try
 227, // `volatile
-332, // `!
-383, // `!=
+334, // `!
+384, // `!=
 65, // `%
-458, // `&&
-411, // `*
-496, // `(
-253, // `)
-326, // `{
-445, // `}
-362, // `-
+460, // `&&
+412, // `*
+498, // `(
+255, // `)
+328, // `{
+447, // `}
+363, // `-
 13, // `+
-187, // `=
-196, // `==
-161, // `[
-325, // `]
-340, // `||
-136, // `<
+186, // `=
+195, // `==
+159, // `[
+327, // `]
+341, // `||
+134, // `<
 121, // `<=
-551, // `,
+554, // `,
 109, // `>
 102, // `>=
-137, // `.
-171, // `;
-435, // `++
+135, // `.
+170, // `;
+437, // `++
 220, // `--
-193, // `/
-273, // `:
-554, // ID
-381, // INTLIT
-165, // STRINGLIT
-426, // CHARLIT
+-1, // `/
+275, // `:
+557, // ID
+382, // INTLIT
+164, // STRINGLIT
+428, // CHARLIT
 -1, // "b"
 -1, // "o"
 -1, // "l"
@@ -1383,7 +1418,7 @@ MIN_REDUCTION+204, // (default reduction)
 -1, // "&"
 -1, // "("
 -1, // ")"
-353, // "*"
+354, // "*"
 -1, // "/"
 -1, // "+"
 -1, // ","
@@ -1398,669 +1433,699 @@ MIN_REDUCTION+204, // (default reduction)
 -1, // "{"
 -1, // "}"
 -1, // "|"
-341, // intLit2
+342, // intLit2
 -1, // "0"
-211, // digit++
--1, // letter
+210, // digit++
 34, // digit
+-1, // {"1".."9"}
+-1, // "'"
+-1, // printable
+-1, // letter
 -1, // "_"
 -1, // {"A".."Z" "j" "q"}
--1, // {"1".."9"}
+-1, // {'"'.."$" "?".."@" "\" "^" "`" "~"}
+-1, // " "
 -1, // ws
--1, // {9 " "}
+-1, // {9}
 -1, // eol
 -1, // {10}
 -1, // {13}
--1, // {130}
--1, // {131}
+-1, // {169}
 -1, // {132}
--1, // {144}
 -1, // token*
 9, // digit+
 -1, // $
 -1, // $NT
   }
 ,
-{ // state 130
-94,424, // "n"
+{ // state 129
+94,426, // "n"
   }
 ,
-{ // state 131
-2,248, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 130
+2,249, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+150, // (default reduction)
   }
 ,
+{ // state 131
+108,392, // "h"
+  }
+,
 { // state 132
-108,391, // "h"
+MIN_REDUCTION+264, // (default reduction)
   }
 ,
 { // state 133
-MIN_REDUCTION+262, // (default reduction)
+93,307, // "a"
   }
 ,
 { // state 134
-MIN_REDUCTION+261, // (default reduction)
-  }
-,
-{ // state 135
-93,305, // "a"
-  }
-,
-{ // state 136
 MIN_REDUCTION+74, // (default reduction)
   }
 ,
-{ // state 137
+{ // state 135
 MIN_REDUCTION+79, // (default reduction)
   }
 ,
-{ // state 138
+{ // state 136
 93,110, // "a"
   }
 ,
+{ // state 137
+96,374, // "r"
+  }
+,
+{ // state 138
+92,404, // "e"
+  }
+,
 { // state 139
-96,373, // "r"
+98,131, // "c"
   }
 ,
 { // state 140
-92,403, // "e"
-  }
-,
-{ // state 141
-98,132, // "c"
-  }
-,
-{ // state 142
-0x80000000|473, // match move
-0x80000000|286, // no-match move
+0x80000000|475, // match move
+0x80000000|288, // no-match move
 // T-test match for "*":
 120,
   }
 ,
+{ // state 141
+93,285, // "a"
+  }
+,
+{ // state 142
+115,403, // "="
+  }
+,
 { // state 143
-93,283, // "a"
+105,470, // "w"
   }
 ,
 { // state 144
-115,402, // "="
+92,401, // "e"
   }
 ,
 { // state 145
-105,468, // "w"
-  }
-,
-{ // state 146
-92,400, // "e"
-  }
-,
-{ // state 147
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+229, // (default reduction)
   }
 ,
+{ // state 146
+MIN_REDUCTION+272, // (default reduction)
+  }
+,
+{ // state 147
+99,452, // "s"
+  }
+,
 { // state 148
-MIN_REDUCTION+271, // (default reduction)
+99,322, // "s"
   }
 ,
 { // state 149
-99,450, // "s"
-  }
-,
-{ // state 150
-99,320, // "s"
-  }
-,
-{ // state 151
 2,70, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+178, // (default reduction)
   }
 ,
-{ // state 152
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 150
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+225, // (default reduction)
   }
 ,
+{ // state 151
+90,565, // "o"
+  }
+,
+{ // state 152
+107,138, // "p"
+  }
+,
 { // state 153
-90,562, // "o"
-  }
-,
-{ // state 154
-107,140, // "p"
-  }
-,
-{ // state 155
 MIN_REDUCTION+33, // (default reduction)
   }
 ,
-{ // state 156
-2,482, // ws*
-143,439, // ws
-145,346, // eol
+{ // state 154
+2,484, // ws*
+147,441, // ws
+149,347, // eol
 MIN_REDUCTION+154, // (default reduction)
   }
 ,
-{ // state 157
-MIN_REDUCTION+257, // (default reduction)
+{ // state 155
+MIN_REDUCTION+260, // (default reduction)
   }
 ,
-{ // state 158
+{ // state 156
 2,72, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+162, // (default reduction)
   }
 ,
-{ // state 159
+{ // state 157
 2,45, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+216, // (default reduction)
   }
 ,
-{ // state 160
-2,257, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 158
+2,259, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+130, // (default reduction)
   }
 ,
-{ // state 161
+{ // state 159
 MIN_REDUCTION+71, // (default reduction)
   }
 ,
-{ // state 162
-2,333, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 160
+2,335, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+208, // (default reduction)
   }
 ,
-{ // state 163
+{ // state 161
 MIN_REDUCTION+16, // (default reduction)
   }
 ,
-{ // state 164
-106,502, // "u"
+{ // state 162
+106,505, // "u"
   }
 ,
-{ // state 165
+{ // state 163
+140,238, // "'"
+  }
+,
+{ // state 164
 MIN_REDUCTION+87, // (default reduction)
   }
 ,
-{ // state 166
+{ // state 165
 0x80000000|1, // match move
-0x80000000|371, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+0x80000000|372, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
-{ // state 167
+{ // state 166
 MIN_REDUCTION+38, // (default reduction)
   }
 ,
-{ // state 168
+{ // state 167
 2,218, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+238, // (default reduction)
   }
 ,
-{ // state 169
-0x80000000|309, // match move
+{ // state 168
+0x80000000|311, // match move
 0x80000000|213, // no-match move
 // T-test match for "*":
 120,
   }
 ,
-{ // state 170
+{ // state 169
 0x80000000|1, // match move
-0x80000000|284, // no-match move
+0x80000000|286, // no-match move
 // T-test match for "0":
 136,
   }
 ,
-{ // state 171
+{ // state 170
 MIN_REDUCTION+80, // (default reduction)
   }
 ,
-{ // state 172
+{ // state 171
 MIN_REDUCTION+49, // (default reduction)
   }
 ,
-{ // state 173
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 172
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+111, // (default reduction)
   }
 ,
-{ // state 174
+{ // state 173
 MIN_REDUCTION+5, // (default reduction)
   }
 ,
-{ // state 175
-97,516, // "k"
+{ // state 174
+97,519, // "k"
   }
 ,
-{ // state 176
+{ // state 175
 MIN_REDUCTION+7, // (default reduction)
   }
 ,
-{ // state 177
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 176
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+125, // (default reduction)
   }
 ,
-{ // state 178
+{ // state 177
 0x80000000|1, // match move
-0x80000000|126, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+0x80000000|125, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
-{ // state 179
-2,183, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 178
+2,182, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+132, // (default reduction)
   }
 ,
+{ // state 179
+103,503, // "f"
+  }
+,
 { // state 180
-103,501, // "f"
+157,MIN_REDUCTION+255, // $NT
   }
 ,
 { // state 181
-155,MIN_REDUCTION+252, // $NT
-  }
-,
-{ // state 182
-0x80000000|494, // match move
-0x80000000|559, // no-match move
+0x80000000|496, // match move
+0x80000000|562, // no-match move
 // T-test match for "*":
 120,
   }
 ,
-{ // state 183
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 182
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+131, // (default reduction)
   }
 ,
-{ // state 184
+{ // state 183
 2,47, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+98, // (default reduction)
   }
 ,
+{ // state 184
+92,507, // "e"
+  }
+,
 { // state 185
-92,504, // "e"
+0x80000000|1, // match move
+0x80000000|268, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 186
-0x80000000|1, // match move
-0x80000000|266, // no-match move
-0x80000000|447, // NT-test-match state for idChar
-  }
-,
-{ // state 187
 MIN_REDUCTION+69, // (default reduction)
   }
 ,
-{ // state 188
+{ // state 187
 90,75, // "o"
-91,143, // "l"
+91,141, // "l"
 93,86, // "a"
-108,437, // "h"
+108,439, // "h"
   }
 ,
-{ // state 189
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 188
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+245, // (default reduction)
   }
 ,
-{ // state 190
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 189
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+89, // (default reduction)
   }
 ,
-{ // state 191
-91,531, // "l"
+{ // state 190
+91,534, // "l"
   }
 ,
-{ // state 192
+{ // state 191
 MIN_REDUCTION+15, // (default reduction)
   }
 ,
-{ // state 193
+{ // state 192
 MIN_REDUCTION+83, // (default reduction)
   }
 ,
-{ // state 194
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 193
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+199, // (default reduction)
   }
 ,
-{ // state 195
-MIN_REDUCTION+272, // (default reduction)
+{ // state 194
+MIN_REDUCTION+273, // (default reduction)
   }
 ,
-{ // state 196
+{ // state 195
 MIN_REDUCTION+70, // (default reduction)
   }
 ,
-{ // state 197
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 196
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+205, // (default reduction)
   }
 ,
-{ // state 198
-2,485, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 197
+2,487, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+136, // (default reduction)
   }
 ,
-{ // state 199
-98,467, // "c"
+{ // state 198
+98,469, // "c"
   }
 ,
-{ // state 200
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 199
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+223, // (default reduction)
   }
 ,
+{ // state 200
+92,455, // "e"
+  }
+,
 { // state 201
-92,453, // "e"
+0x80000000|1, // match move
+0x80000000|417, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 202
-0x80000000|1, // match move
-0x80000000|415, // no-match move
-0x80000000|447, // NT-test-match state for idChar
-  }
-,
-{ // state 203
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+113, // (default reduction)
   }
 ,
-{ // state 204
+{ // state 203
 94,61, // "n"
   }
 ,
-{ // state 205
+{ // state 204
 0x80000000|1, // match move
-0x80000000|324, // no-match move
+0x80000000|326, // no-match move
 // T-test match for "0":
 136,
   }
 ,
-{ // state 206
+{ // state 205
 94,97, // "n"
   }
 ,
-{ // state 207
-92,537, // "e"
+{ // state 206
+92,540, // "e"
   }
 ,
-{ // state 208
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 207
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+115, // (default reduction)
   }
 ,
-{ // state 209
+{ // state 208
 0x80000000|1, // match move
-0x80000000|158, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+0x80000000|156, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
-{ // state 210
-0x80000000|478, // match move
-0x80000000|195, // no-match move
+{ // state 209
+0x80000000|480, // match move
+0x80000000|194, // no-match move
 0x80000000|33, // NT-test-match state for digit
   }
 ,
-{ // state 211
+{ // state 210
 MIN_REDUCTION+251, // (default reduction)
   }
 ,
+{ // state 211
+136,463, // "0"
+138,209, // digit
+139,463, // {"1".."9"}
+  }
+,
 { // state 212
-136,461, // "0"
-139,210, // digit
-142,461, // {"1".."9"}
+MIN_REDUCTION+259, // (default reduction)
   }
 ,
 { // state 213
 -1, // $$start
 -1, // start
-339, // ws*
+340, // ws*
 -1, // $$0
 MIN_REDUCTION+186, // token
-174, // `boolean
-564, // `class
-176, // `extends
+173, // `boolean
+567, // `class
+175, // `extends
 5, // `void
 233, // `int
-288, // `while
-421, // `if
-125, // `else
-427, // `for
-498, // `break
-192, // `this
-163, // `false
-251, // `true
+290, // `while
+423, // `if
+124, // `else
+429, // `for
+500, // `break
+191, // `this
+161, // `false
+252, // `true
 217, // `super
 40, // `null
 96, // `return
-338, // `instanceof
-499, // `new
-312, // `abstract
-395, // `assert
-573, // `byte
-434, // `case
-575, // `catch
-356, // `char
-418, // `const
-491, // `continue
-474, // `default
-366, // `do
-155, // `double
+339, // `instanceof
+501, // `new
+314, // `abstract
+396, // `assert
+576, // `byte
+436, // `case
+578, // `catch
+357, // `char
+420, // `const
+493, // `continue
+476, // `default
+367, // `do
+153, // `double
 60, // `enum
 119, // `final
-274, // `finally
+276, // `finally
 101, // `float
-167, // `goto
-497, // `implements
+166, // `goto
+499, // `implements
 54, // `import
-259, // `interface
-404, // `long
-318, // `native
-401, // `package
-280, // `private
+261, // `interface
+405, // `long
+320, // `native
+402, // `package
+282, // `private
 38, // `protected
-291, // `public
-548, // `short
-172, // `static
-351, // `strictfp
+293, // `public
+551, // `short
+171, // `static
+352, // `strictfp
 94, // `switch
-359, // `synchronized
-449, // `throw
+360, // `synchronized
+451, // `throw
 56, // `throws
-261, // `transient
+263, // `transient
 18, // `try
 227, // `volatile
-332, // `!
-383, // `!=
+334, // `!
+384, // `!=
 65, // `%
-458, // `&&
+460, // `&&
 -1, // `*
-496, // `(
-253, // `)
-326, // `{
-445, // `}
-362, // `-
+498, // `(
+255, // `)
+328, // `{
+447, // `}
+363, // `-
 13, // `+
-187, // `=
-196, // `==
-161, // `[
-325, // `]
-340, // `||
-136, // `<
+186, // `=
+195, // `==
+159, // `[
+327, // `]
+341, // `||
+134, // `<
 121, // `<=
-551, // `,
+554, // `,
 109, // `>
 102, // `>=
-137, // `.
-171, // `;
-435, // `++
+135, // `.
+170, // `;
+437, // `++
 220, // `--
-193, // `/
-273, // `:
-554, // ID
-381, // INTLIT
-165, // STRINGLIT
-426, // CHARLIT
-361, // "b"
+192, // `/
+275, // `:
+557, // ID
+382, // INTLIT
+164, // STRINGLIT
+428, // CHARLIT
+362, // "b"
 -1, // "o"
-480, // "l"
-360, // "e"
-579, // "a"
-509, // "n"
+482, // "l"
+361, // "e"
+582, // "a"
+512, // "n"
 -1, // idChar
-298, // "r"
+300, // "r"
 -1, // "k"
-188, // "c"
-428, // "s"
+187, // "c"
+430, // "s"
 -1, // "x"
-489, // "t"
-569, // "d"
-276, // "f"
-372, // "i"
+491, // "t"
+572, // "d"
+278, // "f"
+373, // "i"
 48, // "w"
 -1, // "u"
-331, // "p"
+333, // "p"
 -1, // "h"
 114, // "v"
 -1, // "y"
 -1, // "m"
 8, // "g"
 -1, // "z"
-297, // "!"
+299, // "!"
 30, // "="
 78, // "%"
-354, // "&"
-127, // "("
-479, // ")"
+355, // "&"
+126, // "("
+481, // ")"
 MIN_REDUCTION+186, // "*"
-471, // "/"
-423, // "+"
-382, // ","
-386, // "-"
+473, // "/"
+425, // "+"
+383, // ","
+387, // "-"
 223, // "."
 53, // ":"
 6, // ";"
-367, // "<"
-327, // ">"
-414, // "["
-576, // "]"
-242, // "{"
+368, // "<"
+329, // ">"
+416, // "["
+579, // "]"
+243, // "{"
 95, // "}"
-433, // "|"
+435, // "|"
 -1, // intLit2
 MIN_REDUCTION+186, // "0"
 -1, // digit++
--1, // letter
 -1, // digit
+MIN_REDUCTION+186, // {"1".."9"}
+504, // "'"
+-1, // printable
+-1, // letter
 -1, // "_"
 -1, // {"A".."Z" "j" "q"}
-MIN_REDUCTION+186, // {"1".."9"}
-439, // ws
-157, // {9 " "}
-346, // eol
-521, // {10}
+-1, // {'"'.."$" "?".."@" "\" "^" "`" "~"}
+155, // " "
+441, // ws
+155, // {9}
+347, // eol
+524, // {10}
 224, // {13}
-133, // {130}
-335, // {131}
-315, // {132}
-124, // {144}
+415, // {169}
+317, // {132}
 -1, // token*
 -1, // digit+
 MIN_REDUCTION+186, // $
@@ -2068,20 +2133,21 @@ MIN_REDUCTION+186, // $
   }
 ,
 { // state 214
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+221, // (default reduction)
   }
 ,
 { // state 215
-92,563, // "e"
+92,566, // "e"
   }
 ,
 { // state 216
-101,545, // "t"
+101,548, // "t"
   }
 ,
 { // state 217
@@ -2089,16 +2155,17 @@ MIN_REDUCTION+18, // (default reduction)
   }
 ,
 { // state 218
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+237, // (default reduction)
   }
 ,
 { // state 219
-89,512, // "b"
+89,515, // "b"
   }
 ,
 { // state 220
@@ -2106,57 +2173,62 @@ MIN_REDUCTION+82, // (default reduction)
   }
 ,
 { // state 221
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+103, // (default reduction)
   }
 ,
 { // state 222
-2,390, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+2,391, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+158, // (default reduction)
   }
 ,
 { // state 223
 2,28, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+220, // (default reduction)
   }
 ,
 { // state 224
-0x80000000|313, // match move
-0x80000000|134, // no-match move
+0x80000000|315, // match move
+0x80000000|132, // no-match move
 // T-test match for 10:
-146,
+150,
   }
 ,
 { // state 225
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+159, // (default reduction)
   }
 ,
 { // state 226
-2,249, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+2,250, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+202, // (default reduction)
   }
 ,
@@ -2165,30 +2237,33 @@ MIN_REDUCTION+57, // (default reduction)
   }
 ,
 { // state 228
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+173, // (default reduction)
   }
 ,
 { // state 229
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+203, // (default reduction)
   }
 ,
 { // state 230
-2,300, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+2,302, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+152, // (default reduction)
   }
 ,
@@ -2196,163 +2271,165 @@ MIN_REDUCTION+152, // (default reduction)
 -1, // $$start
 89, // start
 32, // ws*
-397, // $$0
+398, // $$0
 99, // token
-174, // `boolean
-564, // `class
-176, // `extends
+173, // `boolean
+567, // `class
+175, // `extends
 5, // `void
 233, // `int
-288, // `while
-421, // `if
-125, // `else
-427, // `for
-498, // `break
-192, // `this
-163, // `false
-251, // `true
+290, // `while
+423, // `if
+124, // `else
+429, // `for
+500, // `break
+191, // `this
+161, // `false
+252, // `true
 217, // `super
 40, // `null
 96, // `return
-338, // `instanceof
-499, // `new
-312, // `abstract
-395, // `assert
-573, // `byte
-434, // `case
-575, // `catch
-356, // `char
-418, // `const
-491, // `continue
-474, // `default
-366, // `do
-155, // `double
+339, // `instanceof
+501, // `new
+314, // `abstract
+396, // `assert
+576, // `byte
+436, // `case
+578, // `catch
+357, // `char
+420, // `const
+493, // `continue
+476, // `default
+367, // `do
+153, // `double
 60, // `enum
 119, // `final
-274, // `finally
+276, // `finally
 101, // `float
-167, // `goto
-497, // `implements
+166, // `goto
+499, // `implements
 54, // `import
-259, // `interface
-404, // `long
-318, // `native
-401, // `package
-280, // `private
+261, // `interface
+405, // `long
+320, // `native
+402, // `package
+282, // `private
 38, // `protected
-291, // `public
-548, // `short
-172, // `static
-351, // `strictfp
+293, // `public
+551, // `short
+171, // `static
+352, // `strictfp
 94, // `switch
-359, // `synchronized
-449, // `throw
+360, // `synchronized
+451, // `throw
 56, // `throws
-261, // `transient
+263, // `transient
 18, // `try
 227, // `volatile
-332, // `!
-383, // `!=
+334, // `!
+384, // `!=
 65, // `%
-458, // `&&
+460, // `&&
 -1, // `*
-496, // `(
-253, // `)
-326, // `{
-445, // `}
-362, // `-
+498, // `(
+255, // `)
+328, // `{
+447, // `}
+363, // `-
 13, // `+
-187, // `=
-196, // `==
-161, // `[
-325, // `]
-340, // `||
-136, // `<
+186, // `=
+195, // `==
+159, // `[
+327, // `]
+341, // `||
+134, // `<
 121, // `<=
-551, // `,
+554, // `,
 109, // `>
 102, // `>=
-137, // `.
-171, // `;
-435, // `++
+135, // `.
+170, // `;
+437, // `++
 220, // `--
-193, // `/
-273, // `:
-554, // ID
-381, // INTLIT
-165, // STRINGLIT
-426, // CHARLIT
-361, // "b"
+192, // `/
+275, // `:
+557, // ID
+382, // INTLIT
+164, // STRINGLIT
+428, // CHARLIT
+362, // "b"
 -1, // "o"
-480, // "l"
-360, // "e"
-579, // "a"
-509, // "n"
+482, // "l"
+361, // "e"
+582, // "a"
+512, // "n"
 -1, // idChar
-298, // "r"
+300, // "r"
 -1, // "k"
-188, // "c"
-463, // "s"
+187, // "c"
+465, // "s"
 -1, // "x"
-489, // "t"
-569, // "d"
-276, // "f"
-372, // "i"
+491, // "t"
+572, // "d"
+278, // "f"
+373, // "i"
 48, // "w"
 -1, // "u"
-331, // "p"
+333, // "p"
 -1, // "h"
 114, // "v"
 -1, // "y"
 -1, // "m"
 8, // "g"
 -1, // "z"
-297, // "!"
+299, // "!"
 30, // "="
 78, // "%"
-354, // "&"
-127, // "("
-479, // ")"
+355, // "&"
+126, // "("
+481, // ")"
 -1, // "*"
-471, // "/"
-423, // "+"
-382, // ","
-386, // "-"
+473, // "/"
+425, // "+"
+383, // ","
+387, // "-"
 223, // "."
 53, // ":"
 6, // ";"
-367, // "<"
-327, // ">"
-414, // "["
-576, // "]"
-242, // "{"
+368, // "<"
+329, // ">"
+416, // "["
+579, // "]"
+243, // "{"
 95, // "}"
-433, // "|"
-341, // intLit2
-461, // "0"
-211, // digit++
--1, // letter
+435, // "|"
+342, // intLit2
+463, // "0"
+210, // digit++
 34, // digit
+463, // {"1".."9"}
+504, // "'"
+-1, // printable
+-1, // letter
 -1, // "_"
 -1, // {"A".."Z" "j" "q"}
-461, // {"1".."9"}
-439, // ws
-157, // {9 " "}
-346, // eol
-521, // {10}
+-1, // {'"'.."$" "?".."@" "\" "^" "`" "~"}
+155, // " "
+441, // ws
+155, // {9}
+347, // eol
+524, // {10}
 224, // {13}
-133, // {130}
-335, // {131}
-315, // {132}
-124, // {144}
-352, // token*
+415, // {169}
+317, // {132}
+353, // token*
 9, // digit+
 MIN_REDUCTION+1, // $
 -1, // $NT
   }
 ,
 { // state 232
-93,466, // "a"
+93,468, // "a"
   }
 ,
 { // state 233
@@ -2360,544 +2437,582 @@ MIN_REDUCTION+9, // (default reduction)
   }
 ,
 { // state 234
-92,442, // "e"
+92,444, // "e"
   }
 ,
 { // state 235
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+145, // (default reduction)
   }
 ,
 { // state 236
-91,515, // "l"
+91,518, // "l"
   }
 ,
 { // state 237
-2,295, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+2,297, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+172, // (default reduction)
   }
 ,
 { // state 238
-93,525, // "a"
+2,254, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+254, // (default reduction)
   }
 ,
 { // state 239
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+155, // (default reduction)
+93,528, // "a"
   }
 ,
 { // state 240
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+155, // (default reduction)
+  }
+,
+{ // state 241
 -1, // $$start
 -1, // start
 -1, // ws*
-464, // $$0
+466, // $$0
 99, // token
-174, // `boolean
-564, // `class
-176, // `extends
+173, // `boolean
+567, // `class
+175, // `extends
 5, // `void
 233, // `int
-288, // `while
-421, // `if
-125, // `else
-427, // `for
-498, // `break
-192, // `this
-163, // `false
-251, // `true
+290, // `while
+423, // `if
+124, // `else
+429, // `for
+500, // `break
+191, // `this
+161, // `false
+252, // `true
 217, // `super
 40, // `null
 96, // `return
-338, // `instanceof
-499, // `new
-312, // `abstract
-395, // `assert
-573, // `byte
-434, // `case
-575, // `catch
-356, // `char
-418, // `const
-491, // `continue
-474, // `default
-366, // `do
-155, // `double
+339, // `instanceof
+501, // `new
+314, // `abstract
+396, // `assert
+576, // `byte
+436, // `case
+578, // `catch
+357, // `char
+420, // `const
+493, // `continue
+476, // `default
+367, // `do
+153, // `double
 60, // `enum
 119, // `final
-274, // `finally
+276, // `finally
 101, // `float
-167, // `goto
-497, // `implements
+166, // `goto
+499, // `implements
 54, // `import
-259, // `interface
-404, // `long
-318, // `native
-401, // `package
-280, // `private
+261, // `interface
+405, // `long
+320, // `native
+402, // `package
+282, // `private
 38, // `protected
-291, // `public
-548, // `short
-172, // `static
-351, // `strictfp
+293, // `public
+551, // `short
+171, // `static
+352, // `strictfp
 94, // `switch
-359, // `synchronized
-449, // `throw
+360, // `synchronized
+451, // `throw
 56, // `throws
-261, // `transient
+263, // `transient
 18, // `try
 227, // `volatile
-332, // `!
-383, // `!=
+334, // `!
+384, // `!=
 65, // `%
-458, // `&&
+460, // `&&
 -1, // `*
-496, // `(
-253, // `)
-326, // `{
-445, // `}
-362, // `-
+498, // `(
+255, // `)
+328, // `{
+447, // `}
+363, // `-
 13, // `+
-187, // `=
-196, // `==
-161, // `[
-325, // `]
-340, // `||
-136, // `<
+186, // `=
+195, // `==
+159, // `[
+327, // `]
+341, // `||
+134, // `<
 121, // `<=
-551, // `,
+554, // `,
 109, // `>
 102, // `>=
-137, // `.
-171, // `;
-435, // `++
+135, // `.
+170, // `;
+437, // `++
 220, // `--
-193, // `/
-273, // `:
-554, // ID
-381, // INTLIT
-165, // STRINGLIT
-426, // CHARLIT
-361, // "b"
+192, // `/
+275, // `:
+557, // ID
+382, // INTLIT
+164, // STRINGLIT
+428, // CHARLIT
+362, // "b"
 -1, // "o"
-480, // "l"
-360, // "e"
-579, // "a"
-509, // "n"
+482, // "l"
+361, // "e"
+582, // "a"
+512, // "n"
 -1, // idChar
-298, // "r"
+300, // "r"
 -1, // "k"
-188, // "c"
-463, // "s"
+187, // "c"
+465, // "s"
 -1, // "x"
-489, // "t"
-569, // "d"
-276, // "f"
-372, // "i"
+491, // "t"
+572, // "d"
+278, // "f"
+373, // "i"
 48, // "w"
 -1, // "u"
-331, // "p"
+333, // "p"
 -1, // "h"
 114, // "v"
 -1, // "y"
 -1, // "m"
 8, // "g"
 -1, // "z"
-297, // "!"
+299, // "!"
 30, // "="
 78, // "%"
-354, // "&"
-127, // "("
-479, // ")"
+355, // "&"
+126, // "("
+481, // ")"
 -1, // "*"
-471, // "/"
-423, // "+"
-382, // ","
-386, // "-"
+473, // "/"
+425, // "+"
+383, // ","
+387, // "-"
 223, // "."
 53, // ":"
 6, // ";"
-367, // "<"
-327, // ">"
-414, // "["
-576, // "]"
-242, // "{"
+368, // "<"
+329, // ">"
+416, // "["
+579, // "]"
+243, // "{"
 95, // "}"
-433, // "|"
-341, // intLit2
-461, // "0"
-211, // digit++
--1, // letter
+435, // "|"
+342, // intLit2
+463, // "0"
+210, // digit++
 34, // digit
+463, // {"1".."9"}
+504, // "'"
+-1, // printable
+-1, // letter
 -1, // "_"
 -1, // {"A".."Z" "j" "q"}
-461, // {"1".."9"}
+-1, // {'"'.."$" "?".."@" "\" "^" "`" "~"}
+155, // " "
 43, // ws
-157, // {9 " "}
-346, // eol
-521, // {10}
+155, // {9}
+347, // eol
+524, // {10}
 224, // {13}
-133, // {130}
-335, // {131}
-315, // {132}
-124, // {144}
-352, // token*
+415, // {169}
+317, // {132}
+353, // token*
 9, // digit+
 MIN_REDUCTION+3, // $
 -1, // $NT
   }
 ,
-{ // state 241
-0x80000000|1, // match move
-0x80000000|184, // no-match move
-0x80000000|447, // NT-test-match state for idChar
-  }
-,
 { // state 242
-2,262, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+244, // (default reduction)
+0x80000000|1, // match move
+0x80000000|183, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 243
-101,441, // "t"
+2,264, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+244, // (default reduction)
   }
 ,
 { // state 244
-104,255, // "i"
-108,337, // "h"
+101,443, // "t"
   }
 ,
 { // state 245
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+211, // (default reduction)
+104,257, // "i"
+108,338, // "h"
   }
 ,
 { // state 246
-104,292, // "i"
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+211, // (default reduction)
   }
 ,
 { // state 247
-2,429, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+192, // (default reduction)
+104,294, // "i"
   }
 ,
 { // state 248
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+149, // (default reduction)
+2,431, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+192, // (default reduction)
   }
 ,
 { // state 249
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+201, // (default reduction)
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+149, // (default reduction)
   }
 ,
 { // state 250
-101,506, // "t"
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+201, // (default reduction)
   }
 ,
 { // state 251
-MIN_REDUCTION+17, // (default reduction)
+101,509, // "t"
   }
 ,
 { // state 252
-92,574, // "e"
+MIN_REDUCTION+17, // (default reduction)
   }
 ,
 { // state 253
-MIN_REDUCTION+64, // (default reduction)
+92,577, // "e"
   }
 ,
 { // state 254
-106,540, // "u"
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+253, // (default reduction)
   }
 ,
 { // state 255
-101,577, // "t"
+MIN_REDUCTION+64, // (default reduction)
   }
 ,
 { // state 256
-155,MIN_REDUCTION+256, // $NT
+106,543, // "u"
   }
 ,
 { // state 257
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+129, // (default reduction)
+101,580, // "t"
   }
 ,
 { // state 258
-97,107, // "k"
+157,MIN_REDUCTION+252, // $NT
   }
 ,
 { // state 259
-MIN_REDUCTION+41, // (default reduction)
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+129, // (default reduction)
   }
 ,
 { // state 260
-96,493, // "r"
+97,107, // "k"
   }
 ,
 { // state 261
-MIN_REDUCTION+55, // (default reduction)
+MIN_REDUCTION+41, // (default reduction)
   }
 ,
 { // state 262
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+243, // (default reduction)
+96,495, // "r"
   }
 ,
 { // state 263
-0x80000000|1, // match move
-0x80000000|68, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+MIN_REDUCTION+55, // (default reduction)
   }
 ,
 { // state 264
-MIN_REDUCTION+266, // (default reduction)
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+243, // (default reduction)
   }
 ,
 { // state 265
 0x80000000|1, // match move
-0x80000000|348, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+0x80000000|68, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 266
-2,177, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+126, // (default reduction)
+MIN_REDUCTION+267, // (default reduction)
   }
 ,
 { // state 267
-96,14, // "r"
+0x80000000|1, // match move
+0x80000000|349, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 268
-109,565, // "v"
+2,176, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+126, // (default reduction)
   }
 ,
 { // state 269
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+105, // (default reduction)
+96,14, // "r"
   }
 ,
 { // state 270
-2,203, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+114, // (default reduction)
+109,568, // "v"
   }
 ,
 { // state 271
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+117, // (default reduction)
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+105, // (default reduction)
   }
 ,
 { // state 272
-0x80000000|1, // match move
-0x80000000|198, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+2,202, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+114, // (default reduction)
   }
 ,
 { // state 273
-MIN_REDUCTION+84, // (default reduction)
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+117, // (default reduction)
   }
 ,
 { // state 274
-MIN_REDUCTION+36, // (default reduction)
+0x80000000|1, // match move
+0x80000000|197, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 275
-101,405, // "t"
+MIN_REDUCTION+84, // (default reduction)
   }
 ,
 { // state 276
-90,416, // "o"
-91,334, // "l"
-93,322, // "a"
-104,455, // "i"
+MIN_REDUCTION+36, // (default reduction)
   }
 ,
 { // state 277
-93,66, // "a"
+101,406, // "t"
   }
 ,
 { // state 278
-0x80000000|1, // match move
-0x80000000|357, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+90,418, // "o"
+91,336, // "l"
+93,324, // "a"
+104,457, // "i"
   }
 ,
 { // state 279
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+249, // (default reduction)
+93,66, // "a"
   }
 ,
 { // state 280
-MIN_REDUCTION+45, // (default reduction)
+0x80000000|1, // match move
+0x80000000|358, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 281
-101,29, // "t"
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+249, // (default reduction)
   }
 ,
 { // state 282
-MIN_REDUCTION+268, // (default reduction)
+MIN_REDUCTION+45, // (default reduction)
   }
 ,
 { // state 283
-99,42, // "s"
+101,29, // "t"
   }
 ,
 { // state 284
+MIN_REDUCTION+269, // (default reduction)
+  }
+,
+{ // state 285
+99,42, // "s"
+  }
+,
+{ // state 286
 -1, // $$start
 -1, // start
 -1, // ws*
-464, // $$0
+466, // $$0
 99, // token
-174, // `boolean
-564, // `class
-176, // `extends
+173, // `boolean
+567, // `class
+175, // `extends
 5, // `void
 233, // `int
-288, // `while
-421, // `if
-125, // `else
-427, // `for
-498, // `break
-192, // `this
-163, // `false
-251, // `true
+290, // `while
+423, // `if
+124, // `else
+429, // `for
+500, // `break
+191, // `this
+161, // `false
+252, // `true
 217, // `super
 40, // `null
 96, // `return
-338, // `instanceof
-499, // `new
-312, // `abstract
-395, // `assert
-573, // `byte
-434, // `case
-575, // `catch
-356, // `char
-418, // `const
-491, // `continue
-474, // `default
-366, // `do
-155, // `double
+339, // `instanceof
+501, // `new
+314, // `abstract
+396, // `assert
+576, // `byte
+436, // `case
+578, // `catch
+357, // `char
+420, // `const
+493, // `continue
+476, // `default
+367, // `do
+153, // `double
 60, // `enum
 119, // `final
-274, // `finally
+276, // `finally
 101, // `float
-167, // `goto
-497, // `implements
+166, // `goto
+499, // `implements
 54, // `import
-259, // `interface
-404, // `long
-318, // `native
-401, // `package
-280, // `private
+261, // `interface
+405, // `long
+320, // `native
+402, // `package
+282, // `private
 38, // `protected
-291, // `public
-548, // `short
-172, // `static
-351, // `strictfp
+293, // `public
+551, // `short
+171, // `static
+352, // `strictfp
 94, // `switch
-359, // `synchronized
-449, // `throw
+360, // `synchronized
+451, // `throw
 56, // `throws
-261, // `transient
+263, // `transient
 18, // `try
 227, // `volatile
-332, // `!
-383, // `!=
+334, // `!
+384, // `!=
 65, // `%
-458, // `&&
-411, // `*
-496, // `(
-253, // `)
-326, // `{
-445, // `}
-362, // `-
+460, // `&&
+412, // `*
+498, // `(
+255, // `)
+328, // `{
+447, // `}
+363, // `-
 13, // `+
-187, // `=
-196, // `==
-161, // `[
-325, // `]
-340, // `||
-136, // `<
+186, // `=
+195, // `==
+159, // `[
+327, // `]
+341, // `||
+134, // `<
 121, // `<=
-551, // `,
+554, // `,
 109, // `>
 102, // `>=
-137, // `.
-171, // `;
-435, // `++
+135, // `.
+170, // `;
+437, // `++
 220, // `--
-193, // `/
-273, // `:
-554, // ID
-381, // INTLIT
-165, // STRINGLIT
-426, // CHARLIT
+-1, // `/
+275, // `:
+557, // ID
+382, // INTLIT
+164, // STRINGLIT
+428, // CHARLIT
 -1, // "b"
 -1, // "o"
 -1, // "l"
@@ -2929,7 +3044,7 @@ MIN_REDUCTION+268, // (default reduction)
 -1, // "&"
 -1, // "("
 -1, // ")"
-353, // "*"
+354, // "*"
 -1, // "/"
 -1, // "+"
 -1, // ","
@@ -2944,497 +3059,510 @@ MIN_REDUCTION+268, // (default reduction)
 -1, // "{"
 -1, // "}"
 -1, // "|"
-341, // intLit2
+342, // intLit2
 -1, // "0"
-211, // digit++
--1, // letter
+210, // digit++
 34, // digit
+-1, // {"1".."9"}
+-1, // "'"
+-1, // printable
+-1, // letter
 -1, // "_"
 -1, // {"A".."Z" "j" "q"}
--1, // {"1".."9"}
+-1, // {'"'.."$" "?".."@" "\" "^" "`" "~"}
+-1, // " "
 43, // ws
--1, // {9 " "}
-346, // eol
+-1, // {9}
+347, // eol
 -1, // {10}
 -1, // {13}
--1, // {130}
--1, // {131}
+-1, // {169}
 -1, // {132}
--1, // {144}
-352, // token*
+353, // token*
 9, // digit+
 -1, // $
 -1, // $NT
   }
 ,
-{ // state 285
-101,377, // "t"
+{ // state 287
+101,378, // "t"
   }
 ,
-{ // state 286
+{ // state 288
 -1, // $$start
 -1, // start
-507, // ws*
+510, // ws*
 -1, // $$0
 MIN_REDUCTION+108, // token
-174, // `boolean
-564, // `class
-176, // `extends
+173, // `boolean
+567, // `class
+175, // `extends
 5, // `void
 233, // `int
-288, // `while
-421, // `if
-125, // `else
-427, // `for
-498, // `break
-192, // `this
-163, // `false
-251, // `true
+290, // `while
+423, // `if
+124, // `else
+429, // `for
+500, // `break
+191, // `this
+161, // `false
+252, // `true
 217, // `super
 40, // `null
 96, // `return
-338, // `instanceof
-499, // `new
-312, // `abstract
-395, // `assert
-573, // `byte
-434, // `case
-575, // `catch
-356, // `char
-418, // `const
-491, // `continue
-474, // `default
-366, // `do
-155, // `double
+339, // `instanceof
+501, // `new
+314, // `abstract
+396, // `assert
+576, // `byte
+436, // `case
+578, // `catch
+357, // `char
+420, // `const
+493, // `continue
+476, // `default
+367, // `do
+153, // `double
 60, // `enum
 119, // `final
-274, // `finally
+276, // `finally
 101, // `float
-167, // `goto
-497, // `implements
+166, // `goto
+499, // `implements
 54, // `import
-259, // `interface
-404, // `long
-318, // `native
-401, // `package
-280, // `private
+261, // `interface
+405, // `long
+320, // `native
+402, // `package
+282, // `private
 38, // `protected
-291, // `public
-548, // `short
-172, // `static
-351, // `strictfp
+293, // `public
+551, // `short
+171, // `static
+352, // `strictfp
 94, // `switch
-359, // `synchronized
-449, // `throw
+360, // `synchronized
+451, // `throw
 56, // `throws
-261, // `transient
+263, // `transient
 18, // `try
 227, // `volatile
-332, // `!
-383, // `!=
+334, // `!
+384, // `!=
 65, // `%
-458, // `&&
+460, // `&&
 -1, // `*
-496, // `(
-253, // `)
-326, // `{
-445, // `}
-362, // `-
+498, // `(
+255, // `)
+328, // `{
+447, // `}
+363, // `-
 13, // `+
-187, // `=
-196, // `==
-161, // `[
-325, // `]
-340, // `||
-136, // `<
+186, // `=
+195, // `==
+159, // `[
+327, // `]
+341, // `||
+134, // `<
 121, // `<=
-551, // `,
+554, // `,
 109, // `>
 102, // `>=
-137, // `.
-171, // `;
-435, // `++
+135, // `.
+170, // `;
+437, // `++
 220, // `--
-193, // `/
-273, // `:
-554, // ID
-381, // INTLIT
-165, // STRINGLIT
-426, // CHARLIT
-361, // "b"
+192, // `/
+275, // `:
+557, // ID
+382, // INTLIT
+164, // STRINGLIT
+428, // CHARLIT
+362, // "b"
 -1, // "o"
-480, // "l"
+482, // "l"
 98, // "e"
-579, // "a"
-509, // "n"
+582, // "a"
+512, // "n"
 -1, // idChar
-298, // "r"
+300, // "r"
 -1, // "k"
-188, // "c"
-463, // "s"
+187, // "c"
+465, // "s"
 -1, // "x"
-489, // "t"
-569, // "d"
-276, // "f"
-372, // "i"
+491, // "t"
+572, // "d"
+278, // "f"
+373, // "i"
 48, // "w"
 -1, // "u"
-331, // "p"
+333, // "p"
 -1, // "h"
 114, // "v"
 -1, // "y"
 -1, // "m"
 8, // "g"
 -1, // "z"
-297, // "!"
+299, // "!"
 30, // "="
 78, // "%"
-354, // "&"
-127, // "("
-479, // ")"
+355, // "&"
+126, // "("
+481, // ")"
 MIN_REDUCTION+108, // "*"
-471, // "/"
-423, // "+"
-382, // ","
-386, // "-"
+473, // "/"
+425, // "+"
+383, // ","
+387, // "-"
 223, // "."
 53, // ":"
 6, // ";"
-367, // "<"
-327, // ">"
-414, // "["
-576, // "]"
-242, // "{"
+368, // "<"
+329, // ">"
+416, // "["
+579, // "]"
+243, // "{"
 95, // "}"
-433, // "|"
+435, // "|"
 -1, // intLit2
 MIN_REDUCTION+108, // "0"
 -1, // digit++
--1, // letter
 -1, // digit
+MIN_REDUCTION+108, // {"1".."9"}
+504, // "'"
+-1, // printable
+-1, // letter
 -1, // "_"
 -1, // {"A".."Z" "j" "q"}
-MIN_REDUCTION+108, // {"1".."9"}
-439, // ws
-157, // {9 " "}
-346, // eol
-521, // {10}
+-1, // {'"'.."$" "?".."@" "\" "^" "`" "~"}
+155, // " "
+441, // ws
+155, // {9}
+347, // eol
+524, // {10}
 224, // {13}
-133, // {130}
-335, // {131}
-315, // {132}
-124, // {144}
+415, // {169}
+317, // {132}
 -1, // token*
 -1, // digit+
 MIN_REDUCTION+108, // $
 -1, // $NT
   }
 ,
-{ // state 287
+{ // state 289
 93,37, // "a"
   }
 ,
-{ // state 288
+{ // state 290
 MIN_REDUCTION+10, // (default reduction)
   }
 ,
-{ // state 289
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 291
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+209, // (default reduction)
   }
 ,
-{ // state 290
+{ // state 292
 106,84, // "u"
   }
 ,
-{ // state 291
+{ // state 293
 MIN_REDUCTION+47, // (default reduction)
   }
 ,
-{ // state 292
-98,345, // "c"
-  }
-,
-{ // state 293
-0x80000000|495, // match move
-0x80000000|169, // no-match move
-0x80000000|447, // NT-test-match state for idChar
-  }
-,
 { // state 294
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+233, // (default reduction)
+98,346, // "c"
   }
 ,
 { // state 295
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+171, // (default reduction)
+0x80000000|497, // match move
+0x80000000|168, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 296
-2,314, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+182, // (default reduction)
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+233, // (default reduction)
   }
 ,
 { // state 297
-0x80000000|500, // match move
-0x80000000|330, // no-match move
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+171, // (default reduction)
+  }
+,
+{ // state 298
+2,316, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+182, // (default reduction)
+  }
+,
+{ // state 299
+0x80000000|502, // match move
+0x80000000|332, // no-match move
 // T-test match for "=":
 115,
   }
 ,
-{ // state 298
+{ // state 300
 92,4, // "e"
   }
 ,
-{ // state 299
+{ // state 301
 113,12, // "z"
   }
 ,
-{ // state 300
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 302
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+151, // (default reduction)
   }
 ,
-{ // state 301
+{ // state 303
 92,55, // "e"
   }
 ,
-{ // state 302
+{ // state 304
 0x80000000|1, // match move
 0x80000000|230, // no-match move
-0x80000000|447, // NT-test-match state for idChar
-  }
-,
-{ // state 303
-92,544, // "e"
-  }
-,
-{ // state 304
-101,67, // "t"
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 305
-98,49, // "c"
+92,547, // "e"
   }
 ,
 { // state 306
-0x80000000|1, // match move
-0x80000000|247, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+101,67, // "t"
   }
 ,
 { // state 307
-0x80000000|1, // match move
-0x80000000|513, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+98,49, // "c"
   }
 ,
 { // state 308
-2,529, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+228, // (default reduction)
+0x80000000|1, // match move
+0x80000000|248, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 309
-2,339, // ws*
-143,439, // ws
-145,346, // eol
-MIN_REDUCTION+186, // (default reduction)
+0x80000000|1, // match move
+0x80000000|516, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 310
-98,11, // "c"
+2,532, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+228, // (default reduction)
   }
 ,
 { // state 311
-2,535, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+100, // (default reduction)
+2,340, // ws*
+147,441, // ws
+149,347, // eol
+MIN_REDUCTION+186, // (default reduction)
   }
 ,
 { // state 312
-MIN_REDUCTION+23, // (default reduction)
+98,11, // "c"
   }
 ,
 { // state 313
-146,528, // {10}
+2,538, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+100, // (default reduction)
   }
 ,
 { // state 314
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+181, // (default reduction)
+MIN_REDUCTION+23, // (default reduction)
   }
 ,
 { // state 315
-MIN_REDUCTION+264, // (default reduction)
+150,531, // {10}
   }
 ,
 { // state 316
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+235, // (default reduction)
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+181, // (default reduction)
   }
 ,
 { // state 317
-92,380, // "e"
+MIN_REDUCTION+266, // (default reduction)
   }
 ,
 { // state 318
-MIN_REDUCTION+43, // (default reduction)
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+235, // (default reduction)
   }
 ,
 { // state 319
-0x80000000|1, // match move
-0x80000000|393, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+92,381, // "e"
   }
 ,
 { // state 320
-0x80000000|1, // match move
-0x80000000|549, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+MIN_REDUCTION+43, // (default reduction)
   }
 ,
 { // state 321
-99,69, // "s"
-101,378, // "t"
+0x80000000|1, // match move
+0x80000000|394, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 322
-91,20, // "l"
+0x80000000|1, // match move
+0x80000000|552, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 323
-101,31, // "t"
+99,69, // "s"
+101,379, // "t"
   }
 ,
 { // state 324
+91,20, // "l"
+  }
+,
+{ // state 325
+101,31, // "t"
+  }
+,
+{ // state 326
 -1, // $$start
 89, // start
 32, // ws*
-397, // $$0
+398, // $$0
 99, // token
-174, // `boolean
-564, // `class
-176, // `extends
+173, // `boolean
+567, // `class
+175, // `extends
 5, // `void
 233, // `int
-288, // `while
-421, // `if
-125, // `else
-427, // `for
-498, // `break
-192, // `this
-163, // `false
-251, // `true
+290, // `while
+423, // `if
+124, // `else
+429, // `for
+500, // `break
+191, // `this
+161, // `false
+252, // `true
 217, // `super
 40, // `null
 96, // `return
-338, // `instanceof
-499, // `new
-312, // `abstract
-395, // `assert
-573, // `byte
-434, // `case
-575, // `catch
-356, // `char
-418, // `const
-491, // `continue
-474, // `default
-366, // `do
-155, // `double
+339, // `instanceof
+501, // `new
+314, // `abstract
+396, // `assert
+576, // `byte
+436, // `case
+578, // `catch
+357, // `char
+420, // `const
+493, // `continue
+476, // `default
+367, // `do
+153, // `double
 60, // `enum
 119, // `final
-274, // `finally
+276, // `finally
 101, // `float
-167, // `goto
-497, // `implements
+166, // `goto
+499, // `implements
 54, // `import
-259, // `interface
-404, // `long
-318, // `native
-401, // `package
-280, // `private
+261, // `interface
+405, // `long
+320, // `native
+402, // `package
+282, // `private
 38, // `protected
-291, // `public
-548, // `short
-172, // `static
-351, // `strictfp
+293, // `public
+551, // `short
+171, // `static
+352, // `strictfp
 94, // `switch
-359, // `synchronized
-449, // `throw
+360, // `synchronized
+451, // `throw
 56, // `throws
-261, // `transient
+263, // `transient
 18, // `try
 227, // `volatile
-332, // `!
-383, // `!=
+334, // `!
+384, // `!=
 65, // `%
-458, // `&&
-411, // `*
-496, // `(
-253, // `)
-326, // `{
-445, // `}
-362, // `-
+460, // `&&
+412, // `*
+498, // `(
+255, // `)
+328, // `{
+447, // `}
+363, // `-
 13, // `+
-187, // `=
-196, // `==
-161, // `[
-325, // `]
-340, // `||
-136, // `<
+186, // `=
+195, // `==
+159, // `[
+327, // `]
+341, // `||
+134, // `<
 121, // `<=
-551, // `,
+554, // `,
 109, // `>
 102, // `>=
-137, // `.
-171, // `;
-435, // `++
+135, // `.
+170, // `;
+437, // `++
 220, // `--
-193, // `/
-273, // `:
-554, // ID
-381, // INTLIT
-165, // STRINGLIT
-426, // CHARLIT
+-1, // `/
+275, // `:
+557, // ID
+382, // INTLIT
+164, // STRINGLIT
+428, // CHARLIT
 -1, // "b"
 -1, // "o"
 -1, // "l"
@@ -3466,7 +3594,7 @@ MIN_REDUCTION+43, // (default reduction)
 -1, // "&"
 -1, // "("
 -1, // ")"
-353, // "*"
+354, // "*"
 -1, // "/"
 -1, // "+"
 -1, // ","
@@ -3481,554 +3609,570 @@ MIN_REDUCTION+43, // (default reduction)
 -1, // "{"
 -1, // "}"
 -1, // "|"
-341, // intLit2
+342, // intLit2
 -1, // "0"
-211, // digit++
--1, // letter
+210, // digit++
 34, // digit
+-1, // {"1".."9"}
+-1, // "'"
+-1, // printable
+-1, // letter
 -1, // "_"
 -1, // {"A".."Z" "j" "q"}
--1, // {"1".."9"}
-439, // ws
--1, // {9 " "}
-346, // eol
+-1, // {'"'.."$" "?".."@" "\" "^" "`" "~"}
+-1, // " "
+441, // ws
+-1, // {9}
+347, // eol
 -1, // {10}
 -1, // {13}
--1, // {130}
--1, // {131}
+-1, // {169}
 -1, // {132}
--1, // {144}
-352, // token*
+353, // token*
 9, // digit+
 -1, // $
 -1, // $NT
   }
 ,
-{ // state 325
+{ // state 327
 MIN_REDUCTION+72, // (default reduction)
   }
 ,
-{ // state 326
+{ // state 328
 MIN_REDUCTION+65, // (default reduction)
   }
 ,
-{ // state 327
-0x80000000|470, // match move
-0x80000000|570, // no-match move
+{ // state 329
+0x80000000|472, // match move
+0x80000000|573, // no-match move
 // T-test match for "=":
 115,
   }
 ,
-{ // state 328
-2,469, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 330
+2,471, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+232, // (default reduction)
   }
 ,
-{ // state 329
+{ // state 331
 102,79, // "d"
   }
 ,
-{ // state 330
-2,394, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 332
+2,395, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+196, // (default reduction)
   }
 ,
-{ // state 331
-93,446, // "a"
+{ // state 333
+93,448, // "a"
 96,106, // "r"
 106,219, // "u"
   }
 ,
-{ // state 332
+{ // state 334
 MIN_REDUCTION+58, // (default reduction)
   }
 ,
-{ // state 333
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 335
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+207, // (default reduction)
   }
 ,
-{ // state 334
+{ // state 336
 90,7, // "o"
   }
 ,
-{ // state 335
-MIN_REDUCTION+263, // (default reduction)
-  }
-,
-{ // state 336
-90,204, // "o"
-110,202, // "y"
-  }
-,
 { // state 337
-104,108, // "i"
+90,203, // "o"
+110,201, // "y"
   }
 ,
 { // state 338
-MIN_REDUCTION+21, // (default reduction)
+104,108, // "i"
   }
 ,
 { // state 339
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+185, // (default reduction)
+MIN_REDUCTION+21, // (default reduction)
   }
 ,
 { // state 340
-MIN_REDUCTION+73, // (default reduction)
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+185, // (default reduction)
   }
 ,
 { // state 341
-2,279, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+250, // (default reduction)
+MIN_REDUCTION+73, // (default reduction)
   }
 ,
 { // state 342
-115,57, // "="
+2,281, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+250, // (default reduction)
   }
 ,
 { // state 343
-103,27, // "f"
+115,57, // "="
   }
 ,
 { // state 344
-101,62, // "t"
+103,27, // "f"
   }
 ,
 { // state 345
-0x80000000|1, // match move
-0x80000000|270, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+101,62, // "t"
   }
 ,
 { // state 346
-MIN_REDUCTION+258, // (default reduction)
+0x80000000|1, // match move
+0x80000000|272, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 347
-112,52, // "g"
+MIN_REDUCTION+261, // (default reduction)
   }
 ,
 { // state 348
-2,556, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+142, // (default reduction)
+112,52, // "g"
   }
 ,
 { // state 349
-101,22, // "t"
+2,559, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+142, // (default reduction)
   }
 ,
 { // state 350
-94,50, // "n"
+101,22, // "t"
   }
 ,
 { // state 351
-MIN_REDUCTION+50, // (default reduction)
+94,50, // "n"
   }
 ,
 { // state 352
-0x80000000|505, // match move
-0x80000000|510, // no-match move
+MIN_REDUCTION+50, // (default reduction)
+  }
+,
+{ // state 353
+0x80000000|508, // match move
+0x80000000|513, // no-match move
 // T-test match for "*":
 120,
   }
 ,
-{ // state 353
+{ // state 354
 0x80000000|1, // match move
-0x80000000|162, // no-match move
+0x80000000|160, // no-match move
 // T-test match for "/":
 121,
   }
 ,
-{ // state 354
+{ // state 355
 117,226, // "&"
   }
 ,
-{ // state 355
-0x80000000|1, // match move
-0x80000000|438, // no-match move
-0x80000000|447, // NT-test-match state for idChar
-  }
-,
 { // state 356
-MIN_REDUCTION+28, // (default reduction)
+0x80000000|1, // match move
+0x80000000|440, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 357
-2,571, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+102, // (default reduction)
+MIN_REDUCTION+28, // (default reduction)
   }
 ,
 { // state 358
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+193, // (default reduction)
+2,574, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+102, // (default reduction)
   }
 ,
 { // state 359
-MIN_REDUCTION+52, // (default reduction)
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+193, // (default reduction)
   }
 ,
 { // state 360
-91,149, // "l"
-94,376, // "n"
-100,567, // "x"
+MIN_REDUCTION+52, // (default reduction)
   }
 ,
 { // state 361
-90,23, // "o"
-96,303, // "r"
-110,323, // "y"
+91,147, // "l"
+94,377, // "n"
+100,570, // "x"
   }
 ,
 { // state 362
-MIN_REDUCTION+67, // (default reduction)
+90,23, // "o"
+96,305, // "r"
+110,325, // "y"
   }
 ,
 { // state 363
-0x80000000|462, // match move
-0x80000000|532, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+MIN_REDUCTION+67, // (default reduction)
   }
 ,
 { // state 364
-99,100, // "s"
+0x80000000|464, // match move
+0x80000000|535, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 365
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+147, // (default reduction)
+99,100, // "s"
   }
 ,
 { // state 366
-MIN_REDUCTION+32, // (default reduction)
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+147, // (default reduction)
   }
 ,
 { // state 367
-0x80000000|342, // match move
-0x80000000|308, // no-match move
+MIN_REDUCTION+32, // (default reduction)
+  }
+,
+{ // state 368
+0x80000000|343, // match move
+0x80000000|310, // no-match move
 // T-test match for "=":
 115,
   }
 ,
-{ // state 368
+{ // state 369
 0x80000000|122, // match move
 0x80000000|231, // no-match move
 // T-test match for "0":
 136,
   }
 ,
-{ // state 369
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 370
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+127, // (default reduction)
   }
 ,
-{ // state 370
+{ // state 371
 106,35, // "u"
   }
 ,
-{ // state 371
+{ // state 372
 2,228, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+174, // (default reduction)
   }
 ,
-{ // state 372
-94,321, // "n"
-103,522, // "f"
-111,561, // "m"
-  }
-,
 { // state 373
-101,503, // "t"
+94,323, // "n"
+103,525, // "f"
+111,564, // "m"
   }
 ,
 { // state 374
-93,410, // "a"
-96,527, // "r"
-108,379, // "h"
+101,506, // "t"
   }
 ,
 { // state 375
-98,82, // "c"
+93,411, // "a"
+96,530, // "r"
+108,380, // "h"
   }
 ,
 { // state 376
-106,111, // "u"
+98,82, // "c"
   }
 ,
 { // state 377
-0x80000000|1, // match move
-0x80000000|553, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+106,111, // "u"
   }
 ,
 { // state 378
-0x80000000|475, // match move
-0x80000000|142, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+0x80000000|1, // match move
+0x80000000|556, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 379
-96,128, // "r"
-104,150, // "i"
+0x80000000|477, // match move
+0x80000000|140, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 380
-0x80000000|1, // match move
-0x80000000|311, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+96,127, // "r"
+104,148, // "i"
   }
 ,
 { // state 381
-MIN_REDUCTION+86, // (default reduction)
+0x80000000|1, // match move
+0x80000000|313, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 382
-2,104, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+214, // (default reduction)
+MIN_REDUCTION+86, // (default reduction)
   }
 ,
 { // state 383
-MIN_REDUCTION+59, // (default reduction)
+2,104, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+214, // (default reduction)
   }
 ,
 { // state 384
-2,271, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+118, // (default reduction)
+MIN_REDUCTION+59, // (default reduction)
   }
 ,
 { // state 385
-91,481, // "l"
+2,273, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+118, // (default reduction)
   }
 ,
 { // state 386
+91,483, // "l"
+  }
+,
+{ // state 387
 0x80000000|71, // match move
-0x80000000|159, // no-match move
+0x80000000|157, // no-match move
 // T-test match for "-":
 124,
   }
 ,
-{ // state 387
+{ // state 388
 92,91, // "e"
   }
 ,
-{ // state 388
-2,518, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 389
+2,521, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+166, // (default reduction)
   }
 ,
-{ // state 389
-2,245, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 390
+2,246, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+212, // (default reduction)
   }
 ,
-{ // state 390
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 391
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+157, // (default reduction)
   }
 ,
-{ // state 391
+{ // state 392
 96,93, // "r"
   }
 ,
-{ // state 392
-96,135, // "r"
-  }
-,
 { // state 393
-2,46, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+134, // (default reduction)
+96,133, // "r"
   }
 ,
 { // state 394
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+195, // (default reduction)
+2,46, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+134, // (default reduction)
   }
 ,
 { // state 395
-MIN_REDUCTION+24, // (default reduction)
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+195, // (default reduction)
   }
 ,
 { // state 396
-94,141, // "n"
+MIN_REDUCTION+24, // (default reduction)
   }
 ,
 { // state 397
-MIN_REDUCTION+4, // (default reduction)
+94,139, // "n"
   }
 ,
 { // state 398
+MIN_REDUCTION+4, // (default reduction)
+  }
+,
+{ // state 399
 -1, // $$start
 -1, // start
 -1, // ws*
 -1, // $$0
-264, // token
-174, // `boolean
-564, // `class
-176, // `extends
+266, // token
+173, // `boolean
+567, // `class
+175, // `extends
 5, // `void
 233, // `int
-288, // `while
-421, // `if
-125, // `else
-427, // `for
-498, // `break
-192, // `this
-163, // `false
-251, // `true
+290, // `while
+423, // `if
+124, // `else
+429, // `for
+500, // `break
+191, // `this
+161, // `false
+252, // `true
 217, // `super
 40, // `null
 96, // `return
-338, // `instanceof
-499, // `new
-312, // `abstract
-395, // `assert
-573, // `byte
-434, // `case
-575, // `catch
-356, // `char
-418, // `const
-491, // `continue
-474, // `default
-366, // `do
-155, // `double
+339, // `instanceof
+501, // `new
+314, // `abstract
+396, // `assert
+576, // `byte
+436, // `case
+578, // `catch
+357, // `char
+420, // `const
+493, // `continue
+476, // `default
+367, // `do
+153, // `double
 60, // `enum
 119, // `final
-274, // `finally
+276, // `finally
 101, // `float
-167, // `goto
-497, // `implements
+166, // `goto
+499, // `implements
 54, // `import
-259, // `interface
-404, // `long
-318, // `native
-401, // `package
-280, // `private
+261, // `interface
+405, // `long
+320, // `native
+402, // `package
+282, // `private
 38, // `protected
-291, // `public
-548, // `short
-172, // `static
-351, // `strictfp
+293, // `public
+551, // `short
+171, // `static
+352, // `strictfp
 94, // `switch
-359, // `synchronized
-449, // `throw
+360, // `synchronized
+451, // `throw
 56, // `throws
-261, // `transient
+263, // `transient
 18, // `try
 227, // `volatile
-332, // `!
-383, // `!=
+334, // `!
+384, // `!=
 65, // `%
-458, // `&&
+460, // `&&
 -1, // `*
-496, // `(
-253, // `)
-326, // `{
-445, // `}
-362, // `-
+498, // `(
+255, // `)
+328, // `{
+447, // `}
+363, // `-
 13, // `+
-187, // `=
-196, // `==
-161, // `[
-325, // `]
-340, // `||
-136, // `<
+186, // `=
+195, // `==
+159, // `[
+327, // `]
+341, // `||
+134, // `<
 121, // `<=
-551, // `,
+554, // `,
 109, // `>
 102, // `>=
-137, // `.
-171, // `;
-435, // `++
+135, // `.
+170, // `;
+437, // `++
 220, // `--
-193, // `/
-273, // `:
-554, // ID
-381, // INTLIT
-165, // STRINGLIT
-426, // CHARLIT
+192, // `/
+275, // `:
+557, // ID
+382, // INTLIT
+164, // STRINGLIT
+428, // CHARLIT
 -1, // "b"
 -1, // "o"
 -1, // "l"
@@ -4078,792 +4222,821 @@ MIN_REDUCTION+4, // (default reduction)
 -1, // intLit2
 -1, // "0"
 -1, // digit++
--1, // letter
 -1, // digit
+-1, // {"1".."9"}
+-1, // "'"
+-1, // printable
+-1, // letter
 -1, // "_"
 -1, // {"A".."Z" "j" "q"}
--1, // {"1".."9"}
+-1, // {'"'.."$" "?".."@" "\" "^" "`" "~"}
+-1, // " "
 -1, // ws
--1, // {9 " "}
+-1, // {9}
 -1, // eol
 -1, // {10}
 -1, // {13}
--1, // {130}
--1, // {131}
+-1, // {169}
 -1, // {132}
--1, // {144}
 -1, // token*
 -1, // digit+
 -1, // $
 -1, // $NT
   }
 ,
-{ // state 399
-105,293, // "w"
-  }
-,
 { // state 400
-90,454, // "o"
+105,295, // "w"
   }
 ,
 { // state 401
-MIN_REDUCTION+44, // (default reduction)
+90,456, // "o"
   }
 ,
 { // state 402
-2,294, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+234, // (default reduction)
+MIN_REDUCTION+44, // (default reduction)
   }
 ,
 { // state 403
-96,440, // "r"
+2,296, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+234, // (default reduction)
   }
 ,
 { // state 404
-MIN_REDUCTION+42, // (default reduction)
+96,442, // "r"
   }
 ,
 { // state 405
-0x80000000|1, // match move
-0x80000000|179, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+MIN_REDUCTION+42, // (default reduction)
   }
 ,
 { // state 406
-92,63, // "e"
+0x80000000|1, // match move
+0x80000000|178, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 407
-155,MIN_REDUCTION+255, // $NT
+92,63, // "e"
   }
 ,
 { // state 408
-2,214, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+222, // (default reduction)
+157,MIN_REDUCTION+258, // $NT
   }
 ,
 { // state 409
-98,146, // "c"
+2,214, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+222, // (default reduction)
   }
 ,
 { // state 410
-101,123, // "t"
+98,144, // "c"
   }
 ,
 { // state 411
-MIN_REDUCTION+62, // (default reduction)
+101,123, // "t"
   }
 ,
 { // state 412
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+217, // (default reduction)
+MIN_REDUCTION+62, // (default reduction)
   }
 ,
 { // state 413
-104,112, // "i"
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+217, // (default reduction)
   }
 ,
 { // state 414
-2,59, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+240, // (default reduction)
+104,112, // "i"
   }
 ,
 { // state 415
-2,239, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+156, // (default reduction)
+MIN_REDUCTION+265, // (default reduction)
   }
 ,
 { // state 416
-96,278, // "r"
+2,59, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+240, // (default reduction)
   }
 ,
 { // state 417
-MIN_REDUCTION+256, // (default reduction)
+2,240, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+156, // (default reduction)
   }
 ,
 { // state 418
-MIN_REDUCTION+29, // (default reduction)
+96,280, // "r"
   }
 ,
 { // state 419
-101,265, // "t"
+MIN_REDUCTION+252, // (default reduction)
   }
 ,
 { // state 420
-0x80000000|1, // match move
-0x80000000|476, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+MIN_REDUCTION+29, // (default reduction)
   }
 ,
 { // state 421
-MIN_REDUCTION+11, // (default reduction)
+101,267, // "t"
   }
 ,
 { // state 422
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+163, // (default reduction)
+0x80000000|1, // match move
+0x80000000|478, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 423
+MIN_REDUCTION+11, // (default reduction)
+  }
+,
+{ // state 424
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+163, // (default reduction)
+  }
+,
+{ // state 425
 0x80000000|21, // match move
 0x80000000|74, // no-match move
 // T-test match for "+":
 122,
   }
 ,
-{ // state 424
+{ // state 426
 99,16, // "s"
   }
 ,
-{ // state 425
-2,486, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 427
+2,488, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+140, // (default reduction)
   }
 ,
-{ // state 426
+{ // state 428
 MIN_REDUCTION+88, // (default reduction)
   }
 ,
-{ // state 427
+{ // state 429
 MIN_REDUCTION+13, // (default reduction)
   }
 ,
-{ // state 428
-0x80000000|542, // match move
-0x80000000|182, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+{ // state 430
+0x80000000|545, // match move
+0x80000000|181, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
-{ // state 429
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 431
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+191, // (default reduction)
   }
 ,
-{ // state 430
+{ // state 432
 -1, // $$start
 -1, // start
-482, // ws*
+484, // ws*
 -1, // $$0
 MIN_REDUCTION+154, // token
-174, // `boolean
-564, // `class
-176, // `extends
+173, // `boolean
+567, // `class
+175, // `extends
 5, // `void
 233, // `int
-288, // `while
-421, // `if
-125, // `else
-427, // `for
-498, // `break
-192, // `this
-163, // `false
-251, // `true
+290, // `while
+423, // `if
+124, // `else
+429, // `for
+500, // `break
+191, // `this
+161, // `false
+252, // `true
 217, // `super
 40, // `null
 96, // `return
-338, // `instanceof
-499, // `new
-312, // `abstract
-395, // `assert
-573, // `byte
-434, // `case
-575, // `catch
-356, // `char
-418, // `const
-491, // `continue
-474, // `default
-366, // `do
-155, // `double
+339, // `instanceof
+501, // `new
+314, // `abstract
+396, // `assert
+576, // `byte
+436, // `case
+578, // `catch
+357, // `char
+420, // `const
+493, // `continue
+476, // `default
+367, // `do
+153, // `double
 60, // `enum
 119, // `final
-274, // `finally
+276, // `finally
 101, // `float
-167, // `goto
-497, // `implements
+166, // `goto
+499, // `implements
 54, // `import
-259, // `interface
-404, // `long
-318, // `native
-401, // `package
-280, // `private
+261, // `interface
+405, // `long
+320, // `native
+402, // `package
+282, // `private
 38, // `protected
-291, // `public
-548, // `short
-172, // `static
-351, // `strictfp
+293, // `public
+551, // `short
+171, // `static
+352, // `strictfp
 94, // `switch
-359, // `synchronized
-449, // `throw
+360, // `synchronized
+451, // `throw
 56, // `throws
-261, // `transient
+263, // `transient
 18, // `try
 227, // `volatile
-332, // `!
-383, // `!=
+334, // `!
+384, // `!=
 65, // `%
-458, // `&&
+460, // `&&
 -1, // `*
-496, // `(
-253, // `)
-326, // `{
-445, // `}
-362, // `-
+498, // `(
+255, // `)
+328, // `{
+447, // `}
+363, // `-
 13, // `+
-187, // `=
-196, // `==
-161, // `[
-325, // `]
-340, // `||
-136, // `<
+186, // `=
+195, // `==
+159, // `[
+327, // `]
+341, // `||
+134, // `<
 121, // `<=
-551, // `,
+554, // `,
 109, // `>
 102, // `>=
-137, // `.
-171, // `;
-435, // `++
+135, // `.
+170, // `;
+437, // `++
 220, // `--
-193, // `/
-273, // `:
-554, // ID
-381, // INTLIT
-165, // STRINGLIT
-426, // CHARLIT
-361, // "b"
+192, // `/
+275, // `:
+557, // ID
+382, // INTLIT
+164, // STRINGLIT
+428, // CHARLIT
+362, // "b"
 -1, // "o"
-336, // "l"
-360, // "e"
-579, // "a"
-509, // "n"
+337, // "l"
+361, // "e"
+582, // "a"
+512, // "n"
 -1, // idChar
-298, // "r"
+300, // "r"
 -1, // "k"
-188, // "c"
-463, // "s"
+187, // "c"
+465, // "s"
 -1, // "x"
-489, // "t"
-569, // "d"
-276, // "f"
-372, // "i"
+491, // "t"
+572, // "d"
+278, // "f"
+373, // "i"
 48, // "w"
 -1, // "u"
-331, // "p"
+333, // "p"
 -1, // "h"
 114, // "v"
 -1, // "y"
 -1, // "m"
 8, // "g"
 -1, // "z"
-297, // "!"
+299, // "!"
 30, // "="
 78, // "%"
-354, // "&"
-127, // "("
-479, // ")"
+355, // "&"
+126, // "("
+481, // ")"
 MIN_REDUCTION+154, // "*"
-471, // "/"
-423, // "+"
-382, // ","
-386, // "-"
+473, // "/"
+425, // "+"
+383, // ","
+387, // "-"
 223, // "."
 53, // ":"
 6, // ";"
-367, // "<"
-327, // ">"
-414, // "["
-576, // "]"
-242, // "{"
+368, // "<"
+329, // ">"
+416, // "["
+579, // "]"
+243, // "{"
 95, // "}"
-433, // "|"
+435, // "|"
 -1, // intLit2
 MIN_REDUCTION+154, // "0"
 -1, // digit++
--1, // letter
 -1, // digit
+MIN_REDUCTION+154, // {"1".."9"}
+504, // "'"
+-1, // printable
+-1, // letter
 -1, // "_"
 -1, // {"A".."Z" "j" "q"}
-MIN_REDUCTION+154, // {"1".."9"}
-439, // ws
-157, // {9 " "}
-346, // eol
-521, // {10}
+-1, // {'"'.."$" "?".."@" "\" "^" "`" "~"}
+155, // " "
+441, // ws
+155, // {9}
+347, // eol
+524, // {10}
 224, // {13}
-133, // {130}
-335, // {131}
-315, // {132}
-124, // {144}
+415, // {169}
+317, // {132}
 -1, // token*
 -1, // digit+
 MIN_REDUCTION+154, // $
 -1, // $NT
   }
 ,
-{ // state 431
-0x80000000|1, // match move
-0x80000000|508, // no-match move
-0x80000000|447, // NT-test-match state for idChar
-  }
-,
-{ // state 432
-2,221, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+104, // (default reduction)
-  }
-,
 { // state 433
-134,539, // "|"
+0x80000000|1, // match move
+0x80000000|511, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 434
-MIN_REDUCTION+26, // (default reduction)
+2,221, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+104, // (default reduction)
   }
 ,
 { // state 435
-MIN_REDUCTION+81, // (default reduction)
+134,542, // "|"
   }
 ,
 { // state 436
-110,202, // "y"
+MIN_REDUCTION+26, // (default reduction)
   }
 ,
 { // state 437
-93,260, // "a"
+MIN_REDUCTION+81, // (default reduction)
   }
 ,
 { // state 438
-2,73, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+170, // (default reduction)
+110,201, // "y"
   }
 ,
 { // state 439
-MIN_REDUCTION+270, // (default reduction)
+93,262, // "a"
   }
 ,
 { // state 440
-0x80000000|1, // match move
-0x80000000|384, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+2,73, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+170, // (default reduction)
   }
 ,
 { // state 441
-92,199, // "e"
+MIN_REDUCTION+271, // (default reduction)
   }
 ,
 { // state 442
-96,275, // "r"
+0x80000000|1, // match move
+0x80000000|385, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 443
-0x80000000|1, // match move
-0x80000000|88, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+92,198, // "e"
   }
 ,
 { // state 444
-102,186, // "d"
+96,277, // "r"
   }
 ,
 { // state 445
-MIN_REDUCTION+66, // (default reduction)
+0x80000000|1, // match move
+0x80000000|88, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 446
-98,175, // "c"
+102,185, // "d"
   }
 ,
 { // state 447
-89,407, // "b"
-90,407, // "o"
-91,407, // "l"
-92,407, // "e"
-93,407, // "a"
-94,407, // "n"
-96,407, // "r"
-97,407, // "k"
-98,407, // "c"
-99,407, // "s"
-100,407, // "x"
-101,407, // "t"
-102,407, // "d"
-103,407, // "f"
-104,407, // "i"
-105,407, // "w"
-106,407, // "u"
-107,407, // "p"
-108,407, // "h"
-109,407, // "v"
-110,407, // "y"
-111,407, // "m"
-112,407, // "g"
-113,407, // "z"
-136,256, // "0"
-138,181, // letter
-139,524, // digit
-140,10, // "_"
-141,407, // {"A".."Z" "j" "q"}
-142,256, // {"1".."9"}
+MIN_REDUCTION+66, // (default reduction)
   }
 ,
 { // state 448
-0x80000000|1, // match move
-0x80000000|568, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+98,174, // "c"
   }
 ,
 { // state 449
-MIN_REDUCTION+53, // (default reduction)
+89,408, // "b"
+90,408, // "o"
+91,408, // "l"
+92,408, // "e"
+93,408, // "a"
+94,408, // "n"
+96,408, // "r"
+97,408, // "k"
+98,408, // "c"
+99,408, // "s"
+100,408, // "x"
+101,408, // "t"
+102,408, // "d"
+103,408, // "f"
+104,408, // "i"
+105,408, // "w"
+106,408, // "u"
+107,408, // "p"
+108,408, // "h"
+109,408, // "v"
+110,408, // "y"
+111,408, // "m"
+112,408, // "g"
+113,408, // "z"
+136,258, // "0"
+138,527, // digit
+139,258, // {"1".."9"}
+142,180, // letter
+143,10, // "_"
+144,408, // {"A".."Z" "j" "q"}
   }
 ,
 { // state 450
-92,83, // "e"
+0x80000000|1, // match move
+0x80000000|571, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 451
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+197, // (default reduction)
+MIN_REDUCTION+53, // (default reduction)
   }
 ,
 { // state 452
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+95, // (default reduction)
+92,83, // "e"
   }
 ,
 { // state 453
-0x80000000|1, // match move
-0x80000000|388, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+197, // (default reduction)
   }
 ,
 { // state 454
-103,80, // "f"
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+95, // (default reduction)
   }
 ,
 { // state 455
-94,138, // "n"
+0x80000000|1, // match move
+0x80000000|389, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 456
-2,190, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+90, // (default reduction)
+103,80, // "f"
   }
 ,
 { // state 457
-98,530, // "c"
+94,136, // "n"
   }
 ,
 { // state 458
-MIN_REDUCTION+61, // (default reduction)
+2,189, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+90, // (default reduction)
   }
 ,
 { // state 459
-2,543, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+180, // (default reduction)
+98,533, // "c"
   }
 ,
 { // state 460
-2,365, // ws*
-106,84, // "u"
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+148, // (default reduction)
+MIN_REDUCTION+61, // (default reduction)
   }
 ,
 { // state 461
-0x80000000|105, // match move
-0x80000000|417, // no-match move
-0x80000000|33, // NT-test-match state for digit
+2,546, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+180, // (default reduction)
   }
 ,
 { // state 462
-91,436, // "l"
+2,366, // ws*
+106,84, // "u"
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+148, // (default reduction)
   }
 ,
 { // state 463
-101,523, // "t"
-105,534, // "w"
-106,154, // "u"
-108,153, // "h"
-110,396, // "y"
+0x80000000|105, // match move
+0x80000000|419, // no-match move
+0x80000000|33, // NT-test-match state for digit
   }
 ,
 { // state 464
-MIN_REDUCTION+2, // (default reduction)
+91,438, // "l"
   }
 ,
 { // state 465
-2,269, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+106, // (default reduction)
+101,526, // "t"
+105,537, // "w"
+106,152, // "u"
+108,151, // "h"
+110,397, // "y"
   }
 ,
 { // state 466
-94,517, // "n"
+MIN_REDUCTION+2, // (default reduction)
   }
 ,
 { // state 467
-101,387, // "t"
+2,271, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+106, // (default reduction)
   }
 ,
 { // state 468
-0x80000000|1, // match move
-0x80000000|51, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+94,520, // "n"
   }
 ,
 { // state 469
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+231, // (default reduction)
+101,388, // "t"
   }
 ,
 { // state 470
-115,168, // "="
+0x80000000|1, // match move
+0x80000000|51, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 471
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+231, // (default reduction)
+  }
+,
+{ // state 472
+115,167, // "="
+  }
+,
+{ // state 473
 0x80000000|1, // match move
-0x80000000|408, // no-match move
+0x80000000|409, // no-match move
 // T-test match for {"*" "/"}:
 120,
 121,
   }
 ,
-{ // state 472
+{ // state 474
 2,225, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+160, // (default reduction)
   }
 ,
-{ // state 473
-2,507, // ws*
-143,439, // ws
-145,346, // eol
+{ // state 475
+2,510, // ws*
+147,441, // ws
+149,347, // eol
 MIN_REDUCTION+108, // (default reduction)
   }
 ,
-{ // state 474
+{ // state 476
 MIN_REDUCTION+31, // (default reduction)
   }
 ,
-{ // state 475
-92,267, // "e"
-  }
-,
-{ // state 476
-2,488, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+184, // (default reduction)
-  }
-,
 { // state 477
-0x80000000|1, // match move
-0x80000000|580, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+92,269, // "e"
   }
 ,
 { // state 478
-MIN_REDUCTION+272, // (default reduction)
+2,490, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+184, // (default reduction)
   }
 ,
 { // state 479
-2,197, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+206, // (default reduction)
+0x80000000|1, // match move
+0x80000000|583, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 480
-90,204, // "o"
+MIN_REDUCTION+273, // (default reduction)
   }
 ,
 { // state 481
-92,490, // "e"
+2,196, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+206, // (default reduction)
   }
 ,
 { // state 482
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+153, // (default reduction)
+90,203, // "o"
   }
 ,
 { // state 483
+92,492, // "e"
+  }
+,
+{ // state 484
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+153, // (default reduction)
+  }
+,
+{ // state 485
 -1, // $$start
 -1, // start
 -1, // ws*
-464, // $$0
+466, // $$0
 99, // token
-174, // `boolean
-564, // `class
-176, // `extends
+173, // `boolean
+567, // `class
+175, // `extends
 5, // `void
 233, // `int
-288, // `while
-421, // `if
-125, // `else
-427, // `for
-498, // `break
-192, // `this
-163, // `false
-251, // `true
+290, // `while
+423, // `if
+124, // `else
+429, // `for
+500, // `break
+191, // `this
+161, // `false
+252, // `true
 217, // `super
 40, // `null
 96, // `return
-338, // `instanceof
-499, // `new
-312, // `abstract
-395, // `assert
-573, // `byte
-434, // `case
-575, // `catch
-356, // `char
-418, // `const
-491, // `continue
-474, // `default
-366, // `do
-155, // `double
+339, // `instanceof
+501, // `new
+314, // `abstract
+396, // `assert
+576, // `byte
+436, // `case
+578, // `catch
+357, // `char
+420, // `const
+493, // `continue
+476, // `default
+367, // `do
+153, // `double
 60, // `enum
 119, // `final
-274, // `finally
+276, // `finally
 101, // `float
-167, // `goto
-497, // `implements
+166, // `goto
+499, // `implements
 54, // `import
-259, // `interface
-404, // `long
-318, // `native
-401, // `package
-280, // `private
+261, // `interface
+405, // `long
+320, // `native
+402, // `package
+282, // `private
 38, // `protected
-291, // `public
-548, // `short
-172, // `static
-351, // `strictfp
+293, // `public
+551, // `short
+171, // `static
+352, // `strictfp
 94, // `switch
-359, // `synchronized
-449, // `throw
+360, // `synchronized
+451, // `throw
 56, // `throws
-261, // `transient
+263, // `transient
 18, // `try
 227, // `volatile
-332, // `!
-383, // `!=
+334, // `!
+384, // `!=
 65, // `%
-458, // `&&
+460, // `&&
 -1, // `*
-496, // `(
-253, // `)
-326, // `{
-445, // `}
-362, // `-
+498, // `(
+255, // `)
+328, // `{
+447, // `}
+363, // `-
 13, // `+
-187, // `=
-196, // `==
-161, // `[
-325, // `]
-340, // `||
-136, // `<
+186, // `=
+195, // `==
+159, // `[
+327, // `]
+341, // `||
+134, // `<
 121, // `<=
-551, // `,
+554, // `,
 109, // `>
 102, // `>=
-137, // `.
-171, // `;
-435, // `++
+135, // `.
+170, // `;
+437, // `++
 220, // `--
-193, // `/
-273, // `:
-554, // ID
-381, // INTLIT
-165, // STRINGLIT
-426, // CHARLIT
+192, // `/
+275, // `:
+557, // ID
+382, // INTLIT
+164, // STRINGLIT
+428, // CHARLIT
 -1, // "b"
 -1, // "o"
 -1, // "l"
@@ -4913,787 +5086,887 @@ MIN_REDUCTION+153, // (default reduction)
 -1, // intLit2
 -1, // "0"
 -1, // digit++
--1, // letter
 -1, // digit
+-1, // {"1".."9"}
+-1, // "'"
+-1, // printable
+-1, // letter
 -1, // "_"
 -1, // {"A".."Z" "j" "q"}
--1, // {"1".."9"}
+-1, // {'"'.."$" "?".."@" "\" "^" "`" "~"}
+-1, // " "
 43, // ws
--1, // {9 " "}
-346, // eol
+-1, // {9}
+347, // eol
 -1, // {10}
 -1, // {13}
--1, // {130}
--1, // {131}
+-1, // {169}
 -1, // {132}
--1, // {144}
-352, // token*
+353, // token*
 -1, // digit+
 -1, // $
 -1, // $NT
   }
 ,
-{ // state 484
-2,558, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 486
+2,561, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+94, // (default reduction)
   }
 ,
-{ // state 485
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 487
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+135, // (default reduction)
   }
 ,
-{ // state 486
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 488
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+139, // (default reduction)
   }
 ,
-{ // state 487
-2,358, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 489
+2,359, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+194, // (default reduction)
   }
 ,
-{ // state 488
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 490
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+183, // (default reduction)
   }
 ,
-{ // state 489
-96,90, // "r"
-108,379, // "h"
-  }
-,
-{ // state 490
-0x80000000|1, // match move
-0x80000000|131, // no-match move
-0x80000000|447, // NT-test-match state for idChar
-  }
-,
 { // state 491
-MIN_REDUCTION+30, // (default reduction)
+96,90, // "r"
+108,380, // "h"
   }
 ,
 { // state 492
-2,412, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+218, // (default reduction)
+0x80000000|1, // match move
+0x80000000|130, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 493
-0x80000000|1, // match move
-0x80000000|425, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+MIN_REDUCTION+30, // (default reduction)
   }
 ,
 { // state 494
-2,578, // ws*
-143,439, // ws
-145,346, // eol
-MIN_REDUCTION+188, // (default reduction)
+2,413, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+218, // (default reduction)
   }
 ,
 { // state 495
-99,307, // "s"
+0x80000000|1, // match move
+0x80000000|427, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 496
-MIN_REDUCTION+63, // (default reduction)
+2,581, // ws*
+147,441, // ws
+149,347, // eol
+MIN_REDUCTION+188, // (default reduction)
   }
 ,
 { // state 497
-MIN_REDUCTION+39, // (default reduction)
+99,309, // "s"
   }
 ,
 { // state 498
-MIN_REDUCTION+14, // (default reduction)
+MIN_REDUCTION+63, // (default reduction)
   }
 ,
 { // state 499
-MIN_REDUCTION+22, // (default reduction)
+MIN_REDUCTION+39, // (default reduction)
   }
 ,
 { // state 500
-115,118, // "="
+MIN_REDUCTION+14, // (default reduction)
   }
 ,
 { // state 501
-93,370, // "a"
+MIN_REDUCTION+22, // (default reduction)
   }
 ,
 { // state 502
-92,263, // "e"
+115,118, // "="
   }
 ,
 { // state 503
-0x80000000|1, // match move
-0x80000000|566, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+93,371, // "a"
   }
 ,
 { // state 504
-111,252, // "m"
+89,212, // "b"
+90,212, // "o"
+91,212, // "l"
+92,212, // "e"
+93,212, // "a"
+94,212, // "n"
+96,212, // "r"
+97,212, // "k"
+98,212, // "c"
+99,212, // "s"
+100,212, // "x"
+101,212, // "t"
+102,212, // "d"
+103,212, // "f"
+104,212, // "i"
+105,212, // "w"
+106,212, // "u"
+107,212, // "p"
+108,212, // "h"
+109,212, // "v"
+110,212, // "y"
+111,212, // "m"
+112,212, // "g"
+113,212, // "z"
+114,212, // "!"
+115,212, // "="
+116,212, // "%"
+117,212, // "&"
+118,212, // "("
+119,212, // ")"
+120,212, // "*"
+121,212, // "/"
+122,212, // "+"
+123,212, // ","
+124,212, // "-"
+125,212, // "."
+126,212, // ":"
+127,212, // ";"
+128,212, // "<"
+129,212, // ">"
+130,212, // "["
+131,212, // "]"
+132,212, // "{"
+133,212, // "}"
+134,212, // "|"
+136,212, // "0"
+139,212, // {"1".."9"}
+140,212, // "'"
+141,163, // printable
+143,212, // "_"
+144,212, // {"A".."Z" "j" "q"}
+145,212, // {'"'.."$" "?".."@" "\" "^" "`" "~"}
+146,212, // " "
   }
 ,
 { // state 505
-0x80000000|1, // match move
-0x80000000|129, // no-match move
-// T-test match for "0":
-136,
+92,265, // "e"
   }
 ,
 { // state 506
 0x80000000|1, // match move
-0x80000000|151, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+0x80000000|569, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 507
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+107, // (default reduction)
+111,253, // "m"
   }
 ,
 { // state 508
-2,24, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+124, // (default reduction)
+0x80000000|1, // match move
+0x80000000|128, // no-match move
+// T-test match for "0":
+136,
   }
 ,
 { // state 509
-92,145, // "e"
-93,216, // "a"
-106,191, // "u"
+0x80000000|1, // match move
+0x80000000|149, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 510
-0x80000000|398, // match move
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+107, // (default reduction)
+  }
+,
+{ // state 511
+2,24, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+124, // (default reduction)
+  }
+,
+{ // state 512
+92,143, // "e"
+93,216, // "a"
+106,190, // "u"
+  }
+,
+{ // state 513
+0x80000000|399, // match move
 0x80000000|85, // no-match move
 // T-test match for "0":
 136,
   }
 ,
-{ // state 511
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 514
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+189, // (default reduction)
   }
 ,
-{ // state 512
-91,246, // "l"
-  }
-,
-{ // state 513
-2,578, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+188, // (default reduction)
-  }
-,
-{ // state 514
-101,19, // "t"
-  }
-,
 { // state 515
-92,232, // "e"
+91,247, // "l"
   }
 ,
 { // state 516
-93,347, // "a"
+2,581, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+188, // (default reduction)
   }
 ,
 { // state 517
-0x80000000|1, // match move
-0x80000000|456, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+101,19, // "t"
   }
 ,
 { // state 518
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+165, // (default reduction)
+92,232, // "e"
   }
 ,
 { // state 519
-99,234, // "s"
+93,348, // "a"
   }
 ,
 { // state 520
-90,139, // "o"
-91,185, // "l"
+0x80000000|1, // match move
+0x80000000|458, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 521
-MIN_REDUCTION+259, // (default reduction)
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+165, // (default reduction)
   }
 ,
 { // state 522
-0x80000000|1, // match move
-0x80000000|432, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+99,234, // "s"
   }
 ,
 { // state 523
-93,410, // "a"
-96,120, // "r"
+90,137, // "o"
+91,184, // "l"
   }
 ,
 { // state 524
-155,MIN_REDUCTION+253, // $NT
+MIN_REDUCTION+262, // (default reduction)
   }
 ,
 { // state 525
-98,201, // "c"
+0x80000000|1, // match move
+0x80000000|434, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 526
-0x80000000|1, // match move
-0x80000000|296, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+93,411, // "a"
+96,120, // "r"
   }
 ,
 { // state 527
-93,130, // "a"
-104,375, // "i"
-106,103, // "u"
-110,306, // "y"
+157,MIN_REDUCTION+256, // $NT
   }
 ,
 { // state 528
-MIN_REDUCTION+260, // (default reduction)
+98,200, // "c"
   }
 ,
 { // state 529
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+227, // (default reduction)
+0x80000000|1, // match move
+0x80000000|298, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 530
-0x80000000|1, // match move
-0x80000000|459, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+93,129, // "a"
+104,376, // "i"
+106,103, // "u"
+110,308, // "y"
   }
 ,
 { // state 531
-91,178, // "l"
+MIN_REDUCTION+263, // (default reduction)
   }
 ,
 { // state 532
-0x80000000|156, // match move
-0x80000000|430, // no-match move
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+227, // (default reduction)
+  }
+,
+{ // state 533
+0x80000000|1, // match move
+0x80000000|461, // no-match move
+0x80000000|449, // NT-test-match state for idChar
+  }
+,
+{ // state 534
+91,177, // "l"
+  }
+,
+{ // state 535
+0x80000000|154, // match move
+0x80000000|432, // no-match move
 // T-test match for "*":
 120,
   }
 ,
-{ // state 533
-92,166, // "e"
-  }
-,
-{ // state 534
-104,255, // "i"
-  }
-,
-{ // state 535
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+99, // (default reduction)
-  }
-,
 { // state 536
-2,511, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+190, // (default reduction)
+92,165, // "e"
   }
 ,
 { // state 537
-94,329, // "n"
+104,257, // "i"
   }
 ,
 { // state 538
-91,215, // "l"
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+99, // (default reduction)
   }
 ,
 { // state 539
-2,117, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+248, // (default reduction)
+2,514, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+190, // (default reduction)
   }
 ,
 { // state 540
-96,206, // "r"
+94,331, // "n"
   }
 ,
 { // state 541
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+109, // (default reduction)
+91,215, // "l"
   }
 ,
 { // state 542
-101,523, // "t"
-105,534, // "w"
-106,154, // "u"
-108,153, // "h"
-110,396, // "y"
+2,117, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+248, // (default reduction)
   }
 ,
 { // state 543
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+179, // (default reduction)
+96,205, // "r"
   }
 ,
 { // state 544
-93,258, // "a"
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+109, // (default reduction)
   }
 ,
 { // state 545
-104,268, // "i"
+101,526, // "t"
+105,537, // "w"
+106,152, // "u"
+108,151, // "h"
+110,397, // "y"
   }
 ,
 { // state 546
-102,420, // "d"
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+179, // (default reduction)
   }
 ,
 { // state 547
-0x80000000|1, // match move
-0x80000000|484, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+93,260, // "a"
   }
 ,
 { // state 548
-MIN_REDUCTION+48, // (default reduction)
+104,270, // "i"
   }
 ,
 { // state 549
-2,44, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+122, // (default reduction)
+102,422, // "d"
   }
 ,
 { // state 550
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+137, // (default reduction)
+0x80000000|1, // match move
+0x80000000|486, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 551
-MIN_REDUCTION+76, // (default reduction)
+MIN_REDUCTION+48, // (default reduction)
   }
 ,
 { // state 552
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+143, // (default reduction)
+2,44, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+122, // (default reduction)
   }
-,
+};
+}
+private class Initter2{
+public int doInit(int startIdx) {
+  for (int i = 0; i < myParseTable.length; i++) {
+    parseTable[i+startIdx] = myParseTable[i];
+  }
+  return myParseTable.length;
+}
+private final int[][] myParseTable = {
 { // state 553
-2,235, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+146, // (default reduction)
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+137, // (default reduction)
   }
 ,
 { // state 554
-MIN_REDUCTION+85, // (default reduction)
+MIN_REDUCTION+76, // (default reduction)
   }
 ,
 { // state 555
-2,208, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+116, // (default reduction)
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+143, // (default reduction)
   }
 ,
 { // state 556
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+141, // (default reduction)
+2,235, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+146, // (default reduction)
   }
 ,
 { // state 557
-0x80000000|483, // match move
-0x80000000|240, // no-match move
+MIN_REDUCTION+85, // (default reduction)
+  }
+,
+{ // state 558
+2,207, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+116, // (default reduction)
+  }
+,
+{ // state 559
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+141, // (default reduction)
+  }
+,
+{ // state 560
+0x80000000|485, // match move
+0x80000000|241, // no-match move
 // T-test match for "0":
 136,
   }
 ,
-{ // state 558
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+{ // state 561
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+93, // (default reduction)
   }
 ,
-{ // state 559
+{ // state 562
 -1, // $$start
 -1, // start
-578, // ws*
+581, // ws*
 -1, // $$0
 MIN_REDUCTION+188, // token
-174, // `boolean
-564, // `class
-176, // `extends
+173, // `boolean
+567, // `class
+175, // `extends
 5, // `void
 233, // `int
-288, // `while
-421, // `if
-125, // `else
-427, // `for
-498, // `break
-192, // `this
-163, // `false
-251, // `true
+290, // `while
+423, // `if
+124, // `else
+429, // `for
+500, // `break
+191, // `this
+161, // `false
+252, // `true
 217, // `super
 40, // `null
 96, // `return
-338, // `instanceof
-499, // `new
-312, // `abstract
-395, // `assert
-573, // `byte
-434, // `case
-575, // `catch
-356, // `char
-418, // `const
-491, // `continue
-474, // `default
-366, // `do
-155, // `double
+339, // `instanceof
+501, // `new
+314, // `abstract
+396, // `assert
+576, // `byte
+436, // `case
+578, // `catch
+357, // `char
+420, // `const
+493, // `continue
+476, // `default
+367, // `do
+153, // `double
 60, // `enum
 119, // `final
-274, // `finally
+276, // `finally
 101, // `float
-167, // `goto
-497, // `implements
+166, // `goto
+499, // `implements
 54, // `import
-259, // `interface
-404, // `long
-318, // `native
-401, // `package
-280, // `private
+261, // `interface
+405, // `long
+320, // `native
+402, // `package
+282, // `private
 38, // `protected
-291, // `public
-548, // `short
-172, // `static
-351, // `strictfp
+293, // `public
+551, // `short
+171, // `static
+352, // `strictfp
 94, // `switch
-359, // `synchronized
-449, // `throw
+360, // `synchronized
+451, // `throw
 56, // `throws
-261, // `transient
+263, // `transient
 18, // `try
 227, // `volatile
-332, // `!
-383, // `!=
+334, // `!
+384, // `!=
 65, // `%
-458, // `&&
+460, // `&&
 -1, // `*
-496, // `(
-253, // `)
-326, // `{
-445, // `}
-362, // `-
+498, // `(
+255, // `)
+328, // `{
+447, // `}
+363, // `-
 13, // `+
-187, // `=
-196, // `==
-161, // `[
-325, // `]
-340, // `||
-136, // `<
+186, // `=
+195, // `==
+159, // `[
+327, // `]
+341, // `||
+134, // `<
 121, // `<=
-551, // `,
+554, // `,
 109, // `>
 102, // `>=
-137, // `.
-171, // `;
-435, // `++
+135, // `.
+170, // `;
+437, // `++
 220, // `--
-193, // `/
-273, // `:
-554, // ID
-381, // INTLIT
-165, // STRINGLIT
-426, // CHARLIT
-361, // "b"
+192, // `/
+275, // `:
+557, // ID
+382, // INTLIT
+164, // STRINGLIT
+428, // CHARLIT
+362, // "b"
 -1, // "o"
-480, // "l"
-360, // "e"
-579, // "a"
-509, // "n"
+482, // "l"
+361, // "e"
+582, // "a"
+512, // "n"
 -1, // idChar
-298, // "r"
+300, // "r"
 -1, // "k"
-188, // "c"
-463, // "s"
+187, // "c"
+465, // "s"
 -1, // "x"
-374, // "t"
-569, // "d"
-276, // "f"
-372, // "i"
-244, // "w"
-154, // "u"
-331, // "p"
-153, // "h"
+375, // "t"
+572, // "d"
+278, // "f"
+373, // "i"
+245, // "w"
+152, // "u"
+333, // "p"
+151, // "h"
 114, // "v"
-396, // "y"
+397, // "y"
 -1, // "m"
 8, // "g"
 -1, // "z"
-297, // "!"
+299, // "!"
 30, // "="
 78, // "%"
-354, // "&"
-127, // "("
-479, // ")"
+355, // "&"
+126, // "("
+481, // ")"
 MIN_REDUCTION+188, // "*"
-471, // "/"
-423, // "+"
-382, // ","
-386, // "-"
+473, // "/"
+425, // "+"
+383, // ","
+387, // "-"
 223, // "."
 53, // ":"
 6, // ";"
-367, // "<"
-327, // ">"
-414, // "["
-576, // "]"
-242, // "{"
+368, // "<"
+329, // ">"
+416, // "["
+579, // "]"
+243, // "{"
 95, // "}"
-433, // "|"
+435, // "|"
 -1, // intLit2
 MIN_REDUCTION+188, // "0"
 -1, // digit++
--1, // letter
 -1, // digit
+MIN_REDUCTION+188, // {"1".."9"}
+504, // "'"
+-1, // printable
+-1, // letter
 -1, // "_"
 -1, // {"A".."Z" "j" "q"}
-MIN_REDUCTION+188, // {"1".."9"}
-439, // ws
-157, // {9 " "}
-346, // eol
-521, // {10}
+-1, // {'"'.."$" "?".."@" "\" "^" "`" "~"}
+155, // " "
+441, // ws
+155, // {9}
+347, // eol
+524, // {10}
 224, // {13}
-133, // {130}
-335, // {131}
-315, // {132}
-124, // {144}
+415, // {169}
+317, // {132}
 -1, // token*
 -1, // digit+
 MIN_REDUCTION+188, // $
 -1, // $NT
   }
 ,
-{ // state 560
-92,272, // "e"
-  }
-,
-{ // state 561
-107,520, // "p"
-  }
-,
-{ // state 562
-96,250, // "r"
-  }
-,
 { // state 563
-0x80000000|1, // match move
-0x80000000|487, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+92,274, // "e"
   }
 ,
 { // state 564
-MIN_REDUCTION+6, // (default reduction)
+107,523, // "p"
   }
 ,
 { // state 565
-92,355, // "e"
+96,251, // "r"
   }
 ,
 { // state 566
-2,422, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+164, // (default reduction)
+0x80000000|1, // match move
+0x80000000|489, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 567
-101,207, // "t"
+MIN_REDUCTION+6, // (default reduction)
   }
 ,
 { // state 568
-2,17, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+176, // (default reduction)
+92,356, // "e"
   }
 ,
 { // state 569
-90,41, // "o"
-92,180, // "e"
+2,424, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+164, // (default reduction)
   }
 ,
 { // state 570
-2,316, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+236, // (default reduction)
+101,206, // "t"
   }
 ,
 { // state 571
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+101, // (default reduction)
+2,17, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+176, // (default reduction)
   }
 ,
 { // state 572
-0x80000000|1, // match move
-0x80000000|472, // no-match move
-0x80000000|447, // NT-test-match state for idChar
+90,41, // "o"
+92,179, // "e"
   }
 ,
 { // state 573
-MIN_REDUCTION+25, // (default reduction)
+2,318, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+236, // (default reduction)
   }
 ,
 { // state 574
-94,281, // "n"
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+101, // (default reduction)
   }
 ,
 { // state 575
-MIN_REDUCTION+27, // (default reduction)
+0x80000000|1, // match move
+0x80000000|474, // no-match move
+0x80000000|449, // NT-test-match state for idChar
   }
 ,
 { // state 576
-2,3, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+242, // (default reduction)
+MIN_REDUCTION+25, // (default reduction)
   }
 ,
 { // state 577
-98,15, // "c"
+94,283, // "n"
   }
 ,
 { // state 578
-143,43, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
-MIN_REDUCTION+187, // (default reduction)
+MIN_REDUCTION+27, // (default reduction)
   }
 ,
 { // state 579
-89,364, // "b"
-99,519, // "s"
+2,3, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+242, // (default reduction)
   }
 ,
 { // state 580
-2,550, // ws*
-143,439, // ws
-144,157, // {9 " "}
-145,346, // eol
-146,521, // {10}
-147,224, // {13}
+98,15, // "c"
+  }
+,
+{ // state 581
+146,155, // " "
+147,43, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
+MIN_REDUCTION+187, // (default reduction)
+  }
+,
+{ // state 582
+89,365, // "b"
+99,522, // "s"
+  }
+,
+{ // state 583
+2,553, // ws*
+146,155, // " "
+147,441, // ws
+148,155, // {9}
+149,347, // eol
+150,524, // {10}
+151,224, // {13}
 MIN_REDUCTION+138, // (default reduction)
   }
 ,
@@ -5701,9 +5974,10 @@ MIN_REDUCTION+138, // (default reduction)
 }
 public TokenGrammarParseTable(TokenGrammar actionObj) {
   actionObject = actionObj;
-  parseTable = new int[581][];
+  parseTable = new int[584][];
   int doneSoFar = 0;
   doneSoFar += new Initter1().doInit(doneSoFar);
+  doneSoFar += new Initter2().doInit(doneSoFar);
 }
 public int[] getProdTable() { return prodTable; }
 private static int[] prodTable = {
@@ -6211,6 +6485,12 @@ private static int[] prodTable = {
 (86<<16)+1,
 // intLit2 ::= !"0" digit++
 (135<<16)+1,
+// digit ::= {"0".."9"}
+(138<<16)+1,
+// CHARLIT ::= "'" printable "'" ws*
+(88<<16)+4,
+// CHARLIT ::= "'" printable "'"
+(88<<16)+3,
 // idChar ::= letter
 (95<<16)+1,
 // idChar ::= digit
@@ -6218,31 +6498,27 @@ private static int[] prodTable = {
 // idChar ::= "_"
 (95<<16)+1,
 // letter ::= {"A".."Z" "a".."z"}
-(138<<16)+1,
-// digit ::= {"0".."9"}
-(139<<16)+1,
+(142<<16)+1,
+// printable ::= {" ".."~"}
+(141<<16)+1,
 // ws ::= {9 " "}
-(143<<16)+1,
+(147<<16)+1,
 // ws ::= eol
-(143<<16)+1,
+(147<<16)+1,
 // eol ::= {10}
-(145<<16)+1,
+(149<<16)+1,
 // eol ::= {13} {10}
-(145<<16)+2,
+(149<<16)+2,
 // eol ::= {13} !10
-(145<<16)+1,
-// CHARLIT ::= {130}
-(88<<16)+1,
-// ID ::= {131}
+(149<<16)+1,
+// ID ::= {169}
 (85<<16)+1,
 // STRINGLIT ::= {132}
 (87<<16)+1,
-// `/ ::= {144}
-(83<<16)+1,
 // token* ::= token* token
-(152<<16)+2,
+(154<<16)+2,
 // token* ::= token
-(152<<16)+1,
+(154<<16)+1,
 // digit++ ::= digit+ !digit
 (137<<16)+1,
 // ws* ::= ws* ws
@@ -6250,9 +6526,9 @@ private static int[] prodTable = {
 // ws* ::= ws
 (2<<16)+1,
 // digit+ ::= digit
-(153<<16)+1,
+(155<<16)+1,
 // digit+ ::= digit+ digit
-(153<<16)+2,
+(155<<16)+2,
 // $$0 ::= token*
 (3<<16)+1,
 };
@@ -6267,11 +6543,11 @@ private static int[] charMapTable = {
 -1, // 6
 -1, // 7
 -1, // 8
-144, // 9
-146, // 10
+148, // 9
+150, // 10
 -1, // 11
 -1, // 12
-147, // 13
+151, // 13
 -1, // 14
 -1, // 15
 -1, // 16
@@ -6290,14 +6566,14 @@ private static int[] charMapTable = {
 -1, // 29
 -1, // 30
 -1, // 31
-144, // " "
+146, // " "
 114, // "!"
--1, // '"'
--1, // "#"
--1, // "$"
+145, // '"'
+145, // "#"
+145, // "$"
 116, // "%"
 117, // "&"
--1, // "'"
+140, // "'"
 118, // "("
 119, // ")"
 120, // "*"
@@ -6307,54 +6583,54 @@ private static int[] charMapTable = {
 125, // "."
 121, // "/"
 136, // "0"
-142, // "1"
-142, // "2"
-142, // "3"
-142, // "4"
-142, // "5"
-142, // "6"
-142, // "7"
-142, // "8"
-142, // "9"
+139, // "1"
+139, // "2"
+139, // "3"
+139, // "4"
+139, // "5"
+139, // "6"
+139, // "7"
+139, // "8"
+139, // "9"
 126, // ":"
 127, // ";"
 128, // "<"
 115, // "="
 129, // ">"
--1, // "?"
--1, // "@"
-141, // "A"
-141, // "B"
-141, // "C"
-141, // "D"
-141, // "E"
-141, // "F"
-141, // "G"
-141, // "H"
-141, // "I"
-141, // "J"
-141, // "K"
-141, // "L"
-141, // "M"
-141, // "N"
-141, // "O"
-141, // "P"
-141, // "Q"
-141, // "R"
-141, // "S"
-141, // "T"
-141, // "U"
-141, // "V"
-141, // "W"
-141, // "X"
-141, // "Y"
-141, // "Z"
+145, // "?"
+145, // "@"
+144, // "A"
+144, // "B"
+144, // "C"
+144, // "D"
+144, // "E"
+144, // "F"
+144, // "G"
+144, // "H"
+144, // "I"
+144, // "J"
+144, // "K"
+144, // "L"
+144, // "M"
+144, // "N"
+144, // "O"
+144, // "P"
+144, // "Q"
+144, // "R"
+144, // "S"
+144, // "T"
+144, // "U"
+144, // "V"
+144, // "W"
+144, // "X"
+144, // "Y"
+144, // "Z"
 130, // "["
--1, // "\"
+145, // "\"
 131, // "]"
--1, // "^"
-140, // "_"
--1, // "`"
+145, // "^"
+143, // "_"
+145, // "`"
 93, // "a"
 89, // "b"
 98, // "c"
@@ -6364,14 +6640,14 @@ private static int[] charMapTable = {
 112, // "g"
 108, // "h"
 104, // "i"
-141, // "j"
+144, // "j"
 97, // "k"
 91, // "l"
 111, // "m"
 94, // "n"
 90, // "o"
 107, // "p"
-141, // "q"
+144, // "q"
 96, // "r"
 99, // "s"
 101, // "t"
@@ -6384,13 +6660,13 @@ private static int[] charMapTable = {
 132, // "{"
 134, // "|"
 133, // "}"
--1, // "~"
+145, // "~"
 -1, // 127
 -1, // 128
 -1, // 129
-148, // 130
-149, // 131
-150, // 132
+-1, // 130
+-1, // 131
+153, // 132
 -1, // 133
 -1, // 134
 -1, // 135
@@ -6402,7 +6678,7 @@ private static int[] charMapTable = {
 -1, // 141
 -1, // 142
 -1, // 143
-151, // 144
+-1, // 144
 -1, // 145
 -1, // 146
 -1, // 147
@@ -6427,7 +6703,7 @@ private static int[] charMapTable = {
 -1, // 166
 -1, // 167
 -1, // 168
--1, // 169
+152, // 169
 -1, // 170
 -1, // 171
 -1, // 172
@@ -6769,28 +7045,29 @@ private String[] actionProdNameTable = {
 "INTLIT ::= # intLit2 ws*", // 249
 "INTLIT ::= # intLit2 ws*", // 250
 "intLit2 ::= !\"0\" digit++", // 251
-"idChar ::= letter", // 252
-"idChar ::= digit", // 253
-"idChar ::= \"_\"", // 254
-"letter ::= {\"A\"..\"Z\" \"a\"..\"z\"}", // 255
-"digit ::= {\"0\"..\"9\"}", // 256
-"ws ::= {9 \" \"}", // 257
-"ws ::= eol", // 258
-"eol ::= {10} registerNewline", // 259
-"eol ::= {13} {10} registerNewline", // 260
-"eol ::= {13} !10 registerNewline", // 261
-"CHARLIT ::= {130}", // 262
-"ID ::= {131}", // 263
-"STRINGLIT ::= {132}", // 264
-"`/ ::= {144}", // 265
-"token* ::= token* token", // 266
+"digit ::= {\"0\"..\"9\"}", // 252
+"CHARLIT ::= # \"\'\" printable \"\'\" ws*", // 253
+"CHARLIT ::= # \"\'\" printable \"\'\" ws*", // 254
+"idChar ::= letter", // 255
+"idChar ::= digit", // 256
+"idChar ::= \"_\"", // 257
+"letter ::= {\"A\"..\"Z\" \"a\"..\"z\"}", // 258
+"printable ::= {\" \"..\"~\"}", // 259
+"ws ::= {9 \" \"}", // 260
+"ws ::= eol", // 261
+"eol ::= {10} registerNewline", // 262
+"eol ::= {13} {10} registerNewline", // 263
+"eol ::= {13} !10 registerNewline", // 264
+"ID ::= {169}", // 265
+"STRINGLIT ::= {132}", // 266
 "token* ::= token* token", // 267
-"digit++ ::= digit+ !digit", // 268
-"ws* ::= ws* ws", // 269
+"token* ::= token* token", // 268
+"digit++ ::= digit+ !digit", // 269
 "ws* ::= ws* ws", // 270
-"digit+ ::= digit", // 271
-"digit+ ::= digit+ digit", // 272
-"", // 273
+"ws* ::= ws* ws", // 271
+"digit+ ::= digit", // 272
+"digit+ ::= digit+ digit", // 273
+"", // 274
 };
 public int[][] getActionTable() { return actionTable; }
 private int[][] actionTable = {
@@ -9243,41 +9520,67 @@ private int[][] actionTable = {
       ((1<<5)|0x0)/*popToPushBack:1*/,
       ((1<<5)|0x4)/*stringConcat:1*/,
     },
-    { // 252: idChar ::= letter @pass
+    { // 252: digit ::= {"0".."9"} @pass
       ((1<<5)|0xe)/*popPos:1*/,
       ((1<<5)|0x0)/*popToPushBack:1*/,
     },
-    { // 253: idChar ::= digit @pass
+    { // 253: CHARLIT ::= [#] "'" printable "'" ws* @printableToAscii(int,char,char,char)=>int
+      ((1<<5)|0xe)/*popPos:1*/,
+      ((1<<5)|0xe)/*popPos:1*/,
+      ((1<<5)|0x0)/*popToPushBack:1*/,
+      ((1<<5)|0xe)/*popPos:1*/,
+      ((1<<5)|0x0)/*popToPushBack:1*/,
+      ((1<<5)|0xe)/*popPos:1*/,
+      ((1<<5)|0x0)/*popToPushBack:1*/,
+      ((4<<5)|0x6)/*nullProductionAction:4*/,
+      ((85<<5)|0x5)/*methodCall:85*/,
+    },
+    { // 254: CHARLIT ::= [#] "'" printable "'" [ws*] @printableToAscii(int,char,char,char)=>int
+      ((1<<5)|0x6)/*nullProductionAction:1*/,
+      ((1<<5)|0xe)/*popPos:1*/,
+      ((1<<5)|0x0)/*popToPushBack:1*/,
+      ((1<<5)|0xe)/*popPos:1*/,
+      ((1<<5)|0x0)/*popToPushBack:1*/,
+      ((1<<5)|0xe)/*popPos:1*/,
+      ((1<<5)|0x0)/*popToPushBack:1*/,
+      ((4<<5)|0x6)/*nullProductionAction:4*/,
+      ((85<<5)|0x5)/*methodCall:85*/,
+    },
+    { // 255: idChar ::= letter @pass
       ((1<<5)|0xe)/*popPos:1*/,
       ((1<<5)|0x0)/*popToPushBack:1*/,
     },
-    { // 254: idChar ::= "_" @pass
+    { // 256: idChar ::= digit @pass
       ((1<<5)|0xe)/*popPos:1*/,
       ((1<<5)|0x0)/*popToPushBack:1*/,
     },
-    { // 255: letter ::= {"A".."Z" "a".."z"} @pass
+    { // 257: idChar ::= "_" @pass
       ((1<<5)|0xe)/*popPos:1*/,
       ((1<<5)|0x0)/*popToPushBack:1*/,
     },
-    { // 256: digit ::= {"0".."9"} @pass
+    { // 258: letter ::= {"A".."Z" "a".."z"} @pass
       ((1<<5)|0xe)/*popPos:1*/,
       ((1<<5)|0x0)/*popToPushBack:1*/,
     },
-    { // 257: ws ::= {9 " "} @void
+    { // 259: printable ::= {" ".."~"} @pass
+      ((1<<5)|0xe)/*popPos:1*/,
+      ((1<<5)|0x0)/*popToPushBack:1*/,
+    },
+    { // 260: ws ::= {9 " "} @void
       ((1<<5)|0xe)/*popPos:1*/,
       ((1<<5)|0x0)/*popToPushBack:1*/,
       ((1<<5)|0x3)/*popOffPushBack:1*/,
     },
-    { // 258: ws ::= eol @void
+    { // 261: ws ::= eol @void
       ((1<<5)|0xe)/*popPos:1*/,
     },
-    { // 259: eol ::= {10} [registerNewline] @void
+    { // 262: eol ::= {10} [registerNewline] @void
       ((5<<5)|0x6)/*nullProductionAction:5*/,
       ((1<<5)|0xe)/*popPos:1*/,
       ((1<<5)|0x0)/*popToPushBack:1*/,
       ((1<<5)|0x3)/*popOffPushBack:1*/,
     },
-    { // 260: eol ::= {13} {10} [registerNewline] @void
+    { // 263: eol ::= {13} {10} [registerNewline] @void
       ((5<<5)|0x6)/*nullProductionAction:5*/,
       ((1<<5)|0xe)/*popPos:1*/,
       ((1<<5)|0x0)/*popToPushBack:1*/,
@@ -9285,65 +9588,55 @@ private int[][] actionTable = {
       ((1<<5)|0x0)/*popToPushBack:1*/,
       ((2<<5)|0x3)/*popOffPushBack:2*/,
     },
-    { // 261: eol ::= {13} !10 [registerNewline] @void
+    { // 264: eol ::= {13} !10 [registerNewline] @void
       ((5<<5)|0x6)/*nullProductionAction:5*/,
       ((1<<5)|0xe)/*popPos:1*/,
       ((1<<5)|0x0)/*popToPushBack:1*/,
       ((1<<5)|0x3)/*popOffPushBack:1*/,
     },
-    { // 262: CHARLIT ::= {130} @zero(char)=>int
-      ((1<<5)|0xe)/*popPos:1*/,
-      ((1<<5)|0x0)/*popToPushBack:1*/,
-      ((85<<5)|0x5)/*methodCall:85*/,
-    },
-    { // 263: ID ::= {131} @text
+    { // 265: ID ::= {169} @text
       ((1<<5)|0xe)/*popPos:1*/,
       ((1<<5)|0x0)/*popToPushBack:1*/,
       ((1<<5)|0x4)/*stringConcat:1*/,
     },
-    { // 264: STRINGLIT ::= {132} @text
+    { // 266: STRINGLIT ::= {132} @text
       ((1<<5)|0xe)/*popPos:1*/,
       ((1<<5)|0x0)/*popToPushBack:1*/,
       ((1<<5)|0x4)/*stringConcat:1*/,
     },
-    { // 265: `/ ::= {144} @void
-      ((1<<5)|0xe)/*popPos:1*/,
-      ((1<<5)|0x0)/*popToPushBack:1*/,
-      ((1<<5)|0x3)/*popOffPushBack:1*/,
-    },
-    { // 266: token* ::= token* token @append
+    { // 267: token* ::= token* token @append
       ((1<<5)|0xe)/*popPos:1*/,
       ((1<<5)|0xe)/*popPos:1*/,
     },
-    { // 267: token* ::= [token*] token @append
+    { // 268: token* ::= [token*] token @append
       ((1<<5)|0xe)/*popPos:1*/,
       ((2<<5)|0x6)/*nullProductionAction:2*/,
     },
-    { // 268: digit++ ::= digit+ !digit @pass
+    { // 269: digit++ ::= digit+ !digit @pass
       ((1<<5)|0xe)/*popPos:1*/,
       ((1<<5)|0x0)/*popToPushBack:1*/,
     },
-    { // 269: ws* ::= ws* ws @append
+    { // 270: ws* ::= ws* ws @append
       ((1<<5)|0xe)/*popPos:1*/,
       ((1<<5)|0xe)/*popPos:1*/,
     },
-    { // 270: ws* ::= [ws*] ws @append
+    { // 271: ws* ::= [ws*] ws @append
       ((1<<5)|0xe)/*popPos:1*/,
       ((1<<5)|0x6)/*nullProductionAction:1*/,
     },
-    { // 271: digit+ ::= digit @singleList
+    { // 272: digit+ ::= digit @singleList
       ((1<<5)|0xe)/*popPos:1*/,
       ((1<<5)|0x0)/*popToPushBack:1*/,
       ((1<<5)|0xa)/*singleList:1*/,
     },
-    { // 272: digit+ ::= digit+ digit @append
+    { // 273: digit+ ::= digit+ digit @append
       ((1<<5)|0xe)/*popPos:1*/,
       ((1<<5)|0x0)/*popToPushBack:1*/,
       ((1<<5)|0xe)/*popPos:1*/,
       ((1<<5)|0x0)/*popToPushBack:1*/,
       ((1<<5)|0xb)/*append:1*/,
     },
-    { // 273: $$0 ::= token* @pass
+    { // 274: $$0 ::= token* @pass
       ((1<<5)|0xe)/*popPos:1*/,
     },
 };
@@ -9813,8 +10106,11 @@ public void actionCall(int idx, wrangLR.runtime.SemanticInfo si) {
     }
     break;
     case 85: {
-      char parm0 = (Character)si.popPb();
-      int result = actionObject.zero(parm0);
+      int parm0 = (Integer)si.popPb();
+      char parm1 = (Character)si.popPb();
+      char parm2 = (Character)si.popPb();
+      char parm3 = (Character)si.popPb();
+      int result = actionObject.printableToAscii(parm0,parm1,parm2,parm3);
       si.pushPb(result);
     }
     break;
@@ -9911,7 +10207,7 @@ private String[] saNameSigTable = {
 "void stringLit(int,String)",
 "void charLit(int,int)",
 "int convertToInt(int,String)",
-"int zero(char)",
+"int printableToAscii(int,char,char,char)",
 "void registerNewline(int)",
 };
 public String[] getSaNameSigTable() {
@@ -10003,7 +10299,7 @@ private int[] sigCountTable = {
 2,0,
 2,0,
 2,1,
-1,1,
+4,1,
 1,0,
 };
 public int[] getSigCountTable() {
@@ -10150,15 +10446,17 @@ private int[] symbolSizeTable = {
     -1,
     1,
     1,
+    -1,
+    -1,
+    1,
     1,
     -1,
     -1,
     -1,
-    0,
     -1,
     0,
     -1,
-    -1,
+    0,
     -1,
     -1,
     -1,
