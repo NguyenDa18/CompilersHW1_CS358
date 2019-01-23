@@ -24,6 +24,17 @@ public class TokenGrammar implements wrangLR.runtime.MessageObject {
 
 
 //: start ::= ws* token*
+
+/**
+THE FOLLOWING IS DETAILS ABOUT TOKENS
+tokens = indivisible building blocks of our language
+
+NON-TERMINALS:
+start : the start rule
+grammar-level symbols : non-termianls that consist of sequences of tokens
+whitespace token : defines what a whitespace character is in the language, ws denotes the whitespace char
+subpattern tokens : define char sequences that might appear within tokens
+ */
 	
 
 //: token ::= # `boolean =>
@@ -633,6 +644,12 @@ public int convertToInt(int pos, String s) {
 public void registerNewline(int pos) {
 	errorMsg.newline(pos-1);
 }
+
+
+/**
+    IDENTIFIERS : Enforce the longest match rule
+ */
+
 
 //================================================================
 // Dummied up (and incorrect) definitions, so that this starter-file
