@@ -3,6 +3,8 @@ import java.util.List;
 
 import errorMsg.*;
 
+// java -cp ./WrangLR.jar main.Main myGram.java -d src/parser -o MyGramParseTable.java
+
 public class TokenGrammar implements wrangLR.runtime.MessageObject {
 
 	public TokenGrammar(ErrorMsg em) {
@@ -381,9 +383,14 @@ public void charLit(int pos, int n) {
 	reportTok(pos, "character literal with ASCII value: "+n);
 }
 
-//: token ::= # COMMENT =>
-public void sawComment(int pos) {
-	reportTok(pos, "Comment found!");
+// //: token ::= # COMMENT =>
+// public void sawComment(int pos) {
+// 	reportTok(pos, "Comment found!");
+// }
+
+//: token ::= # NESTEDCOMMENT =>
+public void sawNestedComment(int pos) {
+	reportTok(pos, "Nested Comment found!");
 }
 
 
@@ -682,10 +689,9 @@ public void registerNewline(int pos) {
 //================================================================
 //: COMMENT ::= # "//" ws* idChar++ ws*
 //: COMMENT ::= # "/*" ws* idChar++ ws* &{"*/"} ws*
-
-
-
-public void reportNestedComment(int pos) {
+//: NESTEDCOMMENT ::= # "/*" ws* idChar++ ws* !{"*/"} &{"/*"} ws* idChar++ &{"*/"} ws* idChar++ ws* &{"*/"} =>
+public void reportNestedComment(int pos, Character left, Character leftInner, List<Character> leftOuterComment, 
+    List<Character> nestedComment, List<Character> rightOuterComment) {
     warning(pos, "Nested comment detected at " + pos);
 }
 
