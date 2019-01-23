@@ -380,6 +380,15 @@ public void stringLit(int pos, String s) {
 public void charLit(int pos, int n) {
 	reportTok(pos, "character literal with ASCII value: "+n);
 }
+
+//: token ::= # COMMENT =>
+public void sawComment(int pos) {
+	reportTok(pos, "Comment found!");
+}
+
+
+
+
 /////////////////////////////////////////////////////////////////
 //////////   Your modifications should start here   /////////////
 /////////////////////////////////////////////////////////////////
@@ -667,6 +676,13 @@ public String charsToStringLiteral(int pos, char leftQuote, List<Character> stri
 public void registerNewline(int pos) {
 	errorMsg.newline(pos-1);
 }
+
+//================================================================
+// COMMENTS
+//================================================================
+//: COMMENT ::= # "//" ws* idChar++ ws*
+//: COMMENT ::= # "/*" ws* idChar++ ws* &{"*/"} ws*
+
 
 
 public void reportNestedComment(int pos) {
