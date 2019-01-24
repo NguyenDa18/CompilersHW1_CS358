@@ -28,16 +28,16 @@ public class TokenGrammar implements wrangLR.runtime.MessageObject {
 //: start ::= ws* token*
 
  /** 
-    ================================================================================
-        THE FOLLOWING IS DETAILS ABOUT TOKENS
-        tokens : indivisible building blocks of our language
+================================================================================
+    THE FOLLOWING IS DETAILS ABOUT TOKENS
+    tokens : indivisible building blocks of our language
 
-        NON-TERMINALS:
-        start : the start rule
-        grammar-level symbols : non-termianls that consist of sequences of tokens
-        whitespace token : defines what a whitespace character is in the language, ws denotes the whitespace char
-        subpattern tokens : define char sequences that might appear within tokens
-    =================================================================================
+    NON-TERMINALS:
+    start : the start rule
+    grammar-level symbols : non-termianls that consist of sequences of tokens
+    whitespace token : defines what a whitespace character is in the language, ws denotes the whitespace char
+    subpattern tokens : define char sequences that might appear within tokens
+=================================================================================
 */
 	
 
@@ -383,17 +383,10 @@ public void charLit(int pos, int n) {
 	reportTok(pos, "character literal with ASCII value: "+n);
 }
 
-// //: token ::= # COMMENT =>
-// public void sawComment(int pos) {
-// 	reportTok(pos, "Comment found!");
-// }
-
 //: token ::= # NESTEDCOMMENT =>
 public void sawNestedComment(int pos) {
 	reportTok(pos, "Nested Comment found!");
 }
-
-
 
 
 /////////////////////////////////////////////////////////////////
@@ -570,8 +563,9 @@ public void sawNestedComment(int pos) {
 
 
 
-
-//special-token characters
+//================================================================
+// SPECIAL-TOKEN CHARACTERS
+//================================================================
 //: `! ::= "!" !"=" ws*
 //: `!= ::= "!=" ws*
 //: `% ::= "%" ws*
@@ -624,6 +618,11 @@ public int convertToInt(int pos, String s) {
 	}
 }
 
+////: INTLIT ::= # "0" &{"x" "X"} digit++ ws* =>
+public int convertHexToInt(int pos, List<Character> hexLit) {
+    return Integer.parseInt(String.valueOf(hexLit), 16);
+}
+
 // pattern that represents an integer literal (without trailing whitespace)
 //: intLit2 ::= !"0" digit++ => text
 
@@ -645,10 +644,12 @@ public String charsToStringLiteral(int pos, char leftQuote, List<Character> stri
     return String.valueOf(stringLit);
 }
 
+//: TEXTBLOCK ::= # COMPOUNDSTRING++ ws*
+
+//: COMPOUNDSTRING ::= # ws++ printable++ ws++
+
 // Escape sequences
 ////: STRINGLIT ::= # '"' '\' !{'\', ''','n','t','f','r'} =>
-
-
 
 
 // a character that can be a non-first character in an identifier
@@ -665,10 +666,13 @@ public String charsToStringLiteral(int pos, char leftQuote, List<Character> stri
 //================================================================
 // WHITESPACE
 //================================================================
-
-// whitespace
 //: ws ::= {" " 9} // space or tab
 //: ws ::= eol
+
+// Comments
+// Single line comment starting with //
+
+//: ws ::= "//" printable** eol
 
 // to handle the common end-of-line sequences on different types
 // of systems, we treat the sequence CR+LF as an end of line.
