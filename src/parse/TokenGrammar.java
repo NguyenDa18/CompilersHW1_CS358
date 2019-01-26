@@ -664,11 +664,12 @@ public String charsToStringLiteral(int pos, char leftQuote, List<Character> stri
 // Single line comment starting with //
 
 //: ws ::= "//" printable** eol
-//: ws ::= "/*" commentContent "*/"
+//: ws ::= "/*" commentContent* "*/"
 
 
 //: commentContent ::= "*" !"/"
-////: commentContent ::= !"/" printable**
+//: commentContent ::= !"*" printable
+//: commentContent ::= eol
     
 // to handle the common end-of-line sequences on different types
 // of systems, we treat the sequence CR+LF as an end of line.
