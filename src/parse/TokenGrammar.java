@@ -383,11 +383,6 @@ public void charLit(int pos, int n) {
 	reportTok(pos, "character literal with ASCII value: "+n);
 }
 
-//: token ::= # NESTEDCOMMENT =>
-public void sawNestedComment(int pos) {
-	reportTok(pos, "Nested Comment found!");
-}
-
 
 /////////////////////////////////////////////////////////////////
 //////////   Your modifications should start here   /////////////
@@ -644,10 +639,6 @@ public String charsToStringLiteral(int pos, char leftQuote, List<Character> stri
     return String.valueOf(stringLit);
 }
 
-//: TEXTBLOCK ::= # COMPOUNDSTRING++ ws*
-
-//: COMPOUNDSTRING ::= # ws++ printable++ ws++
-
 // Escape sequences
 ////: STRINGLIT ::= # '"' '\' !{'\', ''','n','t','f','r'} =>
 
@@ -673,7 +664,12 @@ public String charsToStringLiteral(int pos, char leftQuote, List<Character> stri
 // Single line comment starting with //
 
 //: ws ::= "//" printable** eol
+//: ws ::= "/*" commentContent "*/"
 
+
+//: commentContent ::= "*" !"/"
+////: commentContent ::= !"/" printable**
+    
 // to handle the common end-of-line sequences on different types
 // of systems, we treat the sequence CR+LF as an end of line.
 // Otherwise, we treat CR or LF appearing separately each as an
@@ -691,9 +687,6 @@ public void registerNewline(int pos) {
 //================================================================
 // COMMENTS
 //================================================================
-//: COMMENT ::= # "//" ws* idChar++ ws*
-//: COMMENT ::= # "/*" ws* idChar++ ws* &{"*/"} ws*
-//: NESTEDCOMMENT ::= # "/*" ws* idChar++ ws* !{"*/"} &{"/*"} ws* idChar++ &{"*/"} ws* idChar++ ws* &{"*/"} =>
 public void reportNestedComment(int pos, Character left, Character leftInner, List<Character> leftOuterComment, 
     List<Character> nestedComment, List<Character> rightOuterComment) {
     warning(pos, "Nested comment detected at " + pos);
