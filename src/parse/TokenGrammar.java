@@ -619,9 +619,14 @@ public int convertToInt(int pos, String s) {
 //: `x ::= {"x" "X"}
 //: INTLIT ::= # "0" `x digit++ ws* =>
 public int convertHexToInt(int pos, Character zero, List<Character> hexLit) {
-    Integer hexInt = new Integer(10);
     String hexStr = String.valueOf(hexLit);
     return Integer.decode("0x" + hexStr);
+}
+
+//: INTLIT ::= # "0" digit++ ws* =>
+public int convertOctalToInt(int pos, Character zero, List<Character> octLit) {
+    String octStr = String.valueOf(octLit);
+    return Integer.decode("0" + octStr);
 }
 
 // pattern that represents an integer literal (without trailing whitespace)
