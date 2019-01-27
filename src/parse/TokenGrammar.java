@@ -599,7 +599,8 @@ public void charLit(int pos, int n) {
 // NUMBER RELATED TOKENS
 //================================================================
 
-public int zero(char c) { return 0;}
+//: INTLIT ::= # "0" !{"0".."9" "x" "X"} ws* =>
+public int zero(int pos, char c) { return 0;}
 
 // a numeric literal
 //: INTLIT ::= # intLit2 ws* =>
@@ -613,9 +614,14 @@ public int convertToInt(int pos, String s) {
 	}
 }
 
-////: INTLIT ::= # "0" &{"x" "X"} digit++ ws* =>
-public int convertHexToInt(int pos, List<Character> hexLit) {
-    return Integer.parseInt(String.valueOf(hexLit), 16);
+// Extension 3 : Extend INTLIT so Java's octal and hexadecimal literals interpreted, resource used: https://www.tutorialspoint.com/java/lang/integer_decode.htm 
+
+//: `x ::= {"x" "X"}
+//: INTLIT ::= # "0" `x digit++ ws* =>
+public int convertHexToInt(int pos, Character zero, List<Character> hexLit) {
+    Integer hexInt = new Integer(10);
+    String hexStr = String.valueOf(hexLit);
+    return Integer.decode("0x" + hexStr);
 }
 
 // pattern that represents an integer literal (without trailing whitespace)
@@ -634,7 +640,7 @@ public int printableToAscii(int pos, char leftQuote, char printable, char rightQ
     return (int)printable;
 }
 
-//: STRINGLIT ::= # '"' idChar++ '"' ws* =>
+//: STRINGLIT ::= # '"' printable++ '"' ws* =>
 public String charsToStringLiteral(int pos, char leftQuote, List<Character> stringLit, char rightQuote) {
     return String.valueOf(stringLit);
 }
