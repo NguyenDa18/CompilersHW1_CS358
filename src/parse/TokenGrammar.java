@@ -620,13 +620,25 @@ public int convertToInt(int pos, String s) {
 //: INTLIT ::= # "0" `x digit++ ws* =>
 public int convertHexToInt(int pos, Character zero, List<Character> hexLit) {
     String hexStr = String.valueOf(hexLit);
-    return Integer.decode("0x" + hexStr);
+    try {
+        return Integer.decode("0x" + hexStr);
+    }
+    catch (NumberFormatException nfx) {
+        error(pos, "Hexidecimal literal value 0x" + hexStr + " is out of range.");
+        return 0;
+    }
 }
 
 //: INTLIT ::= # "0" digit++ ws* =>
 public int convertOctalToInt(int pos, Character zero, List<Character> octLit) {
     String octStr = String.valueOf(octLit);
-    return Integer.decode("0" + octStr);
+    try {
+        return Integer.decode("0" + octStr);
+    }
+    catch (NumberFormatException nfx) {
+        error(pos, "Octal literal value " + octStr + " is out of range.");
+        return 0;
+    }
 }
 
 // pattern that represents an integer literal (without trailing whitespace)
@@ -640,18 +652,16 @@ public int convertOctalToInt(int pos, Character zero, List<Character> octLit) {
 // character patterns -- "helper symbols"
 //================================================================
 
-//: CHARLIT ::= # "'" printable "'" ws* =>
+//: CHARLIT ::= # "'" !{"''" "\"} printable "'" ws* =>
 public int printableToAscii(int pos, char leftQuote, char printable, char rightQuote) {
+
     return (int)printable;
 }
 
-//: STRINGLIT ::= # '"' printable++ '"' ws* =>
-public String charsToStringLiteral(int pos, char leftQuote, List<Character> stringLit, char rightQuote) {
-    return String.valueOf(stringLit);
+//: STRINGLIT ::= # '"' stringWord '"' ws* =>
+public String charsToStringLiteral(int pos, char leftQuote, String stringLit, char rightQuote) {
+    return stringLit;
 }
-
-// Escape sequences
-////: STRINGLIT ::= # '"' '\' !{'\', ''','n','t','f','r'} =>
 
 
 // a character that can be a non-first character in an identifier
@@ -665,14 +675,26 @@ public String charsToStringLiteral(int pos, char leftQuote, List<Character> stri
 // printable ASCII chars
 //: printable ::= {" ".."~"} => pass
 
+//: stringChar ::= !{'"' '/'} printable => pass
+//: stringWord ::= stringChar** => text
+
+// Build and return the string given a list of chars
+public String charsToStr(List<Character> string) {
+    StringBuilder builder = new StringBuilder(string.size());
+
+    for (Character c : string) builder.append(c);
+    return builder.toString();
+}
+
 //================================================================
 // WHITESPACE
 //================================================================
 //: ws ::= {" " 9} // space or tab
 //: ws ::= eol
 
-// Comments
-// Single line comment starting with //
+//================================================================
+// COMMENTS
+//================================================================
 
 //: ws ::= "//" printable** eol
 //: ws ::= "/*" commentContent* "*/"
@@ -681,6 +703,14 @@ public String charsToStringLiteral(int pos, char leftQuote, List<Character> stri
 //: commentContent ::= "*" !"/"
 //: commentContent ::= !"*" printable
 //: commentContent ::= eol
+////: commentContent ::= nestedComment
+//: commentStart ::= "/*"
+//: commentEnd ::= "*/"
+
+////: nestedComment ::= # &commentStart =>
+public void reportNestedComment(int pos) {
+    warning(pos, "Nested comment detected at " + pos);
+}
     
 // to handle the common end-of-line sequences on different types
 // of systems, we treat the sequence CR+LF as an end of line.
@@ -694,14 +724,6 @@ public String charsToStringLiteral(int pos, char leftQuote, List<Character> stri
 //: registerNewline ::= # =>
 public void registerNewline(int pos) {
 	errorMsg.newline(pos-1);
-}
-
-//================================================================
-// COMMENTS
-//================================================================
-public void reportNestedComment(int pos, Character left, Character leftInner, List<Character> leftOuterComment, 
-    List<Character> nestedComment, List<Character> rightOuterComment) {
-    warning(pos, "Nested comment detected at " + pos);
 }
 
 
