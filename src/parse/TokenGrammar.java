@@ -654,7 +654,6 @@ public int convertOctalToInt(int pos, Character zero, List<Character> octLit) {
 
 //: CHARLIT ::= # "'" !{"''" "\"} printable "'" ws* =>
 public int printableToAscii(int pos, char leftQuote, char printable, char rightQuote) {
-
     return (int)printable;
 }
 
@@ -675,13 +674,25 @@ public String charsToStringLiteral(int pos, char leftQuote, String stringLit, ch
 // printable ASCII chars
 //: printable ::= {" ".."~"} => pass
 
-//: stringChar ::= !{'"' '/'} printable => pass
+//: stringChar ::= !{'"' '\'} printable => pass
 //: stringWord ::= stringChar** => text
+
+////: escapeSequence ::= {"\n"} 
+
+/**
+    IDENTIFIERS : Enforce the longest match rule, MiniJava identifiers
+    - starts with letter
+    - may optionally be followed by sequence of one or more letters, digits, underscores
+    - Reserved words should NOT be recognized as identifiers
+ */
+ //: ID ::= !reserved letter idChar** ws* =>
+ public String sequenceToIdentifier(Character startLetter, List<Character> sequence) {
+    return startLetter + charsToStr(sequence);
+ }
 
 // Build and return the string given a list of chars
 public String charsToStr(List<Character> string) {
     StringBuilder builder = new StringBuilder(string.size());
-
     for (Character c : string) builder.append(c);
     return builder.toString();
 }
@@ -697,17 +708,17 @@ public String charsToStr(List<Character> string) {
 //================================================================
 
 //: ws ::= "//" printable** eol
-//: ws ::= "/*" commentContent* "*/"
+//: ws ::= "/*" commentContent** "*/"
 
+//: nestedCommentStart ::= "/*"
+//: nestedCommentEnd ::= "*/"
 
-//: commentContent ::= "*" !"/"
-//: commentContent ::= !"*" printable
+//: commentElement ::= nestedCommentStart
+//: commentElement ::= nestedCommentEnd
+
+//: commentContent ::= !commentElement printable
 //: commentContent ::= eol
-////: commentContent ::= nestedComment
-//: commentStart ::= "/*"
-//: commentEnd ::= "*/"
-
-////: nestedComment ::= # &commentStart =>
+//: commentContent ::= # nestedCommentStart =>
 public void reportNestedComment(int pos) {
     warning(pos, "Nested comment detected at " + pos);
 }
@@ -725,18 +736,6 @@ public void reportNestedComment(int pos) {
 public void registerNewline(int pos) {
 	errorMsg.newline(pos-1);
 }
-
-
-/**
-    IDENTIFIERS : Enforce the longest match rule, MiniJava identifiers
-    - starts with letter
-    - may optionally be followed by sequence of one or more letters, digits, underscores
-    - Reserved words should NOT be recognized as identifiers
- */
- //: ID ::= !reserved letter idChar** ws* =>
- public String sequenceToIdentifier(Character startLetter, List<Character> sequence) {
-     return String.valueOf(startLetter) + "" + sequence;
- }
 
 
 }
