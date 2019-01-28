@@ -3,8 +3,6 @@ import java.util.List;
 
 import errorMsg.*;
 
-// java -cp ./WrangLR.jar main.Main myGram.java -d src/parser -o MyGramParseTable.java
-
 public class TokenGrammar implements wrangLR.runtime.MessageObject {
 
 	public TokenGrammar(ErrorMsg em) {
@@ -34,7 +32,7 @@ public class TokenGrammar implements wrangLR.runtime.MessageObject {
 
     NON-TERMINALS:
     start : the start rule
-    grammar-level symbols : non-termianls that consist of sequences of tokens
+    grammar-level symbols : non-terminals that consist of sequences of tokens
     whitespace token : defines what a whitespace character is in the language, ws denotes the whitespace char
     subpattern tokens : define char sequences that might appear within tokens
 =================================================================================
@@ -568,7 +566,7 @@ public void charLit(int pos, int n) {
 //: `( ::= "(" ws*
 //: `) ::= ")" ws*
 
-//: `* ::= "*" !"/" ws*
+//: `* ::= !"/" "*" !"/" ws*
 
 //: `+ ::= "+" !"+" ws*
 //: `++ ::= "++" ws*
@@ -654,7 +652,15 @@ public int convertOctalToInt(int pos, Character zero, List<Character> octLit) {
 
 //: CHARLIT ::= # "'" !{"''" "\"} printable "'" ws* =>
 public int printableToAscii(int pos, char leftQuote, char printable, char rightQuote) {
-    return (int)printable;
+    int asciiLit = (int)printable;
+
+    if (asciiLit < 32 || asciiLit > 126) {
+        error(pos, "Character literal not printable.");
+        return 32; // Return space
+    }
+    else {
+        return (int)printable;
+    }
 }
 
 //: STRINGLIT ::= # '"' stringWord '"' ws* =>
@@ -672,12 +678,31 @@ public String charsToStringLiteral(int pos, char leftQuote, String stringLit, ch
 //: letter ::= {"a".."z" "A".."Z"} => pass
 
 // printable ASCII chars
-//: printable ::= {" ".."~"} => pass
+//: printable ::= !escapeChar {" ".."~"} => pass
+//: printable ::= # escapeSlash idChar =>
+ public Character escape(int pos, Character escapeChar) {
+      warning(pos, "Escaped string at pos " + pos);
 
-//: stringChar ::= !{'"' '\'} printable => pass
+      switch (escapeChar) {
+          case 'n':
+              return 'n';
+          case 't':
+              return 't';
+          case '\\':
+              return '\\';
+
+          default:
+              return ' ';
+      }
+ }
+
+//: escapeChar ::= "\n" ws*
+//: escapeChar ::= "\f" ws*
+//: escapeChar ::= "\t" ws*
+//: escapeSlash ::= '\'
+
+//: stringChar ::= !{'"'} printable => pass
 //: stringWord ::= stringChar** => text
-
-////: escapeSequence ::= {"\n"} 
 
 /**
     IDENTIFIERS : Enforce the longest match rule, MiniJava identifiers
