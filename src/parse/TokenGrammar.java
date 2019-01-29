@@ -678,30 +678,66 @@ public String charsToStringLiteral(int pos, char leftQuote, String stringLit, ch
 //: letter ::= {"a".."z" "A".."Z"} => pass
 
 // printable ASCII chars
-//: printable ::= !escapeChar {" ".."~"} => pass
-//: printable ::= # escapeSlash idChar =>
- public Character escape(int pos, Character escapeChar) {
-      warning(pos, "Escaped string at pos " + pos);
-
-      switch (escapeChar) {
-          case 'n':
-              return 'n';
-          case 't':
-              return 't';
-          case '\\':
-              return '\\';
-
-          default:
-              return ' ';
-      }
- }
+//: printable ::= {" ".."~"} => pass
 
 //: escapeChar ::= "\n" ws*
 //: escapeChar ::= "\f" ws*
 //: escapeChar ::= "\t" ws*
-//: escapeSlash ::= '\'
 
-//: stringChar ::= !{'"'} printable => pass
+//: stringChar ::= !{'"' '\'} printable => pass
+//: escapeSlash ::= '\'
+//: escapeLiteral ::= {"ntfr"} => pass
+
+//: stringChar ::= # escapeSlash '\' =>
+public Character escapeBackslash(int pos, char letter) {
+    warning(pos, "Escaped " + letter + " at pos " + pos + " with \\");
+
+    return '\\';
+}
+
+//: stringChar ::= # escapeSlash '"' =>
+public Character escapeDoubleQuote(int pos, char letter) {
+    warning(pos, "Escaped " + letter + " at pos " + pos + " with \"");
+
+    return '"';
+}
+
+//: stringChar ::= # escapeSlash "'" =>
+public Character escapeSingleQuote(int pos, char letter) {
+    warning(pos, "Escaped " + letter + " at pos " + pos + " with \'");
+
+    return '\'';
+}
+
+//: stringChar ::= # escapeSlash 'n' =>
+public Character escapeN(int pos, char letter) {
+    warning(pos, "Escaped " + letter + " at pos with newline");
+
+    return 10;
+}
+
+//: stringChar ::= # escapeSlash 't' =>
+public Character escapeT(int pos, char letter) {
+    warning(pos, "Escaped " + letter + " at pos " + pos + " with tab");
+
+    return 9;
+}
+
+//: stringChar ::= # escapeSlash 'f' =>
+public Character escapeF(int pos, char letter) {
+    warning(pos, "Escaped " + letter + " at pos " + pos + " with formfeed");
+
+    return 12;
+}
+
+//: stringChar ::= # escapeSlash 'r' =>
+public Character escapeR(int pos, char letter) {
+    warning(pos, "Escaped " + letter + " at pos " + pos + " with carriage return");
+
+    return 13;
+}
+
+
 //: stringWord ::= stringChar** => text
 
 /**
