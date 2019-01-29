@@ -1,6 +1,6 @@
 class Main {
     void main() {
-        boolean b = new Blizzard().run(null);
+        int b = new Blizzard("I am a new \n \n tab").run(null);
     }
 }
 
