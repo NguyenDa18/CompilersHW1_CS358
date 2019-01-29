@@ -172,8 +172,8 @@ private String[] symNameTable = {
 "\" \"",
 "\"\\\"",
 "{\"#\"..\"$\" \"?\"..\"@\" \"^\" \"`\" \"~\"}",
-"escapeSlash",
 "stringChar**",
+"escapeSlash",
 "idChar**",
 "$$2",
 "ws",
@@ -399,8 +399,8 @@ MIN_REDUCTION+144, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -580,8 +580,8 @@ MIN_REDUCTION+203, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -814,8 +814,8 @@ MIN_REDUCTION+228, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -1076,8 +1076,8 @@ MIN_REDUCTION+197, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -1309,8 +1309,8 @@ MIN_REDUCTION+116, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -1585,8 +1585,8 @@ MIN_REDUCTION+201, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -1766,8 +1766,8 @@ MIN_REDUCTION+119, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -1814,7 +1814,7 @@ MIN_REDUCTION+302, // (default reduction)
   }
 ,
 { // state 64
-MIN_REDUCTION+328, // (default reduction)
+MIN_REDUCTION+329, // (default reduction)
   }
 ,
 { // state 65
@@ -2017,8 +2017,8 @@ MIN_REDUCTION+251, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -2261,8 +2261,8 @@ MIN_REDUCTION+111, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -2318,7 +2318,7 @@ MIN_REDUCTION+20, // (default reduction)
 { // state 82
 144,199, // stringChar
 153,98, // "\"
-155,1423, // escapeSlash
+156,1423, // escapeSlash
   }
 ,
 { // state 83
@@ -2477,8 +2477,8 @@ MIN_REDUCTION+372, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -2658,8 +2658,8 @@ MIN_REDUCTION+221, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -2748,7 +2748,7 @@ MIN_REDUCTION+153, // (default reduction)
   }
 ,
 { // state 98
-MIN_REDUCTION+322, // (default reduction)
+MIN_REDUCTION+324, // (default reduction)
   }
 ,
 { // state 99
@@ -2953,8 +2953,8 @@ MIN_REDUCTION+135, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -2979,8 +2979,8 @@ MIN_REDUCTION+135, // $NT
   }
 ,
 { // state 109
-177,MIN_REDUCTION+326, // $NT
-MIN_REDUCTION+326, // (default reduction)
+177,MIN_REDUCTION+327, // $NT
+MIN_REDUCTION+327, // (default reduction)
   }
 ,
 { // state 110
@@ -3153,8 +3153,8 @@ MIN_REDUCTION+158, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -3354,8 +3354,8 @@ MIN_REDUCTION+254, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -3543,8 +3543,8 @@ MIN_REDUCTION+239, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -3766,8 +3766,8 @@ MIN_REDUCTION+314, // (default reduction)
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -3835,7 +3835,7 @@ MIN_REDUCTION+258, // (default reduction)
   }
 ,
 { // state 139
-MIN_REDUCTION+330, // (default reduction)
+MIN_REDUCTION+331, // (default reduction)
   }
 ,
 { // state 140
@@ -4188,8 +4188,8 @@ MIN_REDUCTION+95, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -4256,8 +4256,8 @@ MIN_REDUCTION+363, // (default reduction)
   }
 ,
 { // state 168
-177,MIN_REDUCTION+330, // $NT
-MIN_REDUCTION+330, // (default reduction)
+177,MIN_REDUCTION+331, // $NT
+MIN_REDUCTION+331, // (default reduction)
   }
 ,
 { // state 169
@@ -4416,8 +4416,8 @@ MIN_REDUCTION+255, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -4632,8 +4632,8 @@ MIN_REDUCTION+222, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -4844,8 +4844,8 @@ MIN_REDUCTION+300, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -5025,8 +5025,8 @@ MIN_REDUCTION+301, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -5220,8 +5220,8 @@ MIN_REDUCTION+373, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -5606,8 +5606,8 @@ MIN_REDUCTION+153, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -5995,8 +5995,8 @@ MIN_REDUCTION+98, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -6183,8 +6183,8 @@ MIN_REDUCTION+289, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -6372,8 +6372,8 @@ MIN_REDUCTION+230, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -6630,8 +6630,8 @@ MIN_REDUCTION+162, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -6829,8 +6829,8 @@ MIN_REDUCTION+132, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -7043,8 +7043,8 @@ MIN_REDUCTION+141, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -7254,8 +7254,8 @@ MIN_REDUCTION+200, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -7321,7 +7321,7 @@ MIN_REDUCTION+301, // (default reduction)
 ,
 { // state 281
 153,98, // "\"
-155,1423, // escapeSlash
+156,1423, // escapeSlash
   }
 ,
 { // state 282
@@ -7336,7 +7336,7 @@ MIN_REDUCTION+285, // (default reduction)
   }
 ,
 { // state 284
-MIN_REDUCTION+324, // (default reduction)
+MIN_REDUCTION+325, // (default reduction)
   }
 ,
 { // state 285
@@ -7525,8 +7525,8 @@ MIN_REDUCTION+123, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -7710,8 +7710,8 @@ MIN_REDUCTION+126, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -7929,8 +7929,8 @@ MIN_REDUCTION+266, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -8110,8 +8110,8 @@ MIN_REDUCTION+210, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -8299,8 +8299,8 @@ MIN_REDUCTION+122, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -8560,8 +8560,8 @@ MIN_REDUCTION+256, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -8753,8 +8753,8 @@ MIN_REDUCTION+294, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -8986,8 +8986,8 @@ MIN_REDUCTION+264, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -9214,8 +9214,8 @@ MIN_REDUCTION+125, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -9309,7 +9309,7 @@ MIN_REDUCTION+125, // $NT
 152,211, // " "
 153,211, // "\"
 154,211, // {"#".."$" "?".."@" "^" "`" "~"}
-156,1635, // stringChar**
+155,1635, // stringChar**
 172,893, // stringChar*
   }
 ,
@@ -9475,8 +9475,8 @@ MIN_REDUCTION+286, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -9739,8 +9739,8 @@ MIN_REDUCTION+313, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -9920,8 +9920,8 @@ MIN_REDUCTION+189, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -10167,8 +10167,8 @@ MIN_REDUCTION+134, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -10377,8 +10377,8 @@ MIN_REDUCTION+146, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -10505,8 +10505,8 @@ MIN_REDUCTION+350, // (default reduction)
   }
 ,
 { // state 389
-177,MIN_REDUCTION+324, // $NT
-MIN_REDUCTION+324, // (default reduction)
+177,MIN_REDUCTION+325, // $NT
+MIN_REDUCTION+325, // (default reduction)
   }
 ,
 { // state 390
@@ -10665,8 +10665,8 @@ MIN_REDUCTION+263, // "+"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -10797,7 +10797,7 @@ private final int[][] myParseTable = {
 145,399, // '"'
 146,85, // stringWord
 147,1001, // $$1
-156,1635, // stringChar**
+155,1635, // stringChar**
 172,893, // stringChar*
   }
 ,
@@ -11021,8 +11021,8 @@ MIN_REDUCTION+120, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -11185,8 +11185,8 @@ MIN_REDUCTION+281, // (default reduction)
   }
 ,
 { // state 425
-177,MIN_REDUCTION+328, // $NT
-MIN_REDUCTION+328, // (default reduction)
+177,MIN_REDUCTION+329, // $NT
+MIN_REDUCTION+329, // (default reduction)
   }
 ,
 { // state 426
@@ -11274,8 +11274,8 @@ MIN_REDUCTION+288, // (default reduction)
 144,1654, // stringChar
 146,85, // stringWord
 153,98, // "\"
-155,1209, // escapeSlash
-156,1635, // stringChar**
+155,1635, // stringChar**
+156,1209, // escapeSlash
 172,893, // stringChar*
   }
 ,
@@ -11465,8 +11465,8 @@ MIN_REDUCTION+270, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -11653,8 +11653,8 @@ MIN_REDUCTION+170, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -11841,8 +11841,8 @@ MIN_REDUCTION+242, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -11867,7 +11867,7 @@ MIN_REDUCTION+242, // $NT
   }
 ,
 { // state 454
-MIN_REDUCTION+328, // (default reduction)
+MIN_REDUCTION+329, // (default reduction)
   }
 ,
 { // state 455
@@ -12087,8 +12087,8 @@ MIN_REDUCTION+259, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -12268,8 +12268,8 @@ MIN_REDUCTION+277, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -12641,8 +12641,8 @@ MIN_REDUCTION+191, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -12933,8 +12933,8 @@ MIN_REDUCTION+171, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -13341,8 +13341,8 @@ MIN_REDUCTION+274, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -13651,8 +13651,8 @@ MIN_REDUCTION+280, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -13836,8 +13836,8 @@ MIN_REDUCTION+279, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -14053,8 +14053,8 @@ MIN_REDUCTION+298, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -14287,8 +14287,8 @@ MIN_REDUCTION+234, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -14360,8 +14360,8 @@ MIN_REDUCTION+370, // (default reduction)
   }
 ,
 { // state 571
-177,MIN_REDUCTION+325, // $NT
-MIN_REDUCTION+325, // (default reduction)
+177,MIN_REDUCTION+326, // $NT
+MIN_REDUCTION+326, // (default reduction)
   }
 ,
 { // state 572
@@ -14552,8 +14552,8 @@ MIN_REDUCTION+297, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -14748,8 +14748,8 @@ MIN_REDUCTION+272, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -15037,8 +15037,8 @@ MIN_REDUCTION+296, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -15238,8 +15238,8 @@ MIN_REDUCTION+155, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -15520,8 +15520,8 @@ MIN_REDUCTION+253, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -15708,8 +15708,8 @@ MIN_REDUCTION+183, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -15940,8 +15940,8 @@ MIN_REDUCTION+236, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -16157,8 +16157,8 @@ MIN_REDUCTION+282, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -16361,8 +16361,8 @@ MIN_REDUCTION+110, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -16699,8 +16699,8 @@ MIN_REDUCTION+276, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -16843,7 +16843,7 @@ MIN_REDUCTION+368, // (default reduction)
   }
 ,
 { // state 688
-MIN_REDUCTION+326, // (default reduction)
+MIN_REDUCTION+327, // (default reduction)
   }
 ,
 { // state 689
@@ -17051,8 +17051,8 @@ MIN_REDUCTION+302, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -17261,8 +17261,8 @@ MIN_REDUCTION+249, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -17327,7 +17327,7 @@ MIN_REDUCTION+62, // (default reduction)
   }
 ,
 { // state 712
-MIN_REDUCTION+325, // (default reduction)
+MIN_REDUCTION+326, // (default reduction)
   }
 ,
 { // state 713
@@ -17523,8 +17523,8 @@ MIN_REDUCTION+278, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -17704,8 +17704,8 @@ MIN_REDUCTION+161, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -17953,8 +17953,8 @@ MIN_REDUCTION+252, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -18258,8 +18258,8 @@ MIN_REDUCTION+262, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -18468,8 +18468,8 @@ MIN_REDUCTION+310, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -18702,8 +18702,8 @@ MIN_REDUCTION+185, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -18890,8 +18890,8 @@ MIN_REDUCTION+281, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -19075,8 +19075,8 @@ MIN_REDUCTION+374, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -19379,8 +19379,8 @@ MIN_REDUCTION+293, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -19560,8 +19560,8 @@ MIN_REDUCTION+101, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -19813,8 +19813,8 @@ MIN_REDUCTION+305, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -20094,8 +20094,8 @@ MIN_REDUCTION+104, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -20289,8 +20289,8 @@ MIN_REDUCTION+283, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -20506,8 +20506,8 @@ MIN_REDUCTION+292, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -20687,8 +20687,8 @@ MIN_REDUCTION+149, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -20868,8 +20868,8 @@ MIN_REDUCTION+105, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -21162,8 +21162,8 @@ MIN_REDUCTION+250, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -21363,8 +21363,8 @@ MIN_REDUCTION+269, // "-"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -21693,8 +21693,8 @@ MIN_REDUCTION+137, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -21881,8 +21881,8 @@ MIN_REDUCTION+271, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -22106,8 +22106,8 @@ MIN_REDUCTION+212, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -22335,8 +22335,8 @@ MIN_REDUCTION+92, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -22651,8 +22651,8 @@ MIN_REDUCTION+216, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -23032,8 +23032,8 @@ MIN_REDUCTION+150, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -23243,8 +23243,8 @@ MIN_REDUCTION+168, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -23469,8 +23469,8 @@ MIN_REDUCTION+96, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -23686,8 +23686,8 @@ MIN_REDUCTION+113, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -23736,7 +23736,7 @@ MIN_REDUCTION+315, // (default reduction)
   }
 ,
 { // state 964
-MIN_REDUCTION+329, // (default reduction)
+MIN_REDUCTION+330, // (default reduction)
   }
 ,
 { // state 965
@@ -23909,8 +23909,8 @@ MIN_REDUCTION+248, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -24096,8 +24096,8 @@ MIN_REDUCTION+291, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -24308,8 +24308,8 @@ MIN_REDUCTION+192, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -24526,8 +24526,8 @@ MIN_REDUCTION+164, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -24739,8 +24739,8 @@ MIN_REDUCTION+333, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 807, // $$2
 1552, // ws
@@ -24935,8 +24935,8 @@ MIN_REDUCTION+231, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -25127,8 +25127,8 @@ MIN_REDUCTION+225, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -25424,8 +25424,8 @@ MIN_REDUCTION+227, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -25633,8 +25633,8 @@ MIN_REDUCTION+284, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -25942,8 +25942,8 @@ MIN_REDUCTION+177, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -26172,8 +26172,8 @@ MIN_REDUCTION+176, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -26438,8 +26438,8 @@ MIN_REDUCTION+243, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -26660,8 +26660,8 @@ MIN_REDUCTION+173, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -26867,8 +26867,8 @@ MIN_REDUCTION+295, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -27068,8 +27068,8 @@ MIN_REDUCTION+165, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -27268,8 +27268,8 @@ MIN_REDUCTION+273, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -27456,8 +27456,8 @@ MIN_REDUCTION+267, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -27893,8 +27893,8 @@ MIN_REDUCTION+246, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -28096,8 +28096,8 @@ MIN_REDUCTION+224, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -28277,8 +28277,8 @@ MIN_REDUCTION+152, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -28500,8 +28500,8 @@ MIN_REDUCTION+156, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -28697,8 +28697,8 @@ MIN_REDUCTION+188, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -28893,8 +28893,8 @@ MIN_REDUCTION+102, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -29013,7 +29013,7 @@ MIN_REDUCTION+53, // (default reduction)
   }
 ,
 { // state 1147
-MIN_REDUCTION+327, // (default reduction)
+MIN_REDUCTION+328, // (default reduction)
   }
 ,
 { // state 1148
@@ -29210,8 +29210,8 @@ MIN_REDUCTION+219, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -29391,8 +29391,8 @@ MIN_REDUCTION+245, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -29584,8 +29584,8 @@ MIN_REDUCTION+299, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -29771,7 +29771,7 @@ MIN_REDUCTION+277, // (default reduction)
   }
 ,
 { // state 1186
-MIN_REDUCTION+330, // (default reduction)
+MIN_REDUCTION+331, // (default reduction)
   }
 ,
 { // state 1187
@@ -30006,8 +30006,8 @@ MIN_REDUCTION+308, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -30191,8 +30191,8 @@ MIN_REDUCTION+194, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -30372,8 +30372,8 @@ MIN_REDUCTION+198, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -30641,8 +30641,8 @@ MIN_REDUCTION+260, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -30839,8 +30839,8 @@ MIN_REDUCTION+93, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -30871,7 +30871,7 @@ MIN_REDUCTION+93, // $NT
 { // state 1223
 144,890, // stringChar
 153,98, // "\"
-155,1209, // escapeSlash
+156,1209, // escapeSlash
   }
 ,
 { // state 1224
@@ -31030,8 +31030,8 @@ MIN_REDUCTION+237, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -31284,8 +31284,8 @@ MIN_REDUCTION+174, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -31511,8 +31511,8 @@ MIN_REDUCTION+114, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -31713,8 +31713,8 @@ MIN_REDUCTION+290, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -31746,8 +31746,8 @@ MIN_REDUCTION+290, // $
   }
 ,
 { // state 1255
-177,MIN_REDUCTION+327, // $NT
-MIN_REDUCTION+327, // (default reduction)
+177,MIN_REDUCTION+328, // $NT
+MIN_REDUCTION+328, // (default reduction)
   }
 ,
 { // state 1256
@@ -31912,8 +31912,8 @@ MIN_REDUCTION+99, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -32250,8 +32250,8 @@ MIN_REDUCTION+233, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -32470,8 +32470,8 @@ MIN_REDUCTION+89, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -32687,8 +32687,8 @@ MIN_REDUCTION+195, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -32868,8 +32868,8 @@ MIN_REDUCTION+90, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -33049,8 +33049,8 @@ MIN_REDUCTION+257, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -33150,7 +33150,7 @@ MIN_REDUCTION+285, // (default reduction)
   }
 ,
 { // state 1300
-MIN_REDUCTION+325, // (default reduction)
+MIN_REDUCTION+326, // (default reduction)
   }
 ,
 { // state 1301
@@ -33178,7 +33178,7 @@ MIN_REDUCTION+284, // (default reduction)
   }
 ,
 { // state 1305
-MIN_REDUCTION+327, // (default reduction)
+MIN_REDUCTION+328, // (default reduction)
   }
 ,
 { // state 1306
@@ -33337,8 +33337,8 @@ MIN_REDUCTION+218, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -33385,7 +33385,7 @@ MIN_REDUCTION+173, // (default reduction)
   }
 ,
 { // state 1311
-MIN_REDUCTION+324, // (default reduction)
+MIN_REDUCTION+325, // (default reduction)
   }
 ,
 { // state 1312
@@ -33558,8 +33558,8 @@ MIN_REDUCTION+237, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -33590,7 +33590,7 @@ MIN_REDUCTION+237, // $NT
   }
 ,
 { // state 1317
-MIN_REDUCTION+329, // (default reduction)
+MIN_REDUCTION+330, // (default reduction)
   }
 ,
 { // state 1318
@@ -33749,8 +33749,8 @@ MIN_REDUCTION+128, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -34098,8 +34098,8 @@ MIN_REDUCTION+204, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -34320,8 +34320,8 @@ MIN_REDUCTION+213, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -34501,8 +34501,8 @@ MIN_REDUCTION+108, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -34688,8 +34688,8 @@ MIN_REDUCTION+314, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -34918,8 +34918,8 @@ MIN_REDUCTION+182, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -35181,8 +35181,8 @@ MIN_REDUCTION+215, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -35362,8 +35362,8 @@ MIN_REDUCTION+138, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -35591,8 +35591,8 @@ MIN_REDUCTION+180, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -35776,8 +35776,8 @@ MIN_REDUCTION+209, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -35974,8 +35974,8 @@ MIN_REDUCTION+206, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -36005,7 +36005,7 @@ MIN_REDUCTION+299, // (default reduction)
   }
 ,
 { // state 1393
-MIN_REDUCTION+326, // (default reduction)
+MIN_REDUCTION+327, // (default reduction)
   }
 ,
 { // state 1394
@@ -36197,8 +36197,8 @@ MIN_REDUCTION+240, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -36395,8 +36395,8 @@ MIN_REDUCTION+107, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -36624,8 +36624,8 @@ MIN_REDUCTION+129, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -36826,8 +36826,8 @@ MIN_REDUCTION+131, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -37045,8 +37045,8 @@ MIN_REDUCTION+307, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -37239,8 +37239,8 @@ MIN_REDUCTION+274, // (default reduction)
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -37508,8 +37508,8 @@ MIN_REDUCTION+285, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -37732,8 +37732,8 @@ MIN_REDUCTION+117, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -37948,8 +37948,8 @@ MIN_REDUCTION+90, // (default reduction)
   }
 ,
 { // state 1489
-177,MIN_REDUCTION+329, // $NT
-MIN_REDUCTION+329, // (default reduction)
+177,MIN_REDUCTION+330, // $NT
+MIN_REDUCTION+330, // (default reduction)
   }
 ,
 { // state 1490
@@ -38135,8 +38135,8 @@ MIN_REDUCTION+258, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -38335,8 +38335,8 @@ MIN_REDUCTION+167, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -38649,8 +38649,8 @@ MIN_REDUCTION+268, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -39006,8 +39006,8 @@ MIN_REDUCTION+287, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -39187,8 +39187,8 @@ MIN_REDUCTION+140, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -39394,8 +39394,8 @@ MIN_REDUCTION+335, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 1002, // idChar**
 525, // $$2
 1552, // ws
@@ -39598,8 +39598,8 @@ MIN_REDUCTION+186, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -39874,8 +39874,8 @@ MIN_REDUCTION+288, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -40111,8 +40111,8 @@ MIN_REDUCTION+147, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -40376,8 +40376,8 @@ MIN_REDUCTION+179, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -40622,8 +40622,8 @@ MIN_REDUCTION+143, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -40809,8 +40809,8 @@ MIN_REDUCTION+207, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -41087,8 +41087,8 @@ MIN_REDUCTION+265, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -41293,8 +41293,8 @@ MIN_REDUCTION+309, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -41349,7 +41349,7 @@ MIN_REDUCTION+292, // (default reduction)
   }
 ,
 { // state 1635
-MIN_REDUCTION+331, // (default reduction)
+MIN_REDUCTION+322, // (default reduction)
   }
 ,
 { // state 1636
@@ -41581,8 +41581,8 @@ MIN_REDUCTION+304, // "*"
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1264, // ws
@@ -41775,8 +41775,8 @@ MIN_REDUCTION+159, // {"A".."W" "Y".."Z" "j" "q"}
 913, // " "
 -1, // "\"
 -1, // {"#".."$" "?".."@" "^" "`" "~"}
--1, // escapeSlash
 -1, // stringChar**
+-1, // escapeSlash
 -1, // idChar**
 -1, // $$2
 1552, // ws
@@ -42599,10 +42599,12 @@ private static int[] prodTable = {
 (148<<16)+1,
 // printable ::= {" ".."~"}
 (151<<16)+1,
-// escapeSlash ::= "\"
-(155<<16)+1,
+// stringWord ::= stringChar**
+(146<<16)+1,
 // stringChar ::= !{'"' "\"} printable
 (144<<16)+1,
+// escapeSlash ::= "\"
+(156<<16)+1,
 // stringChar ::= escapeSlash "\"
 (144<<16)+2,
 // stringChar ::= escapeSlash '"'
@@ -42617,8 +42619,6 @@ private static int[] prodTable = {
 (144<<16)+2,
 // stringChar ::= escapeSlash "r"
 (144<<16)+2,
-// stringWord ::= stringChar**
-(146<<16)+1,
 // ID ::= !reserved letter idChar** $$2
 (85<<16)+3,
 // ID ::= !reserved letter idChar**
@@ -42666,7 +42666,7 @@ private static int[] prodTable = {
 // printable** ::= printable* !printable
 (162<<16)+1,
 // stringChar** ::= stringChar* !stringChar
-(156<<16)+1,
+(155<<16)+1,
 // digit++ ::= digit+ !digit
 (141<<16)+1,
 // idChar** ::= idChar* !idChar
@@ -43289,16 +43289,16 @@ private String[] actionProdNameTable = {
 "idChar ::= \"_\"", // 319
 "letter ::= {\"A\"..\"Z\" \"a\"..\"z\"}", // 320
 "printable ::= {\" \"..\"~\"}", // 321
-"escapeSlash ::= \"\\\"", // 322
+"stringWord ::= stringChar**", // 322
 "stringChar ::= !{\'\"\' \"\\\"} printable", // 323
-"stringChar ::= # escapeSlash \"\\\"", // 324
-"stringChar ::= # escapeSlash \'\"\'", // 325
-"stringChar ::= # escapeSlash \"\'\"", // 326
-"stringChar ::= # escapeSlash \"n\"", // 327
-"stringChar ::= # escapeSlash \"t\"", // 328
-"stringChar ::= # escapeSlash \"f\"", // 329
-"stringChar ::= # escapeSlash \"r\"", // 330
-"stringWord ::= stringChar**", // 331
+"escapeSlash ::= \"\\\"", // 324
+"stringChar ::= # escapeSlash \"\\\"", // 325
+"stringChar ::= # escapeSlash \'\"\'", // 326
+"stringChar ::= # escapeSlash \"\'\"", // 327
+"stringChar ::= # escapeSlash \"n\"", // 328
+"stringChar ::= # escapeSlash \"t\"", // 329
+"stringChar ::= # escapeSlash \"f\"", // 330
+"stringChar ::= # escapeSlash \"r\"", // 331
 "ID ::= !reserved letter idChar** ws*", // 332
 "ID ::= !reserved letter idChar** ws*", // 333
 "ID ::= !reserved letter idChar** ws*", // 334
@@ -46075,68 +46075,68 @@ private int[][] actionTable = {
       ((1<<5)|0xe)/*popPos:1*/,
       ((1<<5)|0x0)/*popToPushBack:1*/,
     },
-    { // 322: escapeSlash ::= "\" @void
+    { // 322: stringWord ::= stringChar** @text
       ((1<<5)|0xe)/*popPos:1*/,
       ((1<<5)|0x0)/*popToPushBack:1*/,
-      ((1<<5)|0x3)/*popOffPushBack:1*/,
+      ((1<<5)|0x4)/*stringConcat:1*/,
     },
     { // 323: stringChar ::= !{'"' "\"} printable @pass
       ((1<<5)|0xe)/*popPos:1*/,
       ((1<<5)|0x0)/*popToPushBack:1*/,
     },
-    { // 324: stringChar ::= [#] escapeSlash "\" @escapeBackslash(int,char)=>Character
+    { // 324: escapeSlash ::= "\" @void
+      ((1<<5)|0xe)/*popPos:1*/,
+      ((1<<5)|0x0)/*popToPushBack:1*/,
+      ((1<<5)|0x3)/*popOffPushBack:1*/,
+    },
+    { // 325: stringChar ::= [#] escapeSlash "\" @escapeBackslash(int,char)=>Character
       ((1<<5)|0xe)/*popPos:1*/,
       ((1<<5)|0x0)/*popToPushBack:1*/,
       ((1<<5)|0xe)/*popPos:1*/,
       ((13<<5)|0x6)/*nullProductionAction:13*/,
       ((90<<5)|0x5)/*methodCall:90*/,
     },
-    { // 325: stringChar ::= [#] escapeSlash '"' @escapeDoubleQuote(int,char)=>Character
+    { // 326: stringChar ::= [#] escapeSlash '"' @escapeDoubleQuote(int,char)=>Character
       ((1<<5)|0xe)/*popPos:1*/,
       ((1<<5)|0x0)/*popToPushBack:1*/,
       ((1<<5)|0xe)/*popPos:1*/,
       ((13<<5)|0x6)/*nullProductionAction:13*/,
       ((91<<5)|0x5)/*methodCall:91*/,
     },
-    { // 326: stringChar ::= [#] escapeSlash "'" @escapeSingleQuote(int,char)=>Character
+    { // 327: stringChar ::= [#] escapeSlash "'" @escapeSingleQuote(int,char)=>Character
       ((1<<5)|0xe)/*popPos:1*/,
       ((1<<5)|0x0)/*popToPushBack:1*/,
       ((1<<5)|0xe)/*popPos:1*/,
       ((13<<5)|0x6)/*nullProductionAction:13*/,
       ((92<<5)|0x5)/*methodCall:92*/,
     },
-    { // 327: stringChar ::= [#] escapeSlash "n" @escapeN(int,char)=>Character
+    { // 328: stringChar ::= [#] escapeSlash "n" @escapeN(int,char)=>Character
       ((1<<5)|0xe)/*popPos:1*/,
       ((1<<5)|0x0)/*popToPushBack:1*/,
       ((1<<5)|0xe)/*popPos:1*/,
       ((13<<5)|0x6)/*nullProductionAction:13*/,
       ((93<<5)|0x5)/*methodCall:93*/,
     },
-    { // 328: stringChar ::= [#] escapeSlash "t" @escapeT(int,char)=>Character
+    { // 329: stringChar ::= [#] escapeSlash "t" @escapeT(int,char)=>Character
       ((1<<5)|0xe)/*popPos:1*/,
       ((1<<5)|0x0)/*popToPushBack:1*/,
       ((1<<5)|0xe)/*popPos:1*/,
       ((13<<5)|0x6)/*nullProductionAction:13*/,
       ((94<<5)|0x5)/*methodCall:94*/,
     },
-    { // 329: stringChar ::= [#] escapeSlash "f" @escapeF(int,char)=>Character
+    { // 330: stringChar ::= [#] escapeSlash "f" @escapeF(int,char)=>Character
       ((1<<5)|0xe)/*popPos:1*/,
       ((1<<5)|0x0)/*popToPushBack:1*/,
       ((1<<5)|0xe)/*popPos:1*/,
       ((13<<5)|0x6)/*nullProductionAction:13*/,
       ((95<<5)|0x5)/*methodCall:95*/,
     },
-    { // 330: stringChar ::= [#] escapeSlash "r" @escapeR(int,char)=>Character
+    { // 331: stringChar ::= [#] escapeSlash "r" @escapeR(int,char)=>Character
       ((1<<5)|0xe)/*popPos:1*/,
       ((1<<5)|0x0)/*popToPushBack:1*/,
       ((1<<5)|0xe)/*popPos:1*/,
       ((13<<5)|0x6)/*nullProductionAction:13*/,
       ((96<<5)|0x5)/*methodCall:96*/,
-    },
-    { // 331: stringWord ::= stringChar** @text
-      ((1<<5)|0xe)/*popPos:1*/,
-      ((1<<5)|0x0)/*popToPushBack:1*/,
-      ((1<<5)|0x4)/*stringConcat:1*/,
     },
     { // 332: ID ::= !reserved letter idChar** $$2 @sequenceToIdentifier(Character,List<Character>)=>String
       ((1<<5)|0xe)/*popPos:1*/,
@@ -47360,8 +47360,8 @@ private int[] symbolSizeTable = {
     -1,
     -1,
     -1,
-    0,
     1,
+    0,
     1,
     0,
     0,

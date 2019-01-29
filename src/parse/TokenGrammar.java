@@ -390,7 +390,9 @@ public void charLit(int pos, int n) {
 // the actual tokens
 //================================================================
 
-// reserved words
+/**
+ Symbols for MiniJava reserved words
+ */
 //: `boolean ::= "boolean" !idChar ws*
 //: reserved ::= `boolean
 
@@ -452,7 +454,7 @@ public void charLit(int pos, int n) {
 //: reserved ::= `while
 
 /**
-    Java reserved words not used in MiniJava
+    Symbols for Java reserved words not used in MiniJava
  */
 
 //: `abstract ::= "abstract" !idChar ws*
@@ -555,19 +557,17 @@ public void charLit(int pos, int n) {
 //: reserved ::= `volatile
 
 
-
-//================================================================
+/** ==========================================================================
 // SPECIAL-TOKEN CHARACTERS
-//================================================================
+============================================================================== */
+
 //: `! ::= "!" !"=" ws*
 //: `!= ::= "!=" ws*
 //: `% ::= "%" ws*
 //: `&& ::= "&&" ws*
 //: `( ::= "(" ws*
 //: `) ::= ")" ws*
-
 //: `* ::= !"/" "*" !"/" ws*
-
 //: `+ ::= "+" !"+" ws*
 //: `++ ::= "++" ws*
 //: `, ::= "," ws*
@@ -591,9 +591,9 @@ public void charLit(int pos, int n) {
 
 //: `# ::= "#" ws*
 
-//================================================================
-// NUMBER RELATED TOKENS
-//================================================================
+/** ==========================================================================
+ // NUMBER RELATED TOKENS
+ ============================================================================== */
 
 //: INTLIT ::= # "0" !{"0".."9" "x" "X"} ws* =>
 public int zero(int pos, char c) { return 0;}
@@ -610,7 +610,8 @@ public int convertToInt(int pos, String s) {
 	}
 }
 
-// Extension 3 : Extend INTLIT so Java's octal and hexadecimal literals interpreted, resource used: https://www.tutorialspoint.com/java/lang/integer_decode.htm 
+// Extension 3 : Extend INTLIT so Java's octal and hexadecimal literals interpreted
+// resource used: https://www.tutorialspoint.com/java/lang/integer_decode.htm
 
 //: `x ::= {"x" "X"}
 //: INTLIT ::= # "0" `x digit++ ws* =>
@@ -643,10 +644,10 @@ public int convertOctalToInt(int pos, Character zero, List<Character> octLit) {
 // a digit
 //: digit ::= {"0".."9"} => pass
 
-//================================================================
-// LETTERS AND CHAR TOKENS
-// character patterns -- "helper symbols"
-//================================================================
+/** ==========================================================================
+ // LETTERS AND CHAR TOKENS
+ // character patterns -- "helper symbols"
+ ============================================================================== */
 
 //: CHARLIT ::= # "'" stringChar "'" ws* =>
 public int printableToAscii(int pos, char leftQuote, char printable, char rightQuote) {
@@ -678,10 +679,13 @@ public String charsToStringLiteral(int pos, char leftQuote, String stringLit, ch
 // printable ASCII chars
 //: printable ::= {" ".."~"} => pass
 
-//: escapeSlash ::= '\'
+//: stringWord ::= stringChar** => text
 
 //: stringChar ::= !{'"' '\'} printable => pass
 
+// Extension 2 : Recognize string escape sequences in both string and char literals
+
+//: escapeSlash ::= '\'
 //: stringChar ::= # escapeSlash '\' =>
 public Character escapeBackslash(int pos, char letter) {
     warning(pos, "Escaped " + letter + " at pos " + pos + " with \\");
@@ -731,15 +735,13 @@ public Character escapeR(int pos, char letter) {
     return 13;
 }
 
+/** ==========================================================================
+// IDENTIFIERS : Enforce the longest match rule, MiniJava identifiers
+ - starts with letter
+ - may optionally be followed by sequence of one or more letters, digits, underscores
+ - Reserved words should NOT be recognized as identifiers
+============================================================================== */
 
-//: stringWord ::= stringChar** => text
-
-/**
-    IDENTIFIERS : Enforce the longest match rule, MiniJava identifiers
-    - starts with letter
-    - may optionally be followed by sequence of one or more letters, digits, underscores
-    - Reserved words should NOT be recognized as identifiers
- */
  //: ID ::= !reserved letter idChar** ws* =>
  public String sequenceToIdentifier(Character startLetter, List<Character> sequence) {
     return startLetter + charsToStr(sequence);
@@ -752,16 +754,15 @@ public String charsToStr(List<Character> string) {
     return builder.toString();
 }
 
-//================================================================
-// WHITESPACE
-//================================================================
+/** ==========================================================================
+ // WHITESPACE
+ ============================================================================== */
 //: ws ::= {" " 9} // space or tab
 //: ws ::= eol
 
-//================================================================
-// COMMENTS
-//================================================================
-
+/** ==========================================================================
+ // COMMENTS
+ ============================================================================== */
 //: ws ::= "//" printable** eol
 //: ws ::= "/*" commentContent** "*/"
 
@@ -773,6 +774,8 @@ public String charsToStr(List<Character> string) {
 
 //: commentContent ::= !commentElement printable
 //: commentContent ::= eol
+
+// Extension 1 : Give warning message if nested comment detected
 //: commentContent ::= # nestedCommentStart =>
 public void reportNestedComment(int pos) {
     warning(pos, "Nested comment detected at " + pos);
