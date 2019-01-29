@@ -589,8 +589,6 @@ public void charLit(int pos, int n) {
 //: `} ::= "}" ws*
 //: `|| ::= "||" ws*
 
-
-
 //: `# ::= "#" ws*
 
 //================================================================
@@ -650,16 +648,16 @@ public int convertOctalToInt(int pos, Character zero, List<Character> octLit) {
 // character patterns -- "helper symbols"
 //================================================================
 
-//: CHARLIT ::= # "'" !{"''" "\"} printable "'" ws* =>
+//: CHARLIT ::= # "'" stringChar "'" ws* =>
 public int printableToAscii(int pos, char leftQuote, char printable, char rightQuote) {
     int asciiLit = (int)printable;
 
-    if (asciiLit < 32 || asciiLit > 126) {
+    if (asciiLit > 126) {
         error(pos, "Character literal not printable.");
         return 32; // Return space
     }
     else {
-        return (int)printable;
+        return asciiLit;
     }
 }
 
@@ -680,13 +678,9 @@ public String charsToStringLiteral(int pos, char leftQuote, String stringLit, ch
 // printable ASCII chars
 //: printable ::= {" ".."~"} => pass
 
-//: escapeChar ::= "\n" ws*
-//: escapeChar ::= "\f" ws*
-//: escapeChar ::= "\t" ws*
+//: escapeSlash ::= '\'
 
 //: stringChar ::= !{'"' '\'} printable => pass
-//: escapeSlash ::= '\'
-//: escapeLiteral ::= {"ntfr"} => pass
 
 //: stringChar ::= # escapeSlash '\' =>
 public Character escapeBackslash(int pos, char letter) {
